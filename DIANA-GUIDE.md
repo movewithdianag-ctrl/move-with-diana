@@ -140,6 +140,39 @@ Work through this list in order:
   like *"New enquiry — Jane Smith · Private 1:1"*.
 - Newsletter signups arrive as *"The Weekly Cue signup — jane@gmail.com"*.
 - Reply to enquiries directly from Gmail like a normal email.
+- Every submission is also stored permanently (and searchable) here:
+  https://app.web3forms.com/forms/a7231048-269b-4031-a198-94e69923a608/submissions
+
+### ⚠️ Newsletter signups do NOT reach Constant Contact automatically
+
+When someone signs up for The Weekly Cue on the website, their email goes to
+the submissions list above — **not** into Constant Contact. Once a week, open
+the submissions list, find new signups, and add them to Constant Contact by
+hand. Otherwise you'll be writing newsletters to an empty list.
+
+---
+
+## 9. All your links in one place
+
+| What | Where |
+| --- | --- |
+| Edit the website | movewithdianag.com/admin — *Sign in with Google* |
+| Messages & signups | app.web3forms.com |
+| Newsletter | constantcontact.com |
+| Skool community | skool.com/move-with-diana-9111 |
+| Website code & history | github.com/movewithdianag-ctrl/move-with-diana |
+| Website hosting | app.netlify.com — *Continue with GitHub* |
+| Domain name | Squarespace → Domains → movewithdianag.com |
+
+## 10. Three things not to touch
+
+1. **The DNS settings at Squarespace.** Those records connect your domain to
+   both your website *and* your Gmail. Changing them can take down your email.
+2. **The domain renewal.** The Squarespace *website builder* subscription can
+   be cancelled — the *domain registration* must stay paid, or the website and
+   email both stop working.
+3. **"Value code (internal)" boxes** in the editor. They're wiring, not words
+   visitors read. Everything else is yours to change freely.
 
 That's everything. Log in, change what you want, press Publish, give it two
 minutes. You've got this.
