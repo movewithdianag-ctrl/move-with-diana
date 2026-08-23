@@ -1,0 +1,2 @@
+# Netlify SPA fallback — real files (including /admin/*) are served first.
+/*  /index.html  200

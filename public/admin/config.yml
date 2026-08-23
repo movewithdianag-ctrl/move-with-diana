@@ -1,0 +1,326 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Move with Diana — admin panel configuration (Decap CMS + DecapBridge)
+#
+# Login is handled by DecapBridge (decapbridge.com): Diana signs in with
+# email+password or Google — no GitHub account needed.
+#
+# Managed at decapbridge.com → site "Move with Diana G". To add or remove
+# editors, use that dashboard's "Manage collaborators" tab.
+# ─────────────────────────────────────────────────────────────────────────────
+backend:
+  name: git-gateway
+  repo: movewithdianag-ctrl/move-with-diana
+  branch: main
+  auth_type: pkce
+  base_url: https://auth.decapbridge.com
+  auth_endpoint: /sites/25cc41d9-09aa-4d24-aecf-315d9a634ffc/pkce
+  auth_token_endpoint: /sites/25cc41d9-09aa-4d24-aecf-315d9a634ffc/token
+  gateway_url: https://gateway.decapbridge.com
+  commit_messages:
+    create: Create {{collection}} "{{slug}}" — {{author-name}} <{{author-login}}> via DecapBridge
+    update: Update {{collection}} "{{slug}}" — {{author-name}} <{{author-login}}> via DecapBridge
+    delete: Delete {{collection}} "{{slug}}" — {{author-name}} <{{author-login}}> via DecapBridge
+    uploadMedia: Upload "{{path}}" — {{author-name}} <{{author-login}}> via DecapBridge
+    deleteMedia: Delete "{{path}}" — {{author-name}} <{{author-login}}> via DecapBridge
+    openAuthoring: Message {{message}} — {{author-name}} <{{author-login}}> via DecapBridge
+
+# Records who made each change (shown in the site's history).
+auth:
+  email_claim: email
+  first_name_claim: first_name
+  last_name_claim: last_name
+  avatar_url_claim: avatar_url
+
+logo_url: https://decapbridge.com/decapcms-with-bridge.svg
+
+# Lets me test the admin on localhost with `npx decap-server`; ignored in
+# production (only activates when the panel is opened on localhost).
+local_backend: true
+
+# ⚠️ Update these two to https://movewithdianag.com once the domain is moved
+# (also update the login URL in the DecapBridge dashboard at that time).
+site_url: https://movewithdianag.netlify.app
+display_url: https://movewithdianag.netlify.app
+
+# Uploaded photos are committed into the repo and served from /images/uploads.
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "content"
+    label: "Website content"
+    description: "Every word and photo on the site. Pick a page, edit, then press Publish — changes appear on the live site about 2 minutes later."
+    editor:
+      preview: false
+    files:
+      # ───────────────────────────── SITE SETTINGS ─────────────────────────
+      - name: "settings"
+        label: "Site settings (name, links, menu)"
+        file: "src/content/settings.json"
+        fields:
+          - { label: "Business name", name: "siteName", widget: "string", hint: "Shown in the top-left corner of every page and in the footer." }
+          - { label: "Contact email", name: "email", widget: "string", hint: "Where the contact form's mailto links point. Changing this does NOT change where form submissions are delivered — that lives in Web3Forms." }
+          - { label: "\"Based in…\" line", name: "basedInLine", widget: "string", hint: "The location line shown under the contact form." }
+          - label: "Social media links"
+            name: "socials"
+            widget: "list"
+            summary: "{{fields.label}}"
+            hint: "The icon links in the footer, menu, and contact page. Keep the Platform name exactly Instagram, TikTok, or YouTube so the right icon appears."
+            fields:
+              - { label: "Platform name", name: "label", widget: "string" }
+              - { label: "Link (full web address)", name: "url", widget: "string" }
+          - { label: "Community link (Skool)", name: "communityUrl", widget: "string", required: false, hint: "Paste your Skool community web address here. While this is empty, all \"Join the community\" buttons send people to the contact form instead." }
+          - { label: "Google Calendar embed address", name: "calendarUrl", widget: "string", required: false, hint: "Only used when the weekly schedule section is turned on. Get this from Google Calendar → Settings → Integrate calendar." }
+          - { label: "Show the weekly schedule section", name: "showSchedule", widget: "boolean", required: false, hint: "Turn on to show the weekly schedule on the home page (plus a Schedule link in the menu)." }
+          - label: "Menu labels"
+            name: "nav"
+            widget: "object"
+            hint: "The words in the navigation menu. The pages they lead to never change."
+            fields:
+              - { label: "Home", name: "home", widget: "string" }
+              - { label: "About", name: "about", widget: "string" }
+              - { label: "Offers", name: "offers", widget: "string" }
+              - { label: "Schedule", name: "schedule", widget: "string" }
+              - { label: "Contact", name: "contact", widget: "string" }
+              - { label: "Top-right button", name: "button", widget: "string", hint: "The dark button in the top-right corner. It always leads to the contact page." }
+
+      # ─────────────────────────────── HOME PAGE ───────────────────────────
+      - name: "home"
+        label: "Home page"
+        file: "src/content/home.json"
+        fields:
+          - label: "Search & browser-tab info"
+            name: "meta"
+            widget: "object"
+            collapsed: true
+            hint: "What Google and the browser tab show for this page."
+            fields:
+              - { label: "Browser-tab title", name: "title", widget: "string" }
+              - { label: "Search description", name: "description", widget: "text", hint: "1–2 sentences. Google often shows this under the page title." }
+          - label: "Top of the page (hero)"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Big headline", name: "headline", widget: "string" }
+              - { label: "Sentence under the headline", name: "subhead", widget: "text" }
+              - { label: "Main button", name: "primaryButton", widget: "string", hint: "Leads to the contact page." }
+              - { label: "Second button", name: "offersButton", widget: "string", hint: "Leads to the Offers page." }
+              - { label: "Second button (when schedule is on)", name: "scheduleButton", widget: "string", hint: "Used instead of the one above while the weekly schedule section is turned on." }
+              - { label: "Hero photo (wide, for computers)", name: "photo", widget: "image", hint: "A wide photo works best — it fills the top of the page edge to edge." }
+              - { label: "Hero photo (tall, for phones)", name: "photoMobile", widget: "image", hint: "A tall crop of the same photo, shown on phones. Keep the subject centered." }
+              - { label: "Photo description", name: "photoAlt", widget: "string", hint: "Describes the photo for people using screen readers. One short sentence." }
+          - label: "Weekly schedule section text"
+            name: "schedule"
+            widget: "object"
+            collapsed: true
+            hint: "Only shown when the schedule section is turned on in Site settings."
+            fields:
+              - { label: "Small label above the heading", name: "eyebrow", widget: "string" }
+              - { label: "Section heading", name: "heading", widget: "string" }
+              - { label: "Line under the heading", name: "subline", widget: "text" }
+              - { label: "\"Sample schedule\" note", name: "sampleNote", widget: "string", hint: "Shown only if no calendar address is set." }
+              - { label: "Sample schedule button", name: "sampleCta", widget: "string" }
+              - { label: "Empty-day label", name: "restDayLabel", widget: "string" }
+          - { label: "FAQ section heading", name: "faqHeading", widget: "string" }
+          - label: "FAQ questions & answers"
+            name: "faqs"
+            widget: "list"
+            summary: "{{fields.question}}"
+            hint: "Drag the handle on the left of each item to reorder. Use the + button to add and the … menu to delete."
+            fields:
+              - { label: "Question", name: "question", widget: "string" }
+              - { label: "Answer", name: "answer", widget: "text" }
+
+      # ─────────────────────────────── ABOUT PAGE ──────────────────────────
+      - name: "about"
+        label: "About page"
+        file: "src/content/about.json"
+        fields:
+          - label: "Search & browser-tab info"
+            name: "meta"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Browser-tab title", name: "title", widget: "string" }
+              - { label: "Search description", name: "description", widget: "text" }
+          - { label: "Small label above the name", name: "pageLabel", widget: "string" }
+          - { label: "Page heading", name: "heading", widget: "string", hint: "Usually your name." }
+          - { label: "Portrait photo", name: "photo", widget: "image", hint: "A tall (portrait) photo works best here." }
+          - { label: "Photo description", name: "photoAlt", widget: "string", hint: "For screen readers. One short sentence." }
+          - label: "Bio paragraphs"
+            name: "bio"
+            widget: "list"
+            field: { label: "Paragraph", name: "paragraph", widget: "text" }
+            hint: "Each item is one paragraph. Drag to reorder."
+          - label: "\"Join the community\" section"
+            name: "community"
+            widget: "object"
+            fields:
+              - { label: "Small label above the heading", name: "eyebrow", widget: "string" }
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Text", name: "body", widget: "text" }
+              - { label: "Button", name: "button", widget: "string", hint: "Opens your Skool community once its link is set in Site settings; until then it opens the contact form." }
+
+      # ──────────────────────────────── OFFERS ─────────────────────────────
+      - name: "offers"
+        label: "Offers"
+        file: "src/content/offers.json"
+        fields:
+          - label: "Search & browser-tab info"
+            name: "meta"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Browser-tab title", name: "title", widget: "string" }
+              - { label: "Search description", name: "description", widget: "text" }
+          - { label: "Offers page heading", name: "heading", widget: "string" }
+          - { label: "\"Who it's for\" label", name: "whoLabel", widget: "string", hint: "The small bold label before each offer's who-it's-for sentence." }
+          - label: "The offers"
+            name: "offers"
+            widget: "list"
+            summary: "{{fields.title}}"
+            hint: "These appear on the home-page carousel AND the Offers page, in this order. Drag to reorder, + to add, … menu to delete."
+            fields:
+              - { label: "Offer name", name: "title", widget: "string" }
+              - { label: "One-line summary", name: "oneLiner", widget: "string", hint: "Shown under the photo on the home-page carousel." }
+              - { label: "Full description", name: "description", widget: "text", hint: "Shown on the Offers page." }
+              - { label: "Who it's for", name: "whoItsFor", widget: "text" }
+              - label: "What's included"
+                name: "included"
+                widget: "list"
+                field: { label: "Line", name: "line", widget: "string" }
+                hint: "Short lines with checkmarks. 3–4 works best."
+              - { label: "Button text", name: "buttonLabel", widget: "string", hint: "Say what happens, e.g. \"Book a private session\"." }
+              - { label: "Contact form option", name: "contactOption", widget: "string", hint: "Advanced — must exactly match one of the \"value\" codes on the Contact page's dropdown options (e.g. private-1:1). It preselects that option when someone clicks this offer." }
+              - { label: "Carousel photo (home page)", name: "cardPhoto", widget: "image", hint: "Tall photos look best — they show uncropped." }
+              - { label: "Carousel photo description", name: "cardPhotoAlt", widget: "string" }
+              - { label: "(auto) photo width", name: "cardPhotoW", widget: "hidden", required: false }
+              - { label: "(auto) photo height", name: "cardPhotoH", widget: "hidden", required: false }
+              - { label: "Offers-page photo", name: "pagePhoto", widget: "image", required: false, hint: "The photo on the Offers page row. Can be the same or different from the carousel photo." }
+              - { label: "Offers-page photo description", name: "pagePhotoAlt", widget: "string", required: false }
+              - { label: "Show offers-page photo tall & uncropped", name: "pagePhotoTall", widget: "boolean", required: false, hint: "On for tall photos; off crops the photo to a wide shape." }
+              - { label: "(auto) photo width", name: "pagePhotoW", widget: "hidden", required: false }
+              - { label: "(auto) photo height", name: "pagePhotoH", widget: "hidden", required: false }
+
+      # ────────────────────────────── CONTACT PAGE ─────────────────────────
+      - name: "contact"
+        label: "Contact page"
+        file: "src/content/contact.json"
+        fields:
+          - label: "Search & browser-tab info"
+            name: "meta"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Browser-tab title", name: "title", widget: "string" }
+              - { label: "Search description", name: "description", widget: "text" }
+          - { label: "Small label above the heading", name: "pageLabel", widget: "string" }
+          - { label: "Page heading", name: "heading", widget: "string" }
+          - { label: "Intro sentence", name: "opening", widget: "text" }
+          - { label: "Photo beside the form", name: "photo", widget: "image", hint: "Tall photo, shown to the right of the form on computers." }
+          - { label: "Photo description", name: "photoAlt", widget: "string" }
+          - label: "\"I'm interested in\" dropdown options"
+            name: "options"
+            widget: "list"
+            summary: "{{fields.label}}"
+            hint: "What people can pick in the form. \"Shown text\" is what they see; \"value code\" is internal — if you change it, update any offer that points at it."
+            fields:
+              - { label: "Value code (internal)", name: "value", widget: "string" }
+              - { label: "Shown text", name: "label", widget: "string" }
+          - label: "Form labels"
+            name: "labels"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Name field", name: "name", widget: "string" }
+              - { label: "Email field", name: "email", widget: "string" }
+              - { label: "Phone field", name: "phone", widget: "string" }
+              - { label: "Interest dropdown", name: "interest", widget: "string" }
+              - { label: "Dropdown placeholder", name: "interestPlaceholder", widget: "string" }
+              - { label: "Message field", name: "message", widget: "string" }
+              - { label: "Message placeholder", name: "messagePlaceholder", widget: "string" }
+              - { label: "Send button", name: "submit", widget: "string" }
+              - { label: "Send button while sending", name: "submitting", widget: "string" }
+          - label: "Error messages"
+            name: "errors"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Missing name", name: "nameRequired", widget: "string" }
+              - { label: "Missing email", name: "emailRequired", widget: "string" }
+              - { label: "Email looks wrong", name: "emailInvalid", widget: "string" }
+              - { label: "Nothing picked in dropdown", name: "interestRequired", widget: "string" }
+              - { label: "Missing message", name: "messageRequired", widget: "string" }
+          - label: "Thank-you message (after sending)"
+            name: "success"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Text", name: "body", widget: "string" }
+          - label: "If sending fails"
+            name: "failure"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Error text", name: "text", widget: "string" }
+              - { label: "Email link text", name: "mailtoLabel", widget: "string" }
+          - label: "Photo strip (bottom of the page)"
+            name: "gallery"
+            widget: "list"
+            summary: "{{fields.alt}}"
+            hint: "The band of photos above the footer. Drag to reorder, + to add, … menu to delete. Tall photos look best."
+            fields:
+              - { label: "Photo", name: "photo", widget: "image" }
+              - { label: "Photo description", name: "alt", widget: "string", hint: "For screen readers. One short sentence." }
+              - { label: "(auto) width", name: "w", widget: "hidden", required: false }
+              - { label: "(auto) height", name: "h", widget: "hidden", required: false }
+
+      # ─────────────────────────── FOOTER & EXTRAS ─────────────────────────
+      - name: "footer"
+        label: "Footer & extras"
+        file: "src/content/footer.json"
+        fields:
+          - { label: "Footer tagline", name: "oneLiner", widget: "string", hint: "The line under the business name in the footer." }
+          - { label: "\"Pages\" column heading", name: "pagesHeading", widget: "string" }
+          - { label: "\"Connect\" column heading", name: "connectHeading", widget: "string" }
+          - { label: "Community link text", name: "communityLinkLabel", widget: "string", hint: "Appears in the footer once the Skool link is set in Site settings." }
+          - label: "Newsletter box"
+            name: "newsletter"
+            widget: "object"
+            fields:
+              - { label: "Newsletter name", name: "heading", widget: "string" }
+              - { label: "Description", name: "text", widget: "text" }
+              - { label: "Email box placeholder", name: "placeholder", widget: "string" }
+              - { label: "Sign-up button", name: "button", widget: "string" }
+              - { label: "Success message", name: "successToast", widget: "string" }
+              - { label: "Bad-email message", name: "invalidEmailText", widget: "string" }
+              - { label: "Error message", name: "errorText", widget: "string" }
+          - label: "\"Page not found\" page"
+            name: "notFound"
+            widget: "object"
+            collapsed: true
+            hint: "What visitors see if they follow a broken link."
+            fields:
+              - { label: "Browser-tab title", name: "metaTitle", widget: "string" }
+              - { label: "Search description", name: "metaDescription", widget: "text" }
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Text", name: "text", widget: "string" }
+              - { label: "Button", name: "button", widget: "string" }
+
+      # ────────────────────────────── TESTIMONIALS ─────────────────────────
+      - name: "testimonials"
+        label: "Testimonials (saved for later)"
+        file: "src/content/testimonials.json"
+        fields:
+          - { label: "Section heading", name: "heading", widget: "string", hint: "These aren't shown on the site right now, but they're saved here ready for when a testimonials section returns." }
+          - { label: "Small label above the heading", name: "eyebrow", widget: "string" }
+          - { label: "\"Read more\" link text", name: "readMore", widget: "string" }
+          - { label: "\"Read less\" link text", name: "readLess", widget: "string" }
+          - label: "Client testimonials"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.name}}"
+            hint: "Drag to reorder, + to add, … menu to delete."
+            fields:
+              - { label: "Client name", name: "name", widget: "string" }
+              - { label: "Their words", name: "quote", widget: "text" }

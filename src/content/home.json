@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "title": "Move with Diana | Classical Pilates — In Person & Online",
+    "description": "Classical Pilates with Diana Gonçalves — for beginners, advanced practitioners, and athletes. In person and online, tailored entirely to you."
+  },
+  "hero": {
+    "headline": "Move better. Move with control. Built to last.",
+    "subhead": "Classical Pilates with Diana Gonçalves — for beginners, advanced practitioners, and athletes. In person and online, tailored entirely to you.",
+    "primaryButton": "Get started",
+    "offersButton": "See what I offer",
+    "scheduleButton": "See the weekly schedule",
+    "photo": "/images/hero-home.jpg",
+    "photoMobile": "/images/hero-home-mobile.jpg",
+    "photoAlt": "Diana Gonçalves arched over the ladder barrel with one leg extended, in black and white"
+  },
+  "schedule": {
+    "eyebrow": "Weekly rhythm",
+    "heading": "Weekly schedule — in person & online",
+    "subline": "Live classes and open session times pulled straight from Diana's Google Calendar. Times shown in your local timezone.",
+    "sampleNote": "Sample schedule — message me for current times",
+    "sampleCta": "Ask about a time that works for you",
+    "restDayLabel": "Rest day"
+  },
+  "faqHeading": "FAQ",
+  "faqs": [
+    {
+      "question": "What is real Classical Pilates — and what does \"Contrology\" mean?",
+      "answer": "Contrology is what Joseph Pilates originally named his method: the complete coordination of body, mind, and spirit. Real Classical Pilates preserves his work exactly as he designed it — the original exercises, the intentional order, and the apparatus he invented — taught with precision, control, and breath. It isn't a random workout or a trendy fusion class; it's a complete system where each session builds on the last and every sequence exists for a reason."
+    },
+    {
+      "question": "I'm a complete beginner. Can I start?",
+      "answer": "Yes. Every session is tailored to your current level; you'll never be thrown into something your body isn't ready for."
+    },
+    {
+      "question": "How does classical pilates help athletes?",
+      "answer": "Classical Pilates builds the control, alignment, and deep stability that support every other sport. It improves movement efficiency, reduces injury risk, and creates a stronger foundation for power and endurance. Many athletes use it for recovery and longevity."
+    },
+    {
+      "question": "How do I book, and what does it cost?",
+      "answer": "Send a message through the contact form and tell me what you're interested in. I personally reply within 24–48 hours, and we'll discuss goals, scheduling, and pricing – every package is tailored, so it starts with a conversation."
+    }
+  ]
+}

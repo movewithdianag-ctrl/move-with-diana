@@ -1,0 +1,22 @@
+{
+  "oneLiner": "Classical Pilates — in person and online.",
+  "pagesHeading": "Pages",
+  "connectHeading": "Connect",
+  "communityLinkLabel": "Join the community",
+  "newsletter": {
+    "heading": "The Weekly Cue",
+    "text": "One short email a week: a movement cue, an exercise, and what's on the schedule.",
+    "placeholder": "Your email",
+    "button": "Sign up",
+    "successToast": "You're on the list — welcome to The Weekly Cue.",
+    "invalidEmailText": "That email doesn't look right — mind checking it?",
+    "errorText": "Couldn't sign you up just now — please try again."
+  },
+  "notFound": {
+    "metaTitle": "Page not found | Move with Diana",
+    "metaDescription": "That page doesn't exist — head back home to Move with Diana.",
+    "heading": "This page went off script.",
+    "text": "The page you're looking for doesn't exist — but the movement continues.",
+    "button": "Back to home"
+  }
+}

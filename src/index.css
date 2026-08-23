@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ──────────────────────────────────────────────────────────────────────────
+   Design tokens (mirrors tailwind.config.ts — edit both together).
+   Palette: classical-studio materials. Warm plaster ground, espresso ink,
+   one accent: spring-steel blue-grey (the springs on a classical reformer).
+   ────────────────────────────────────────────────────────────────────────── */
+:root {
+  --bone: #f4f0e9;
+  --plaster: #eae3d7;
+  --ink: #282018;
+  --umber: #6b5f51;
+  --steel: #445862;
+  --steel-deep: #32434c;
+  --char: #1d1813;
+}
+
+@layer base {
+  /* Note: no `scroll-behavior: smooth` — programmatic scrolls (route changes,
+     /#schedule anchors) are instant on purpose: consistent across browsers
+     and correct for prefers-reduced-motion users. */
+  body {
+    @apply bg-bone text-ink font-sans antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Anchor targets (#schedule, #faq) must clear the sticky header. */
+  [id] {
+    scroll-margin-top: 5.5rem;
+  }
+
+  /* Visible focus ring in the accent color, everywhere. */
+  :focus-visible {
+    outline: 2px solid var(--steel);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background-color: var(--steel);
+    color: var(--bone);
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display;
+    font-optical-sizing: auto;
+  }
+}
+
+@layer components {
+  /* Letter-spaced small-caps eyebrow used above every section heading. */
+  .eyebrow {
+    @apply font-sans text-xs font-semibold uppercase tracking-eyebrow text-steel;
+  }
+
+  /* Comfortable editorial measure for long-form text. */
+  .measure {
+    max-width: 65ch;
+  }
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   Motion. One orchestrated hero entrance + gentle scroll reveals.
+   Everything collapses to “just visible” under prefers-reduced-motion.
+   ────────────────────────────────────────────────────────────────────────── */
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-rise {
+  opacity: 0;
+  animation: rise-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Scroll-reveal: .reveal starts hidden, .reveal-visible added by IntersectionObserver. */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-rise {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Mobile testimonial carousel: scroll-snap, hidden scrollbar. */
+.carousel-track {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-slide {
+  scroll-snap-align: center;
+}

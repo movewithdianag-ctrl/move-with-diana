@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#F4F0E9" />
+    <!-- Static fallback title/description (what crawlers and link previews
+         see); each route overrides at runtime via src/components/Seo.tsx -->
+    <title>Move with Diana | Classical Pilates — In Person &amp; Online</title>
+    <meta
+      name="description"
+      content="Classical Pilates with Diana Gonçalves — for beginners, advanced practitioners, and athletes. In person and online, tailored entirely to you."
+    />
+    <!-- Fonts: Fraunces (display serif, optical sizing) + Instrument Sans (body/UI).
+         display=swap keeps text visible on system fallbacks while webfonts load. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <!-- The home hero is the largest above-the-fold asset — start fetching it
+         before the JS bundle finishes parsing, but only when actually landing
+         on the home page, and only the variant this device will display. -->
+    <script>
+      (function () {
+        if (location.pathname !== "/") return;
+        var link = document.createElement("link");
+        link.rel = "preload";
+        link.as = "image";
+        link.fetchPriority = "high";
+        link.href = matchMedia("(max-width: 767px)").matches
+          ? "/images/hero-home-mobile.jpg"
+          : "/images/hero-home.jpg";
+        document.head.appendChild(link);
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
