@@ -37,10 +37,8 @@ logo_url: https://decapbridge.com/decapcms-with-bridge.svg
 # production (only activates when the panel is opened on localhost).
 local_backend: true
 
-# ⚠️ Update these two to https://movewithdianag.com once the domain is moved
-# (also update the login URL in the DecapBridge dashboard at that time).
-site_url: https://movewithdianag.netlify.app
-display_url: https://movewithdianag.netlify.app
+site_url: https://movewithdianag.com
+display_url: https://movewithdianag.com
 
 # Uploaded photos are committed into the repo and served from /images/uploads.
 media_folder: "public/images/uploads"
