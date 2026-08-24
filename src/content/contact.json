@@ -1,62 +1,157 @@
 {
-  "meta": {
-    "title": "Contact Diana | Book a Private Session",
-    "description": "Tell Diana about you and your Pilates goals. She personally reads and replies to every message — usually within 24–48 hours."
-  },
-  "pageLabel": "Get in touch",
   "heading": "Let's talk about your Pilates practice",
-  "opening": "Tell me a bit about you and what you're looking for. I personally read and reply to every message — usually within 24–48 hours.",
-  "photo": "/images/contact-portrait.jpg",
-  "photoAlt": "Diana Gonçalves in a handstand, one foot resting on the ladder barrel",
-  "options": [
-    { "value": "private-1:1", "label": "Private 1:1" },
-    { "value": "semi-private", "label": "Semi-private (2–4 people)" },
-    { "value": "group-classes", "label": "Group classes" },
-    { "value": "community", "label": "Join the community" },
-    { "value": "something-else", "label": "Something else" }
-  ],
-  "labels": {
-    "name": "Name",
-    "email": "Email",
-    "phone": "Phone (optional)",
-    "interest": "I'm interested in",
-    "interestPlaceholder": "Choose one…",
-    "message": "Message",
-    "messagePlaceholder": "Your goals, experience level, and any days/times that work best…",
-    "submit": "Send message",
-    "submitting": "Sending…"
-  },
-  "errors": {
-    "nameRequired": "Please enter your name.",
-    "emailRequired": "Please enter your email.",
-    "emailInvalid": "That email doesn't look right — mind checking it?",
-    "interestRequired": "Please choose what you're interested in.",
-    "messageRequired": "Tell me a little about what you're looking for."
-  },
   "success": {
     "heading": "Thank you!",
     "body": "Your message is on its way. Diana will get back to you within 24–48 hours."
+  },
+  "pageLabel": "Get in touch",
+  "meta": {
+    "title": "Contact Diana | Book a Private Session",
+    "description": "Tell Diana about you and your Pilates goals. She personally reads and replies to every message, usually within 24–48 hours."
   },
   "failure": {
     "text": "Something went wrong sending your message. Please email me directly:",
     "mailtoLabel": "movewithdianag@gmail.com"
   },
+  "errors": {
+    "nameRequired": "Please enter your name.",
+    "emailRequired": "Please enter your email.",
+    "emailInvalid": "That email doesn't look right, mind checking it?",
+    "interestRequired": "Please choose what you're interested in.",
+    "messageRequired": "Tell me a little about what you're looking for."
+  },
+  "photo": "/images/contact-portrait.jpg",
   "gallery": [
-    { "photo": "/images/offer-private-page-920.jpg", "alt": "Diana inverted over the ladder barrel, legs scissored", "w": 557, "h": 920 },
-    { "photo": "/images/movement-4.jpg", "alt": "Diana arched over the barrel, feet on the ladder, in black and white", "w": 613, "h": 920 },
-    { "photo": "/images/intro-portrait.jpg", "alt": "Diana smiling, arms resting on the ladder barrel", "w": 736, "h": 920 },
-    { "photo": "/images/movement-2.jpg", "alt": "Diana in a handstand against the barrel, in black and white", "w": 613, "h": 920 },
-    { "photo": "/images/offer-community-920.jpg", "alt": "Diana balancing over the ladder barrel, legs in a split", "w": 613, "h": 920 },
-    { "photo": "/images/movement-1.jpg", "alt": "Diana holding the teaser position on the mat, in black and white", "w": 613, "h": 920 },
-    { "photo": "/images/about-portrait-920.jpg", "alt": "Diana seated beside the wunda chair", "w": 736, "h": 920 },
-    { "photo": "/images/movement-5.jpg", "alt": "Diana in a shoulder stand over the ladder barrel", "w": 670, "h": 920 },
-    { "photo": "/images/gallery-34.jpg", "alt": "Diana in a side pose on the wunda chair, in black and white", "w": 613, "h": 920 },
-    { "photo": "/images/gallery-29.jpg", "alt": "Diana in an L-sit balance on low wooden bars", "w": 613, "h": 920 },
-    { "photo": "/images/gallery-22.jpg", "alt": "Diana in a handstand beside the ladder, in black and white", "w": 613, "h": 920 },
-    { "photo": "/images/gallery-45.jpg", "alt": "Diana in a teaser on the mat bench", "w": 1379, "h": 920 },
-    { "photo": "/images/gallery-37.jpg", "alt": "Diana leaning back against the wunda chair, in black and white", "w": 613, "h": 920 },
-    { "photo": "/images/gallery-14.jpg", "alt": "Diana inverted at the ladder barrel, knees bent, feet on the ladder", "w": 671, "h": 920 },
-    { "photo": "/images/gallery-30.jpg", "alt": "Diana pressing to a handstand on low wooden bars", "w": 613, "h": 920 },
-    { "photo": "/images/gallery-40.jpg", "alt": "Diana in a teaser variation on the mat bench, knees in tabletop", "w": 613, "h": 920 }
-  ]
+    {
+      "photo": "/images/offer-private-page-920.jpg",
+      "alt": "Diana inverted over the ladder barrel, legs scissored",
+      "w": 557,
+      "h": 920
+    },
+    {
+      "photo": "/images/movement-4.jpg",
+      "alt": "Diana arched over the barrel, feet on the ladder, in black and white",
+      "w": 613,
+      "h": 920
+    },
+    {
+      "photo": "/images/intro-portrait.jpg",
+      "alt": "Diana smiling, arms resting on the ladder barrel",
+      "w": 736,
+      "h": 920
+    },
+    {
+      "photo": "/images/movement-2.jpg",
+      "alt": "Diana in a handstand against the barrel, in black and white",
+      "w": 613,
+      "h": 920
+    },
+    {
+      "photo": "/images/offer-community-920.jpg",
+      "alt": "Diana balancing over the ladder barrel, legs in a split",
+      "w": 613,
+      "h": 920
+    },
+    {
+      "photo": "/images/movement-1.jpg",
+      "alt": "Diana holding the teaser position on the mat, in black and white",
+      "w": 613,
+      "h": 920
+    },
+    {
+      "photo": "/images/about-portrait-920.jpg",
+      "alt": "Diana seated beside the wunda chair",
+      "w": 736,
+      "h": 920
+    },
+    {
+      "photo": "/images/movement-5.jpg",
+      "alt": "Diana in a shoulder stand over the ladder barrel",
+      "w": 670,
+      "h": 920
+    },
+    {
+      "photo": "/images/gallery-34.jpg",
+      "alt": "Diana in a side pose on the wunda chair, in black and white",
+      "w": 613,
+      "h": 920
+    },
+    {
+      "photo": "/images/gallery-29.jpg",
+      "alt": "Diana in an L-sit balance on low wooden bars",
+      "w": 613,
+      "h": 920
+    },
+    {
+      "photo": "/images/gallery-22.jpg",
+      "alt": "Diana in a handstand beside the ladder, in black and white",
+      "w": 613,
+      "h": 920
+    },
+    {
+      "photo": "/images/gallery-45.jpg",
+      "alt": "Diana in a teaser on the mat bench",
+      "w": 1379,
+      "h": 920
+    },
+    {
+      "photo": "/images/gallery-37.jpg",
+      "alt": "Diana leaning back against the wunda chair, in black and white",
+      "w": 613,
+      "h": 920
+    },
+    {
+      "photo": "/images/gallery-14.jpg",
+      "alt": "Diana inverted at the ladder barrel, knees bent, feet on the ladder",
+      "w": 671,
+      "h": 920
+    },
+    {
+      "photo": "/images/gallery-30.jpg",
+      "alt": "Diana pressing to a handstand on low wooden bars",
+      "w": 613,
+      "h": 920
+    },
+    {
+      "photo": "/images/gallery-40.jpg",
+      "alt": "Diana in a teaser variation on the mat bench, knees in tabletop",
+      "w": 613,
+      "h": 920
+    }
+  ],
+  "photoAlt": "Diana Gonçalves in a handstand, one foot resting on the ladder barrel",
+  "opening": "Tell me a bit about you and what you're looking for. I personally read and reply to every message, usually within 24–48 hours.",
+  "options": [
+    {
+      "value": "private-1:1",
+      "label": "Private 1:1"
+    },
+    {
+      "value": "semi-private",
+      "label": "Semi-private (2–4 people)"
+    },
+    {
+      "value": "group-classes",
+      "label": "Group classes"
+    },
+    {
+      "value": "community",
+      "label": "Join the community"
+    },
+    {
+      "value": "something-else",
+      "label": "Something else"
+    }
+  ],
+  "labels": {
+    "submitting": "Sending…",
+    "message": "Message",
+    "interestPlaceholder": "Choose one…",
+    "interest": "I'm interested in",
+    "name": "Name",
+    "messagePlaceholder": "Your goals, experience level, and any days/times that work best…",
+    "phone": "Phone (optional)",
+    "submit": "Send message",
+    "email": "Email"
+  }
 }
