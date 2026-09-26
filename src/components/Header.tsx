@@ -3,7 +3,7 @@ import { createPortal } from "react-dom";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { nav, site } from "@/content/content";
-import { SHOW_SCHEDULE } from "@/lib/config";
+import { SHOW_SCHEDULE, SKOOL_COMMUNITY_URL } from "@/lib/config";
 import { buttonClasses } from "@/components/ui/button";
 import SocialLinks from "@/components/SocialLinks";
 import { cn } from "@/lib/utils";
@@ -130,9 +130,17 @@ export default function Header() {
               </NavLink>
             ),
           )}
-          <Link to="/contact" className={buttonClasses("primary", "px-5 py-2.5")}>
-            {nav.bookCta}
-          </Link>
+          {/* "Get started" → the Skool community while the link is set; falls
+              back to the contact form if it's ever cleared in the CMS. */}
+          {SKOOL_COMMUNITY_URL ? (
+            <a href={SKOOL_COMMUNITY_URL} className={buttonClasses("primary", "px-5 py-2.5")}>
+              {nav.bookCta}
+            </a>
+          ) : (
+            <Link to="/contact" className={buttonClasses("primary", "px-5 py-2.5")}>
+              {nav.bookCta}
+            </Link>
+          )}
         </nav>
 
         <button
@@ -197,13 +205,23 @@ export default function Header() {
             </nav>
 
             <div className="space-y-6 px-6 pb-10">
-              <Link
-                to="/contact"
-                onClick={() => setOpen(false)}
-                className={buttonClasses("primary", "w-full py-4 text-base")}
-              >
-                {nav.bookCta}
-              </Link>
+              {SKOOL_COMMUNITY_URL ? (
+                <a
+                  href={SKOOL_COMMUNITY_URL}
+                  onClick={() => setOpen(false)}
+                  className={buttonClasses("primary", "w-full py-4 text-base")}
+                >
+                  {nav.bookCta}
+                </a>
+              ) : (
+                <Link
+                  to="/contact"
+                  onClick={() => setOpen(false)}
+                  className={buttonClasses("primary", "w-full py-4 text-base")}
+                >
+                  {nav.bookCta}
+                </Link>
+              )}
               <SocialLinks className="justify-center" iconClassName="h-6 w-6" />
             </div>
           </div>,
