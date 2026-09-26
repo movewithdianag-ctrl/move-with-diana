@@ -80,7 +80,7 @@ collections:
               - { label: "Offers", name: "offers", widget: "string" }
               - { label: "Schedule", name: "schedule", widget: "string" }
               - { label: "Contact", name: "contact", widget: "string" }
-              - { label: "Top-right button", name: "button", widget: "string", hint: "The dark button in the top-right corner. It always leads to the contact page." }
+              - { label: "Top-right button", name: "button", widget: "string", hint: "The dark button in the top-right corner. It opens your Skool community while the Community link (in Site settings) is filled in; if that link is empty, it opens the contact page." }
 
       # ─────────────────────────────── HOME PAGE ───────────────────────────
       - name: "home"
@@ -101,7 +101,7 @@ collections:
             fields:
               - { label: "Big headline", name: "headline", widget: "string" }
               - { label: "Sentence under the headline", name: "subhead", widget: "text" }
-              - { label: "Main button", name: "primaryButton", widget: "string", hint: "Leads to the contact page." }
+              - { label: "Main button", name: "primaryButton", widget: "string", hint: "Opens your Skool community while the Community link (in Site settings) is filled in; if that link is empty, it opens the contact page." }
               - { label: "Second button", name: "offersButton", widget: "string", hint: "Leads to the Offers page." }
               - { label: "Second button (when schedule is on)", name: "scheduleButton", widget: "string", hint: "Used instead of the one above while the weekly schedule section is turned on." }
               - { label: "Hero photo (wide, for computers)", name: "photo", widget: "image", hint: "A wide photo works best — it fills the top of the page edge to edge." }

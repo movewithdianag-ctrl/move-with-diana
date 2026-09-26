@@ -61,8 +61,8 @@ Every item in a list has a thin **grey bar across its top**. The small
 arrow at the bar's left end folds the item open or closed; the small **x**
 at its right end deletes it.
 
-- **Add one:** click the **＋ Add** button under the list, then fill in the
-  boxes.
+- **Add one:** click the **＋ Add …** button at the top-right of the list's
+  title bar, then fill in the boxes.
 - **Delete one:** click the small **x** at the right end of the item's grey
   bar. Careful — it deletes immediately, with no "are you sure?". Clicked it
   by mistake? Click the back arrow (top-left) and choose to discard —
@@ -73,7 +73,8 @@ at its right end deletes it.
 **Example — adding a new testimonial:**
 
 1. Click **Testimonials (saved for later)**.
-2. Under "Client testimonials", click **＋ Add client testimonials**.
+2. At the top-right of the "Client testimonials" list, click
+   **＋ Add client testimonial**.
 3. Fill in "Client name" and "Their words".
 4. Click **Publish → Publish now**. Done.
 
@@ -152,7 +153,9 @@ The schedule doesn't live in this editor — it lives in your
    `https://www.skool.com/move-with-diana-9111/about`
 5. Click **Publish**, then **Publish now**.
 6. Wait 2 minutes. Open **movewithdianag.com**, click the top-right button,
-   and check it lands where you expect. Done.
+   and check it lands where you expect. (On a phone, the top-right shows the
+   ☰ menu icon — tap it, and the button is the big dark one at the bottom of
+   the menu.) Done.
 
 ---
 
