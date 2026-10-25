@@ -8,12 +8,12 @@
   "intro": "Real reviews from real clients, collected and verified through Trustpilot.",
   "comingSoon": "Fresh reviews are on their way — check back soon.",
   "trustpilot": {
-    "businessUnitId": "",
-    "templateId": "",
+    "businessUnitId": "6ade677e14c0719eb0babb6b",
+    "templateId": "56278e9abfbbba0bdcd568bc",
     "locale": "en-US",
     "theme": "light",
-    "heightPx": 700,
-    "profileUrl": "",
+    "heightPx": 52,
+    "profileUrl": "https://www.trustpilot.com/review/www.movewithdianag.com",
     "reviewUrl": "",
     "reviewButtonLabel": "Write a review on Trustpilot"
   },
