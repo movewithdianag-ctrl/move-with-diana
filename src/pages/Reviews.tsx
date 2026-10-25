@@ -25,7 +25,7 @@ export default function Reviews() {
         heading={reviewsPage.heading}
         subline={reviewsPage.intro}
         headingLevel="h1"
-        className="pt-24 md:pt-32"
+        className="pt-24 pb-10 md:pt-32 md:pb-12"
       >
         {tpReady ? (
           <TrustpilotWidget
@@ -61,6 +61,7 @@ export default function Reviews() {
           eyebrow={testimonialsSection.eyebrow}
           heading={testimonialsSection.heading}
           tone="plaster"
+          className="pt-10 md:pt-14"
         >
           <Testimonials />
         </Section>
