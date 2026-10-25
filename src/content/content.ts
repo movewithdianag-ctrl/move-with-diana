@@ -4,8 +4,8 @@
  *
  *  ✏️  TO EDIT THE SITE'S WORDS OR PHOTOS: use the admin panel at /admin —
  *      it edits the .json files in this folder through friendly forms.
- *      (settings.json, home.json, about.json, offers.json, contact.json,
- *      footer.json, testimonials.json)
+ *      (settings.json, home.json, about.json, offers.json, reviews.json,
+ *      contact.json, footer.json, testimonials.json)
  *
  *  This file is the typed adapter between those JSON files and the React
  *  components: it maps plain-English CMS fields onto the exact shapes the
@@ -21,6 +21,7 @@ import offersJsonRaw from "./offers.json";
 import contactJsonRaw from "./contact.json";
 import footerJson from "./footer.json";
 import testimonialsJson from "./testimonials.json";
+import reviewsJsonRaw from "./reviews.json";
 
 /**
  * The CMS may omit or null image-dimension fields when Diana saves (they are
@@ -53,10 +54,31 @@ interface CmsGalleryItem {
   h?: number | null;
 }
 
+/** Reviews-page JSON, null-tolerant for the same reason as the above. */
+interface CmsReviews {
+  meta?: { title?: string | null; description?: string | null } | null;
+  eyebrow?: string | null;
+  heading?: string | null;
+  intro?: string | null;
+  comingSoon?: string | null;
+  trustpilot?: {
+    businessUnitId?: string | null;
+    templateId?: string | null;
+    locale?: string | null;
+    theme?: string | null;
+    heightPx?: number | string | null;
+    profileUrl?: string | null;
+    reviewUrl?: string | null;
+    reviewButtonLabel?: string | null;
+  } | null;
+  showSavedTestimonials?: boolean | null;
+}
+
 const offersJson = offersJsonRaw as unknown as typeof offersJsonRaw & { offers: CmsOffer[] };
 const contactJson = contactJsonRaw as unknown as typeof contactJsonRaw & {
   gallery: CmsGalleryItem[];
 };
+const reviewsJson = reviewsJsonRaw as CmsReviews;
 
 /* ─────────────────────────── Site-wide settings ─────────────────────────── */
 
@@ -81,6 +103,7 @@ export const nav = {
     { label: settingsJson.nav.home, to: "/" },
     { label: settingsJson.nav.about, to: "/about" },
     { label: settingsJson.nav.offers, to: "/offers" },
+    { label: settingsJson.nav.reviews ?? "Reviews", to: "/reviews" },
     { label: settingsJson.nav.schedule, to: "/#schedule" },
     { label: settingsJson.nav.contact, to: "/contact" },
   ],
@@ -93,6 +116,10 @@ export const meta = {
   home: homeJson.meta,
   about: aboutJson.meta,
   offers: offersJson.meta,
+  reviews: {
+    title: reviewsJson.meta?.title ?? "Reviews | Move with Diana",
+    description: reviewsJson.meta?.description ?? "",
+  },
   contact: contactJson.meta,
   notFound: {
     title: footerJson.notFound.metaTitle,
@@ -280,6 +307,30 @@ export const testimonialsSection = {
 };
 
 export const testimonials: Testimonial[] = testimonialsJson.items;
+
+/* ────────────────────────────── Reviews page ────────────────────────────── */
+
+export const reviewsPage = {
+  eyebrow: reviewsJson.eyebrow ?? "",
+  heading: reviewsJson.heading ?? "Reviews",
+  intro: reviewsJson.intro ?? "",
+  comingSoon: reviewsJson.comingSoon ?? "",
+  showSavedTestimonials: reviewsJson.showSavedTestimonials ?? false,
+  trustpilot: {
+    businessUnitId: (reviewsJson.trustpilot?.businessUnitId ?? "").trim(),
+    templateId: (reviewsJson.trustpilot?.templateId ?? "").trim(),
+    // `.trim() || default` (not ??): the CMS writes cleared fields as "",
+    // which is not nullish and would otherwise reach the widget unguarded.
+    locale: (reviewsJson.trustpilot?.locale ?? "").trim() || "en-US",
+    theme: (reviewsJson.trustpilot?.theme ?? "").trim() || "light",
+    // Decap's number widget can save "" (cleared) or a numeric string.
+    heightPx: Number(reviewsJson.trustpilot?.heightPx) || 700,
+    profileUrl: (reviewsJson.trustpilot?.profileUrl ?? "").trim(),
+    reviewUrl: (reviewsJson.trustpilot?.reviewUrl ?? "").trim(),
+    reviewButtonLabel:
+      (reviewsJson.trustpilot?.reviewButtonLabel ?? "").trim() || "Write a review on Trustpilot",
+  },
+};
 
 /* ────────────── NOT-RENDERED copy retained from earlier drafts ──────────── */
 /* These sections were removed from the layout by the owner but their copy is

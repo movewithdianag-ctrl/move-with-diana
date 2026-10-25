@@ -5,6 +5,7 @@ import ScrollManager from "./components/ScrollManager";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Offers from "./pages/Offers";
+import Reviews from "./pages/Reviews";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
@@ -25,6 +26,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/offers" element={<Offers />} />
+          <Route path="/reviews" element={<Reviews />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

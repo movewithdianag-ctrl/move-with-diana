@@ -1,0 +1,21 @@
+{
+  "meta": {
+    "title": "Reviews | Move with Diana — Classical Pilates",
+    "description": "Verified Trustpilot reviews from clients training with Diana Gonçalves — Classical Pilates in Boca Raton, in person and online."
+  },
+  "eyebrow": "In their words",
+  "heading": "Reviews",
+  "intro": "Real reviews from real clients, collected and verified through Trustpilot.",
+  "comingSoon": "Fresh reviews are on their way — check back soon.",
+  "trustpilot": {
+    "businessUnitId": "",
+    "templateId": "",
+    "locale": "en-US",
+    "theme": "light",
+    "heightPx": 700,
+    "profileUrl": "",
+    "reviewUrl": "",
+    "reviewButtonLabel": "Write a review on Trustpilot"
+  },
+  "showSavedTestimonials": false
+}

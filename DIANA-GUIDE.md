@@ -30,8 +30,8 @@ can be undone.
      email. Forgot it? Click "Forgot password" and check your email.
 
 You'll see a screen titled **"Website content"** with a list of sections:
-Site settings, Home page, About page, Offers, Contact page, Footer & extras,
-and Testimonials.
+Site settings, Home page, About page, Offers, Reviews page, Contact page,
+Footer & extras, and Testimonials.
 
 ---
 

@@ -78,6 +78,7 @@ collections:
               - { label: "Home", name: "home", widget: "string" }
               - { label: "About", name: "about", widget: "string" }
               - { label: "Offers", name: "offers", widget: "string" }
+              - { label: "Reviews", name: "reviews", widget: "string" }
               - { label: "Schedule", name: "schedule", widget: "string" }
               - { label: "Contact", name: "contact", widget: "string" }
               - { label: "Top-right button", name: "button", widget: "string", hint: "The dark button in the top-right corner. It opens your Skool community while the Community link (in Site settings) is filled in; if that link is empty, it opens the contact page." }
@@ -200,6 +201,38 @@ collections:
               - { label: "(auto) photo width", name: "pagePhotoW", widget: "hidden", required: false }
               - { label: "(auto) photo height", name: "pagePhotoH", widget: "hidden", required: false }
 
+      # ────────────────────────────── REVIEWS PAGE ─────────────────────────
+      - name: "reviews"
+        label: "Reviews page"
+        file: "src/content/reviews.json"
+        fields:
+          - label: "Search & browser-tab info"
+            name: "meta"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Browser-tab title", name: "title", widget: "string" }
+              - { label: "Search description", name: "description", widget: "text", hint: "1–2 sentences. Google often shows this under the page title." }
+          - { label: "Small label above the heading", name: "eyebrow", widget: "string" }
+          - { label: "Page heading", name: "heading", widget: "string", hint: "To rename the menu link too, change it in Site settings → Menu labels." }
+          - { label: "Line under the heading", name: "intro", widget: "text" }
+          - { label: "\"No reviews yet\" line", name: "comingSoon", widget: "string", required: false, hint: "Shown only until the Trustpilot review box is connected." }
+          - label: "Trustpilot connection"
+            name: "trustpilot"
+            widget: "object"
+            collapsed: true
+            hint: "The live review box. The value codes are wiring — Nick sets them once; leave them alone."
+            fields:
+              - { label: "Business value code (internal)", name: "businessUnitId", widget: "string", required: false }
+              - { label: "Widget style value code (internal)", name: "templateId", widget: "string", required: false }
+              - { label: "Language value code (internal)", name: "locale", widget: "string", required: false }
+              - { label: "Colour value code (internal)", name: "theme", widget: "string", required: false }
+              - { label: "Box height value code (internal)", name: "heightPx", widget: "number", value_type: "int", required: false }
+              - { label: "Your public Trustpilot page link", name: "profileUrl", widget: "string", required: false, hint: "Your business page on trustpilot.com." }
+              - { label: "\"Write a review\" link", name: "reviewUrl", widget: "string", required: false, hint: "The link you send clients to leave a review. While it's filled in, a button shows on the page." }
+              - { label: "\"Write a review\" button text", name: "reviewButtonLabel", widget: "string", required: false }
+          - { label: "Also show the saved client testimonials", name: "showSavedTestimonials", widget: "boolean", required: false, hint: "Turn on to show the quotes from \"Testimonials (saved for later)\" under the Trustpilot reviews." }
+
       # ────────────────────────────── CONTACT PAGE ─────────────────────────
       - name: "contact"
         label: "Contact page"
@@ -266,7 +299,7 @@ collections:
             name: "gallery"
             widget: "list"
             summary: "{{fields.alt}}"
-            hint: "The band of photos above the footer. Drag to reorder, + to add, … menu to delete. Tall photos look best."
+            hint: "The band of photos above the footer. Drag an item's grey bar to reorder, + Add to add, and the small x on the grey bar deletes it. Tall photos look best."
             fields:
               - { label: "Photo", name: "photo", widget: "image" }
               - { label: "Photo description", name: "alt", widget: "string", hint: "For screen readers. One short sentence." }
@@ -310,7 +343,7 @@ collections:
         label: "Testimonials (saved for later)"
         file: "src/content/testimonials.json"
         fields:
-          - { label: "Section heading", name: "heading", widget: "string", hint: "These aren't shown on the site right now, but they're saved here ready for when a testimonials section returns." }
+          - { label: "Section heading", name: "heading", widget: "string", hint: "These show on the Reviews page only when \"Also show the saved client testimonials\" is turned on there — otherwise they're saved here, ready." }
           - { label: "Small label above the heading", name: "eyebrow", widget: "string" }
           - { label: "\"Read more\" link text", name: "readMore", widget: "string" }
           - { label: "\"Read less\" link text", name: "readLess", widget: "string" }
@@ -318,7 +351,7 @@ collections:
             name: "items"
             widget: "list"
             summary: "{{fields.name}}"
-            hint: "Drag to reorder, + to add, … menu to delete."
+            hint: "Drag an item's grey bar to reorder, + Add to add, and the small x on the grey bar deletes it."
             fields:
               - { label: "Client name", name: "name", widget: "string" }
               - { label: "Their words", name: "quote", widget: "text" }
