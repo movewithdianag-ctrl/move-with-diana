@@ -17,5 +17,5 @@
     "reviewUrl": "",
     "reviewButtonLabel": "Write a review on Trustpilot"
   },
-  "showSavedTestimonials": false
+  "showSavedTestimonials": true
 }
