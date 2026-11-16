@@ -660,10 +660,6 @@ export interface Program {
     assessmentText: string;
     /** iframe title / accessible name for the assessment calendar. */
     assessmentTitle: string;
-    sessionEyebrow: string;
-    sessionHeading: string;
-    sessionText: string;
-    sessionTitle: string;
     /** Quiet line under each card's text (time zone, confirmation email). "" hides it. */
     detailsNote: string;
     pendingNote: string;
@@ -672,7 +668,6 @@ export interface Program {
     /** "I can't find a time" button under each calendar. Opens a prefilled email. */
     cantFindLabel: string;
     cantFindAssessmentSubject: string;
-    cantFindSessionSubject: string;
     /** Prefilled email body. Line breaks are kept. */
     cantFindBody: string;
   };
@@ -803,17 +798,12 @@ export const program: Program = {
     assessmentHeading: str(pj.booking?.assessmentHeading),
     assessmentText: str(pj.booking?.assessmentText),
     assessmentTitle: str(pj.booking?.assessmentTitle).trim() || "Book your online assessment",
-    sessionEyebrow: str(pj.booking?.sessionEyebrow),
-    sessionHeading: str(pj.booking?.sessionHeading),
-    sessionText: str(pj.booking?.sessionText),
-    sessionTitle: str(pj.booking?.sessionTitle).trim() || "Book your online sessions",
     detailsNote: str(pj.booking?.detailsNote),
     pendingNote: str(pj.booking?.pendingNote),
     openLinkLabel: str(pj.booking?.openLinkLabel).trim() || "Open the booking page in a new tab",
     loadingLabel: str(pj.booking?.loadingLabel).trim() || "Loading the calendar",
     cantFindLabel: str(pj.booking?.cantFindLabel).trim() || "I can't find a time that works",
     cantFindAssessmentSubject: str(pj.booking?.cantFindAssessmentSubject),
-    cantFindSessionSubject: str(pj.booking?.cantFindSessionSubject),
     cantFindBody: str(pj.booking?.cantFindBody),
   },
   bookingPages: {

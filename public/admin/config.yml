@@ -653,12 +653,13 @@ collections:
               - { label: "Heading with their name", name: "headingWithName", widget: "string", hint: "Keep {firstName} exactly as written. It is swapped for the person's first name." }
               - { label: "Intro", name: "intro", widget: "text", required: false, hint: "Leave empty to hide it." }
               - { label: "Receipt note", name: "receiptNote", widget: "string", required: false, hint: "Leave empty to hide it." }
-              - { label: "\"Before your assessment\" heading", name: "prepHeading", widget: "string" }
+              - { label: "\"Before your assessment\" heading", name: "prepHeading", widget: "string", required: false }
               - label: "Before your assessment"
                 name: "prep"
                 widget: "list"
                 field: { label: "Line", name: "line", widget: "string" }
-                hint: "Each item is one line. Drag to reorder."
+                required: false
+                hint: "Each item is one line. Drag to reorder. With no lines, the whole list is hidden."
               - { label: "\"What happens next\" heading", name: "nextHeading", widget: "string", required: false }
               - label: "What happens next"
                 name: "next"
@@ -685,17 +686,12 @@ collections:
               - { label: "Assessment heading", name: "assessmentHeading", widget: "string", hint: "Step 1 on the welcome page. The step number is added for you." }
               - { label: "Assessment text", name: "assessmentText", widget: "text", hint: "Say what to do and why. If you mention how many days ahead people can book, keep it the same as in your booking calendar." }
               - { label: "Assessment calendar description", name: "assessmentTitle", widget: "string", hint: "Read aloud by screen readers. Not shown on screen." }
-              - { label: "Weekly sessions small label", name: "sessionEyebrow", widget: "string", required: false, hint: "A short line above the heading that says who this step is for. Leave empty to hide it." }
-              - { label: "Weekly sessions heading", name: "sessionHeading", widget: "string", hint: "Step 2 on the welcome page. The step number is added for you." }
-              - { label: "Weekly sessions text", name: "sessionText", widget: "text", hint: "Sessions are booked one at a time, because your schedule changes every week. Do not promise the same time each week. If you mention how many days ahead people can book, keep it the same as in your booking calendar." }
-              - { label: "Weekly sessions calendar description", name: "sessionTitle", widget: "string", hint: "Read aloud by screen readers. Not shown on screen." }
-              - { label: "Small note under the assessment text", name: "detailsNote", widget: "string", required: false, hint: "One quiet line shown on step 1, for example about time zones and the confirmation email. Leave empty to hide it." }
+              - { label: "Small note under the assessment text", name: "detailsNote", widget: "string", required: false, hint: "One quiet line under the assessment text, for example about time zones and the confirmation email. Leave empty to hide it." }
               - { label: "\"Calendar is being connected\" note", name: "pendingNote", widget: "string", hint: "Shown in place of a calendar while its booking link is empty." }
               - { label: "\"Open in a new tab\" link text", name: "openLinkLabel", widget: "string" }
               - { label: "Loading message", name: "loadingLabel", widget: "string" }
               - { label: "\"I can't find a time\" button", name: "cantFindLabel", widget: "string", hint: "Shown under each calendar. Opens an email to you that is already started for them." }
               - { label: "\"I can't find a time\" email subject, assessment", name: "cantFindAssessmentSubject", widget: "string" }
-              - { label: "\"I can't find a time\" email subject, weekly sessions", name: "cantFindSessionSubject", widget: "string" }
               - { label: "\"I can't find a time\" email text", name: "cantFindBody", widget: "text", hint: "The start of the email they send you. Keep it short and end by asking for the days and times that suit them." }
           - label: "Booking pages (one link per calendar)"
             name: "bookingPages"

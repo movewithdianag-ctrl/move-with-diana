@@ -269,7 +269,7 @@ afterwards. Don't send people straight to the payment page.
 | movewithdianag.com/apply | The intake form. One short page of questions that takes about two minutes. **This is the link you share.** |
 | movewithdianag.com/pilates-program | The order page, laid out like a shop page. First the photo beside the program name, the review count, the price ($897), four short lines of what is included and one pay button that opens Stripe. Below that: three client reviews, what's included, how the 8 weeks work, what happens next, questions, all the reviews, and the pay button once more. People who are a fit land here straight from the form and see one slim bar on top: "[Name], you qualify for the 8-Week Pilates Program". |
 | movewithdianag.com/apply/not-yet | The "not yet" page. People who need an OK from their doctor or physical therapist first land here. A kind message and next steps, with no payment or booking. |
-| movewithdianag.com/pilates-program/welcome | The welcome page. Stripe sends people here right after they pay. Two numbered steps: 1. book the assessment, 2. book weekly sessions one at a time. Clients come back to this page each week. |
+| movewithdianag.com/pilates-program/welcome | The welcome page. Stripe sends people here right after they pay. It has one job: book the 75 minute assessment. Weekly sessions are booked on movewithdianag.com/book/session, the link you send each client. |
 
 So the path is: application, order page, Stripe, welcome page. There is no
 page in between. The old address movewithdianag.com/apply/approved still
@@ -409,8 +409,8 @@ when cleared" text on the "not yet" page.
 - **Moving a session line** is optional small print under the tick box.
   It is empty, so nothing shows, and it is best left that way. The one
   line about moving a session ("Need to move a session? Please give me at
-  least 24 hours notice.") is on the welcome page, in the weekly session
-  text under **8-Week Program**, then **Booking calendars**.
+  least 24 hours notice.") is on the weekly session booking page
+  (movewithdianag.com/book/session).
 - **Privacy line** is the short line under the policy. Empty the box to
   hide it.
 

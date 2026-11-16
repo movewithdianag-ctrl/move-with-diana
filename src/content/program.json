@@ -6,7 +6,7 @@
     },
     "welcome": {
       "title": "Welcome to the 8-Week Pilates Program | Book Your Assessment",
-      "description": "You're in. Book your online assessment and your private sessions with Diana."
+      "description": "You're in. Book your online assessment with Diana."
     }
   },
   "chrome": {
@@ -163,12 +163,7 @@
     "intro": "",
     "receiptNote": "",
     "prepHeading": "Before your assessment",
-    "prep": [
-      "Find a quiet spot with a mat or a carpeted floor",
-      "Set your camera so I can see your whole body lying down and standing",
-      "Wear something comfortable that lets me see how you move",
-      "Have water nearby, and any notes from your doctor or PT if you have them"
-    ],
+    "prep": [],
     "nextHeading": "What happens next",
     "next": [
       {
@@ -189,17 +184,12 @@
     "assessmentHeading": "Book your online assessment",
     "assessmentText": "75 minutes, live on video. Pick the earliest time that suits you in the next 10 days. The sooner we meet, the sooner we start. I'll confirm it by email.",
     "assessmentTitle": "Book your online assessment with Diana",
-    "sessionEyebrow": "Your weekly sessions",
-    "sessionHeading": "Book your weekly session",
-    "sessionText": "60 minutes, live on video. My schedule changes from week to week, so we book your sessions one at a time. Pick a time in the next 14 days, after your assessment, and I'll confirm it by email. Come back to this page each week to book the next one, or we'll set it together at the end of a session. Need to move a session? Please give me at least 24 hours notice.",
-    "sessionTitle": "Book your private online sessions with Diana",
     "detailsNote": "Times show in your own time zone. Your confirmation email has the video link.",
     "pendingNote": "My booking calendar is being connected. I'll message you within 24 hours to set your times.",
     "openLinkLabel": "Open the booking page in a new tab",
     "loadingLabel": "Loading the calendar",
     "cantFindLabel": "I can't find a time that works",
     "cantFindAssessmentSubject": "I can't find a time for my assessment",
-    "cantFindSessionSubject": "I can't find a time for my weekly sessions",
     "cantFindBody": "Hi Diana,\n\nI can't find a booking time that works for me. These days and times suit me best:\n\n"
   },
   "bookingPages": {
