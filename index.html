@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <!-- Trustpilot domain-ownership proof — keep in place. -->
     <meta name="trustpilot-one-time-domain-verification-id" content="90574f31-9c34-49e5-8d9c-f8311580133c"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="theme-color" content="#F4F0E9" />
     <!-- Static fallback title/description (what crawlers and link previews
@@ -14,6 +14,13 @@
       name="description"
       content="Classical Pilates with Diana Gonçalves — for beginners, advanced practitioners, and athletes. In person and online, tailored entirely to you."
     />
+    <!-- Paint the page colour before any stylesheet or script arrives, so a
+         load or reload never flashes white. Mirrors the bone token. -->
+    <style>
+      html {
+        background: #f4f0e9;
+      }
+    </style>
     <!-- Fonts: Fraunces (display serif, optical sizing) + Instrument Sans (body/UI).
          display=swap keeps text visible on system fallbacks while webfonts load. -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -22,6 +29,30 @@
       href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"
       rel="stylesheet"
     />
+    <!-- Start downloading both webfonts now, alongside the JS bundle. Without
+         this the browser only asks for them once the app has drawn its first
+         text, and every heading and label re-wraps when they land. Every
+         weight the pages draw is asked for (each one is its own font face),
+         and src/main.tsx waits briefly for window.__fontsReady so the first
+         paint is already in the right fonts. -->
+    <script>
+      (function () {
+        if (!document.fonts || !document.fonts.load) return;
+        var quiet = function () {};
+        var faces = [
+          '500 1em "Fraunces"',
+          '600 1em "Fraunces"',
+          '400 1em "Instrument Sans"',
+          '500 1em "Instrument Sans"',
+          '600 1em "Instrument Sans"',
+        ];
+        window.__fontsReady = Promise.all(
+          faces.map(function (face) {
+            return document.fonts.load(face).then(null, quiet);
+          })
+        );
+      })();
+    </script>
     <!-- The home hero is the largest above-the-fold asset — start fetching it
          before the JS bundle finishes parsing, but only when actually landing
          on the home page, and only the variant this device will display. -->

@@ -5,6 +5,12 @@ interface SeoProps {
   description: string;
   /** Route path, used to build the canonical/OG URL. */
   path: string;
+  /**
+   * Keep this page out of search results (funnel "not yet", order and welcome
+   * pages). Adds <meta name="robots" content="noindex, nofollow"> while the
+   * page is mounted and removes it again on the way out.
+   */
+  noindex?: boolean;
 }
 
 // Update this to the production domain once DNS is pointed at the new site.
@@ -28,7 +34,23 @@ function upsertMeta(attr: "name" | "property", key: string, content: string) {
   el.setAttribute("content", content);
 }
 
-export default function Seo({ title, description, path }: SeoProps) {
+const ROBOTS_SELECTOR = 'meta[name="robots"][data-seo-noindex]';
+
+export default function Seo({ title, description, path, noindex = false }: SeoProps) {
+  // Robots tag: owned entirely by this effect. The cleanup runs before the
+  // next page's effect, so a page without `noindex` never inherits the tag.
+  useEffect(() => {
+    document.head.querySelector(ROBOTS_SELECTOR)?.remove();
+    if (!noindex) return;
+
+    const el = document.createElement("meta");
+    el.setAttribute("name", "robots");
+    el.setAttribute("content", "noindex, nofollow");
+    el.setAttribute("data-seo-noindex", "");
+    document.head.appendChild(el);
+    return () => el.remove();
+  }, [noindex]);
+
   useEffect(() => {
     const url = `${SITE_ORIGIN}${path === "/" ? "" : path}`;
 

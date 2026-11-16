@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import { offers } from "@/content/content";
 import { SKOOL_COMMUNITY_URL } from "@/lib/config";
 import Photo from "@/components/Photo";
+import { cn } from "@/lib/utils";
 
 /**
  * Heading-less offers carousel on the home page (per the owner's reference
@@ -12,7 +13,7 @@ import Photo from "@/components/Photo";
  * to the contact form with that offer preselected (the community card goes
  * straight to Skool once SKOOL_COMMUNITY_URL is configured).
  */
-export default function OffersCarousel() {
+export default function OffersCarousel({ className }: { className?: string } = {}) {
   const trackRef = useRef<HTMLDivElement>(null);
 
   const scrollByCard = (direction: 1 | -1) => {
@@ -25,7 +26,7 @@ export default function OffersCarousel() {
   };
 
   return (
-    <section aria-label="Offers" className="py-16 md:py-24">
+    <section aria-label="Offers" className={cn("py-16 md:py-24", className)}>
       <div className="mx-auto w-full max-w-6xl px-5 md:px-8">
         <div className="mb-5 hidden justify-end gap-2 md:flex">
           <button

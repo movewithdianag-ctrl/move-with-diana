@@ -1,20 +1,20 @@
 import { useId, useState } from "react";
 import { Minus, Plus } from "lucide-react";
-import { faqs } from "@/content/content";
+import { faqs, type Faq as FaqItem } from "@/content/content";
 
 /**
  * Editorial FAQ accordion (modeled on the "ref-faq-style" brief: minimal,
  * generous padding, thin divider rules, plus/minus indicator, one item open
  * at a time). Native buttons + aria-expanded/aria-controls keep it fully
- * keyboard-accessible.
+ * keyboard-accessible. Shows the home page FAQs unless `items` is passed.
  */
-export default function Faq() {
+export default function Faq({ items = faqs }: { items?: FaqItem[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
   const baseId = useId();
 
   return (
     <div className="divide-y divide-ink/10 border-y border-ink/10">
-      {faqs.map((faq, i) => {
+      {items.map((faq, i) => {
         const open = openIndex === i;
         const headerId = `${baseId}-faq-h-${i}`;
         const panelId = `${baseId}-faq-p-${i}`;

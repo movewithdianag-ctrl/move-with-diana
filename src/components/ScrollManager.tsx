@@ -1,15 +1,18 @@
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigationType } from "react-router-dom";
 
 /**
  * Scroll handling for a hash-aware SPA:
  *  • plain route change → scroll to top
+ *  • first load, refresh, back or forward → left to the browser, which puts
+ *    the page back where it was (someone halfway down /apply stays there)
  *  • route change with a hash (e.g. /#schedule from any page) → scroll to
  *    that element once it's rendered; scroll-margin-top in index.css keeps
  *    it clear of the sticky header.
  */
 export default function ScrollManager() {
   const { hash, key } = useLocation();
+  const navigationType = useNavigationType();
 
   // Keyed on location.key (not pathname/hash): every navigation gets a fresh
   // key, so clicking the same link again still re-scrolls.
@@ -17,7 +20,7 @@ export default function ScrollManager() {
     if (hash) {
       // By effect time the new page is committed, so the target usually
       // exists; the setTimeout covers anything mounted late. Deliberately not
-      // requestAnimationFrame — rAF never fires in background tabs.
+      // requestAnimationFrame: rAF never fires in background tabs.
       const id = hash.slice(1);
       const el = document.getElementById(id);
       if (el) {
@@ -25,7 +28,9 @@ export default function ScrollManager() {
       } else {
         setTimeout(() => document.getElementById(id)?.scrollIntoView(), 0);
       }
-    } else {
+    } else if (navigationType !== "POP") {
+      // POP is a load, a refresh, or back/forward. Only a link or a redirect
+      // inside the site (PUSH, REPLACE) goes to the top.
       window.scrollTo(0, 0);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

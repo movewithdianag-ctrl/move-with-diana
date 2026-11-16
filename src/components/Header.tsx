@@ -89,7 +89,7 @@ export default function Header() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-colors duration-300",
+        "fixed inset-x-0 top-0 z-50 pl-[env(safe-area-inset-left)] pr-[env(safe-area-inset-right)] transition-colors duration-300",
         scrolled || open
           ? "border-b border-ink/10 bg-bone/95 backdrop-blur"
           : "bg-bone/40 backdrop-blur-sm",
@@ -166,7 +166,7 @@ export default function Header() {
             aria-modal="true"
             aria-label="Menu"
             onKeyDown={onSheetKeyDown}
-            className="fixed inset-0 z-[60] flex flex-col overflow-y-auto bg-bone md:hidden"
+            className="fixed inset-0 z-[60] flex flex-col overflow-y-auto bg-bone pl-[env(safe-area-inset-left)] pr-[env(safe-area-inset-right)] md:hidden"
           >
             <div className="flex h-16 items-center justify-between px-5">
               <span className="font-display text-lg font-semibold tracking-tight">

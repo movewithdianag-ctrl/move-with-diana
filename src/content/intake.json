@@ -1,0 +1,296 @@
+{
+  "meta": {
+    "apply": {
+      "title": "Apply for the 8-Week Pilates Program | Move with Diana",
+      "description": "Answer a few short questions to see if the 8-Week Pilates Program is right for your body. It takes about 2 minutes. No payment needed to apply."
+    },
+    "notYet": {
+      "title": "Thank you for applying | Move with Diana",
+      "description": "Thank you for your application. Here is the best next step for you and your body."
+    }
+  },
+  "settings": {
+    "draftMaxAgeDays": 7,
+    "emailFallbackIncludesAnswers": false
+  },
+  "intro": {
+    "eyebrow": "",
+    "timeEstimate": "",
+    "heading": "Apply for the 8-Week Pilates Program",
+    "subline": "",
+    "points": []
+  },
+  "blocks": [
+    {
+      "id": "healthFlags",
+      "type": "multi",
+      "question": "Do any of these apply to you right now?",
+      "help": "Click all that apply. A serious condition could be a heart condition, osteoporosis, a recent fracture, or a nerve or disc issue.",
+      "required": true,
+      "requiredMessage": "Click any that apply, or choose No medical conditions.",
+      "layout": "stack",
+      "exclusive": "none",
+      "options": [
+        {
+          "value": "surgery6mo",
+          "label": "Surgery in the last 6 months"
+        },
+        {
+          "value": "seriousDiagnosis",
+          "label": "A serious medical condition"
+        },
+        {
+          "value": "pregnant",
+          "label": "I'm pregnant"
+        },
+        {
+          "value": "postpartum",
+          "label": "I had a baby recently"
+        },
+        {
+          "value": "currentInjury",
+          "label": "A current injury"
+        },
+        {
+          "value": "other",
+          "label": "Other"
+        },
+        {
+          "value": "none",
+          "label": "No medical conditions"
+        }
+      ],
+      "other": {
+        "optionValue": "other",
+        "fieldId": "healthFlagsOther",
+        "label": "Tell me what it is",
+        "placeholder": ""
+      }
+    },
+    {
+      "id": "cleared",
+      "type": "single",
+      "question": "Has a doctor or physical therapist cleared you for exercise?",
+      "help": "Your answer tells me where we can begin.",
+      "required": true,
+      "layout": "stack",
+      "options": [
+        {
+          "value": "yes",
+          "label": "Yes, I'm cleared"
+        },
+        {
+          "value": "no",
+          "label": "Not yet"
+        },
+        {
+          "value": "not_sure",
+          "label": "I'm not sure"
+        }
+      ],
+      "detail": {
+        "fieldId": "conditionDetails",
+        "label": "Anything you'd like me to know?",
+        "help": "A sentence or two is plenty. What happened and roughly when.",
+        "placeholder": "For example: knee replacement in June, cleared by my surgeon in October",
+        "maxLength": 600
+      }
+    },
+    {
+      "id": "areas",
+      "type": "multi",
+      "question": "Where does your body have the most discomfort right now?",
+      "help": "Choose all that apply.",
+      "required": true,
+      "layout": "grid",
+      "exclusive": "no_pain",
+      "options": [
+        {
+          "value": "back",
+          "label": "Back"
+        },
+        {
+          "value": "neck",
+          "label": "Neck"
+        },
+        {
+          "value": "shoulder",
+          "label": "Shoulders"
+        },
+        {
+          "value": "hips",
+          "label": "Hips"
+        },
+        {
+          "value": "knees",
+          "label": "Knees"
+        },
+        {
+          "value": "other",
+          "label": "Something else"
+        },
+        {
+          "value": "no_pain",
+          "label": "No pain anywhere"
+        }
+      ],
+      "other": {
+        "optionValue": "other",
+        "fieldId": "areasOther",
+        "label": "Tell me where",
+        "placeholder": "For example wrists or ankles"
+      }
+    },
+    {
+      "id": "painToday",
+      "type": "scale",
+      "question": "On a typical day, how much discomfort do you feel?",
+      "help": "Tap a number.",
+      "required": true,
+      "min": 0,
+      "max": 10,
+      "minLabel": "No discomfort",
+      "maxLabel": "The worst I can imagine"
+    },
+    {
+      "id": "contact",
+      "type": "contact",
+      "question": "Where can I reach you?",
+      "help": "",
+      "required": true,
+      "fields": [
+        {
+          "id": "firstName",
+          "label": "First name",
+          "type": "text",
+          "required": true,
+          "autoComplete": "given-name",
+          "autoCapitalize": "words",
+          "requiredMessage": "Please enter your first name."
+        },
+        {
+          "id": "lastName",
+          "label": "Last name",
+          "type": "text",
+          "required": true,
+          "autoComplete": "family-name",
+          "autoCapitalize": "words",
+          "requiredMessage": "Please enter your last name."
+        },
+        {
+          "id": "email",
+          "label": "Email",
+          "type": "email",
+          "required": true,
+          "autoComplete": "email",
+          "autoCapitalize": "none",
+          "requiredMessage": "Please enter your email.",
+          "invalidMessage": "That email looks incomplete. Check for the @ and the ending."
+        },
+        {
+          "id": "phone",
+          "label": "Mobile number",
+          "type": "tel",
+          "required": true,
+          "requiredMessage": "Please enter your mobile number.",
+          "autoComplete": "tel",
+          "autoCapitalize": "none",
+          "help": "So I can text you about scheduling.",
+          "invalidMessage": "That number looks too short. Include the area code."
+        }
+      ]
+    },
+    {
+      "id": "consent",
+      "type": "consent",
+      "question": "Last step: a quick yes from you",
+      "required": true,
+      "consentLabel": "I understand that Pilates is exercise, not medical care, and I'm happy for you to contact me about my application.",
+      "policyText": "",
+      "note": ""
+    }
+  ],
+  "labels": {
+    "submit": "Submit Application",
+    "submitNote": "",
+    "questionCount": "{current} of {total}",
+    "submitting": "Sending your answers",
+    "optional": "Optional",
+    "emailSuggestion": "Did you mean {suggestion}?",
+    "emailSuggestionAccept": "Yes, fix it",
+    "exclusiveCleared": "Your other choices were cleared.",
+    "exclusiveUnticked": "{option} was cleared.",
+    "followUpShown": "One more question was added just below.",
+    "followUpHidden": "The extra question was removed.",
+    "honeypotLabel": "Leave this field empty"
+  },
+  "errors": {
+    "required": "Please fill this in.",
+    "chooseOne": "Please pick one.",
+    "chooseAtLeastOne": "Please pick at least one.",
+    "scaleRequired": "Please tap a number from 0 to 10.",
+    "emailInvalid": "That email looks incomplete. Check for the @ and the ending.",
+    "phoneInvalid": "That number looks too short. Include the area code.",
+    "consentRequired": "Please tick this box so I can reply to your application.",
+    "summaryOne": "One answer above still needs a look.",
+    "summaryMany": "{count} answers above still need a look.",
+    "submitFailed": "Something went wrong sending your answers. Nothing is lost. Please try again.",
+    "retryLabel": "Try again",
+    "fallbackText": "Still stuck? Message me on Instagram or email me and I'll take it from there.",
+    "fallbackInstagramLabel": "Message me on Instagram",
+    "fallbackEmailLabel": "Email me"
+  },
+  "eligibility": {
+    "flagsField": "healthFlags",
+    "clearanceField": "cleared",
+    "clearedValue": "yes",
+    "reviewFlags": [
+      "surgery6mo",
+      "seriousDiagnosis",
+      "pregnant",
+      "postpartum",
+      "other"
+    ]
+  },
+  "notYet": {
+    "eyebrow": "Thank you",
+    "heading": "{firstName}, please get your doctor's OK first",
+    "headingNoName": "Please get your doctor's OK first",
+    "body": [
+      "Because you don't have a clear OK for exercise yet, the right next step is a conversation with your doctor or physical therapist before we start working together."
+    ],
+    "nextHeading": "What to do next",
+    "next": [
+      {
+        "title": "Talk to your doctor or PT",
+        "detail": "Tell them you'd like to start gentle, one to one Pilates online, and ask if you're cleared for exercise."
+      },
+      {
+        "title": "Message me when you have the OK",
+        "detail": "Once you're cleared, send me a message on Instagram or by email."
+      }
+    ],
+    "askHeading": "What to ask your doctor or PT",
+    "askIntro": "If it helps, here are a few simple questions to bring to your appointment.",
+    "ask": [
+      "Am I cleared for gentle, low-impact exercise like one to one Pilates?",
+      "Are there any movements or positions I should avoid for now?",
+      "Is there anything my instructor should know before we start?",
+      "When would be a sensible time to check in with you again?"
+    ],
+    "contactHeading": "",
+    "emailLabel": "Email me",
+    "messageLabel": "Message me on Instagram",
+    "communityHeading": "",
+    "communityText": "",
+    "communityLabel": "Visit the free community",
+    "newsletter": {
+      "heading": "The Weekly Cue",
+      "text": "One short, free email a week with a movement cue and what I'm teaching.",
+      "buttonLabel": "Send me The Weekly Cue",
+      "successText": "You're on the list. Welcome to The Weekly Cue.",
+      "errorText": "Couldn't sign you up just now. Please try again."
+    },
+    "disclaimer": "Pilates is exercise, not medical care. Nothing here is medical advice."
+  }
+}

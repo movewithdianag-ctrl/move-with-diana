@@ -1,0 +1,284 @@
+{
+  "meta": {
+    "checkout": {
+      "title": "8-Week Strong & Safe Online Private Program | Move with Diana",
+      "description": "Reserve your place in the 8-Week Strong & Safe Online Private Program. One to one, injury-aware Classical Pilates with Diana Gonçalves, live online from home."
+    },
+    "welcome": {
+      "title": "Welcome to Strong & Safe | Book Your Assessment",
+      "description": "You're in. Book your online assessment and your private sessions with Diana."
+    }
+  },
+  "chrome": {
+    "homeLabel": "Move with Diana, back to the home page",
+    "questionsLabel": "Questions? Email me",
+    "questionsLabelShort": "Email me",
+    "questionsSubject": "Question about Strong & Safe",
+    "bookingQuestionsSubject": "Question about booking",
+    "stepsLabel": "Your progress",
+    "stepApply": "Apply",
+    "stepReserve": "Reserve",
+    "stepBook": "Book",
+    "footerDisclaimer": "Pilates is exercise, not medical care.",
+    "footerPrivacy": "Your details stay private and are never sold. I only use them to plan your sessions and to contact you."
+  },
+  "name": "8-Week Strong & Safe Online Private Program",
+  "shortName": "Strong & Safe",
+  "tagline": "Injury-aware Classical Pilates, one to one, from home.",
+  "whoItsForHeading": "This is for you if",
+  "whoItsFor": [
+    "Your back, neck, shoulders or knees have been holding you back",
+    "You feel stiff, or you're careful around an old injury",
+    "You're hypermobile and want strength you can rely on",
+    "Group classes move too fast, or you're not sure what is right for your body",
+    "Your doctor or physical therapist has cleared you for exercise"
+  ],
+  "notForHeading": "This is not the right fit if",
+  "notFor": [
+    "You've had surgery in the last 6 months and your doctor has not cleared you for exercise",
+    "You have a serious medical condition and have not been cleared for exercise",
+    "You're looking for medical care. Pilates is exercise, and it works alongside your doctor or PT, not instead of them"
+  ],
+  "includedHeading": "What's included",
+  "included": [
+    {
+      "title": "1 online assessment (75 minutes)",
+      "detail": "We meet live on video. I watch how you move, listen to your history, and we set the goals for your 8 weeks."
+    },
+    {
+      "title": "7 private online sessions (60 minutes each)",
+      "detail": "Just you and me, once a week. Every session is planned for your body and adjusted as you get stronger."
+    },
+    {
+      "title": "A written weekly plan",
+      "detail": "A short, clear plan after each session so you know exactly what to practice between our meetings."
+    },
+    {
+      "title": "Session recordings",
+      "detail": "Our sessions are on Zoom and recorded. I send you the recording so you can revisit the cues at home."
+    },
+    {
+      "title": "Weekly check-in by WhatsApp or text",
+      "detail": "A quick message from me each week to see how your body is feeling and answer questions."
+    },
+    {
+      "title": "The private Skool hub",
+      "detail": "Access to Strong & Safe Pilates Online, the private hub where your plans and resources live."
+    }
+  ],
+  "howItWorksHeading": "How the 8 weeks work",
+  "howItWorks": [
+    {
+      "title": "Week 1. Your assessment",
+      "detail": "A 75-minute session on video. We look at how you move today and agree on what matters most to you."
+    },
+    {
+      "title": "Weeks 2 to 8. Your private sessions",
+      "detail": "One 60-minute session each week, live online. We build strength and control step by step, always within what feels safe for you."
+    },
+    {
+      "title": "Between sessions. Your weekly plan",
+      "detail": "A short written plan to practice at home, plus a check-in from me by WhatsApp or text."
+    },
+    {
+      "title": "Week 8. Where you are now",
+      "detail": "We look back at where you started, what has changed, and how to keep going."
+    }
+  ],
+  "equipmentHeading": "What you need",
+  "equipment": [
+    "A mat, or a carpeted floor",
+    "Enough room to lie down and stretch your arms and legs out",
+    "A phone, tablet or laptop with a camera"
+  ],
+  "instructor": {
+    "heading": "Your teacher",
+    "name": "Diana Gonçalves",
+    "credential": "Classical Pilates instructor. Romana's Pilates International Certification, 900 hours.",
+    "bio": "I teach the classical method the way it was passed down, with close attention to your body and your history. I've worked with beginners, athletes, clients in their nineties, hypermobile bodies and people coming back after an injury. My job is to meet you where you are and help you build strength you can trust.",
+    "photo": "/images/intro-portrait.jpg",
+    "photoAlt": "Diana Gonçalves smiling, arms resting on the ladder barrel",
+    "photoW": 736,
+    "photoH": 920
+  },
+  "testimonialsHeading": "What clients say",
+  "testimonialNames": [
+    "Sammi Davis Jr.",
+    "Liam Gardner",
+    "Spencer",
+    "Ida",
+    "Lila Male"
+  ],
+  "faqHeading": "Questions, answered",
+  "faq": [
+    {
+      "q": "Is this medical care or physical therapy?",
+      "a": "No. Pilates is exercise. I don't diagnose or treat anything. I plan careful, injury-aware sessions and I'm happy to work alongside the advice of your doctor or physical therapist."
+    },
+    {
+      "q": "Do I need to be cleared for exercise?",
+      "a": "Yes. If you have an injury, a recent surgery or a medical condition, please get the OK from your doctor or PT before we start. If you are not sure, ask them first. Your place will be here when you're ready."
+    },
+    {
+      "q": "I've never done Pilates. Is that OK?",
+      "a": "Absolutely. Many of my clients start as complete beginners. Everything is taught step by step and adapted to you."
+    },
+    {
+      "q": "What equipment do I need?",
+      "a": "A mat or a carpeted floor, enough space to lie down with your arms and legs stretched out, and a device with a camera. That's all."
+    },
+    {
+      "q": "How do the online sessions work?",
+      "a": "We meet live on video. You set your camera so I can see your whole body, and I coach you in real time, just like in the studio."
+    }
+  ],
+  "guarantee": {
+    "heading": "My promise to you",
+    "text": "Every session is planned for your body, not pulled from a template. If something doesn't feel right, we stop, adjust and find another way. You'll always know why we're doing what we're doing."
+  },
+  "disclaimer": "Pilates is exercise, not medical care. This program does not diagnose, treat or cure any condition. Please check with your doctor or physical therapist before starting any exercise program, and stop any movement that causes sharp or unusual pain.",
+  "checkout": {
+    "eyebrow": "Reserve your place",
+    "payInFull": {
+      "label": "Pay in full",
+      "price": 897,
+      "priceDisplay": "$897",
+      "sublabel": "One payment today.",
+      "stripeUrl": "",
+      "buttonLabel": "Pay $897"
+    },
+    "afterPaymentNote": "",
+    "qualified": {
+      "heading": "{firstName}, you qualify for Strong & Safe",
+      "headingNoName": "You qualify for Strong & Safe",
+      "text": "",
+      "reviewNote": "Because of what you shared about your health, I'll read your notes before we begin and may ask for a short note from your doctor or PT. You can still reserve your place today."
+    },
+    "next": {
+      "heading": "What happens next",
+      "steps": [
+        {
+          "title": "Book your assessment",
+          "detail": "After you pay, the next page opens my calendar. You pick the time for your 75 minute online assessment and your first weekly session."
+        },
+        {
+          "title": "I confirm each booking by email",
+          "detail": ""
+        },
+        {
+          "title": "I message you personally within 24 hours of your payment",
+          "detail": ""
+        }
+      ]
+    },
+    "notReadyLabel": "Not ready yet? Ask me a question first",
+    "notReadyText": "If you have a question before you commit, I'm happy to talk it through.",
+    "notReadyCallLabel": "Book a 15 minute video call with me",
+    "notReadyCallText": "Not ready to decide yet? Let's talk first. Pick a time in the next few days, bring your questions, and I'll tell you honestly whether this program suits you.",
+    "pendingStripeNote": "Online payment is being set up. Email me and I'll send you a payment link directly.",
+    "pendingStripeButtonLabel": "Email me for a payment link",
+    "orderPage": {
+      "pendingButtonLabel": "Payment link coming soon",
+      "pendingContactLabel": "Or send me a message on the contact page",
+      "intakeFirstLabel": "Not sure it is right for you? Answer a few quick questions first",
+      "stickyBarLabel": "Reserve your place",
+      "payBusyLabel": "Opening checkout",
+      "reviewsLine": "{count} client reviews on Trustpilot",
+      "reviewsLinkLabel": "Read all {count} reviews on Trustpilot",
+      "policiesHeading": "Payment and policies",
+      "policies": [
+        {
+          "title": "Paying over time",
+          "text": "If you're in the US, the checkout page may offer pay over time options from its payment partners. The price stays $897 and you repay the provider on their schedule. Which options you see, and whether you're approved, is decided by the provider, not by me. Please read their terms, including any interest, before you agree."
+        }
+      ],
+      "photo": "/images/offer-private.jpg",
+      "photoAlt": "Diana Gonçalves balancing on the wunda chair, leg extended",
+      "photoW": 900,
+      "photoH": 1349
+    }
+  },
+  "welcome": {
+    "eyebrow": "You're in",
+    "heading": "Welcome to Strong & Safe",
+    "headingWithName": "Welcome to Strong & Safe, {firstName}",
+    "intro": "Thank you for trusting me with your body. Your place is reserved. Two quick steps and we're ready to begin.",
+    "receiptNote": "Stripe has emailed your receipt. I'll message you personally within 24 hours to say hello.",
+    "prepHeading": "Before your assessment",
+    "prep": [
+      "Find a quiet spot with a mat or a carpeted floor",
+      "Set your camera so I can see your whole body lying down and standing",
+      "Wear something comfortable that lets me see how you move",
+      "Have water nearby, and any notes from your doctor or PT if you have them"
+    ],
+    "nextHeading": "What happens next",
+    "next": [
+      {
+        "title": "Within 24 hours",
+        "detail": "I message you myself to say hello and send your invite to the private hub."
+      },
+      {
+        "title": "After you book",
+        "detail": "I confirm your time by email. That email has your video link, so keep it handy."
+      },
+      {
+        "title": "On the day",
+        "detail": "Be set up a few minutes early. The list under Before your assessment, just below, is all you need."
+      }
+    ],
+    "hubHeading": "Your private hub",
+    "hubText": "Strong & Safe Pilates Online is where your weekly plans and resources live. I'll send your invite myself when I message you to say hello.",
+    "hubButtonLabel": "Open the private hub",
+    "hubUrl": ""
+  },
+  "booking": {
+    "assessmentUrl": "https://cal.com/movewithdianag/strong-safe-assessment",
+    "sessionUrl": "https://cal.com/movewithdianag/strong-safe-session",
+    "callUrl": "https://cal.com/movewithdianag/strong-safe-call",
+    "assessmentEyebrow": "For new Strong & Safe clients",
+    "assessmentHeading": "Book your online assessment",
+    "assessmentText": "75 minutes, live on video. Pick the earliest time that suits you in the next 10 days. The sooner we meet, the sooner we start. I'll confirm it by email.",
+    "assessmentTitle": "Book your online assessment with Diana",
+    "sessionEyebrow": "Your weekly sessions",
+    "sessionHeading": "Book your weekly session",
+    "sessionText": "60 minutes, live on video. My schedule changes from week to week, so we book your sessions one at a time. Pick a time in the next 14 days, after your assessment, and I'll confirm it by email. Come back to this page each week to book the next one, or we'll set it together at the end of a session. Need to move a session? Please give me at least 24 hours notice.",
+    "sessionTitle": "Book your private online sessions with Diana",
+    "detailsNote": "Times show in your own time zone. Your confirmation email has the video link.",
+    "pendingNote": "My booking calendar is being connected. I'll message you within 24 hours to set your times.",
+    "openLinkLabel": "Open the booking page in a new tab",
+    "loadingLabel": "Loading the calendar",
+    "cantFindLabel": "I can't find a time that works",
+    "cantFindAssessmentSubject": "I can't find a time for my assessment",
+    "cantFindSessionSubject": "I can't find a time for my weekly sessions",
+    "cantFindBody": "Hi Diana,\n\nI can't find a booking time that works for me. These days and times suit me best:\n\n"
+  },
+  "bookingPages": {
+    "introCall": {
+      "metaTitle": "Book a 15 Minute Call | Move with Diana",
+      "metaDescription": "Book a free 15 minute video call with Diana.",
+      "eyebrow": "15 minute call",
+      "heading": "Book a 15 minute call with me",
+      "text": "A short video call to talk through what you need and answer your questions. It is free. Pick a time and I'll confirm it by email.",
+      "calendarTitle": "Book a 15 minute call with Diana",
+      "cantFindSubject": "I can't find a time for a call"
+    },
+    "assessment": {
+      "metaTitle": "Book Your Online Assessment | Move with Diana",
+      "metaDescription": "Book your 75 minute online assessment with Diana.",
+      "eyebrow": "75 minute assessment",
+      "heading": "Book your online assessment",
+      "text": "75 minutes, live on video. I look at how you move and we plan your sessions from there. Pick a time and I'll confirm it by email.",
+      "calendarTitle": "Book your online assessment with Diana",
+      "cantFindSubject": "I can't find a time for my assessment"
+    },
+    "session": {
+      "metaTitle": "Book Your Private Session | Move with Diana",
+      "metaDescription": "Book your 60 minute private online session with Diana.",
+      "eyebrow": "60 minute session",
+      "heading": "Book your private session",
+      "text": "60 minutes, live on video. Pick a time that suits you and I'll confirm it by email. Need to move a session? Please give me at least 24 hours notice.",
+      "calendarTitle": "Book your private online session with Diana",
+      "cantFindSubject": "I can't find a time for my session"
+    }
+  }
+}

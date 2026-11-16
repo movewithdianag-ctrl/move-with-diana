@@ -1,0 +1,60 @@
+/* ──────────────────────────────────────────────────────────────────────────
+   Intake form (/apply). Imported by src/pages/Apply.tsx only.
+   Colours come from the tokens in src/index.css (var(--bone) etc.).
+   ────────────────────────────────────────────────────────────────────────── */
+
+/* 0 to 10 scale. On a phone the numbers sit in two rows so every one is a
+   comfortable tap target even at 320px wide; from 640px they sit in one row.
+   The column counts are set from the block's min/max in ScaleBlock.tsx. */
+.intake-scale {
+  display: grid;
+  gap: 0.25rem;
+  grid-template-columns: repeat(var(--scale-cols, 6), minmax(0, 1fr));
+}
+
+.intake-scale > :last-child {
+  grid-column: span var(--scale-last-span, 1);
+}
+
+/* The narrowest phones: a tighter gap keeps each cell at least 44px wide. */
+@media (max-width: 359px) {
+  .intake-scale {
+    gap: 0.125rem;
+  }
+}
+
+@media (min-width: 640px) {
+  .intake-scale {
+    gap: 0.375rem;
+    grid-template-columns: repeat(var(--scale-count, 11), minmax(0, 1fr));
+  }
+
+  .intake-scale > :last-child {
+    grid-column: auto;
+  }
+}
+
+/* Something that appears because of an earlier answer (the clearance
+   question, the "Something else" text box) fades in once. Opacity only: the
+   page takes its new height in a single step and nothing is re-laid-out frame
+   by frame. The class is only given to wrappers that appear after the page
+   has loaded (see Reveal in blockParts.tsx), so restored answers never
+   replay it. */
+@keyframes intake-reveal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.intake-reveal {
+  animation: intake-reveal 160ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intake-reveal {
+    animation: none;
+  }
+}

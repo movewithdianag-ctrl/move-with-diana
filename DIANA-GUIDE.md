@@ -31,7 +31,7 @@ can be undone.
 
 You'll see a screen titled **"Website content"** with a list of sections:
 Site settings, Home page, About page, Offers, Reviews page, Contact page,
-Footer & extras, and Testimonials.
+Footer & extras, Testimonials, 8-Week Program, and Intake form.
 
 ---
 
@@ -72,7 +72,7 @@ at its right end deletes it.
 
 **Example — adding a new testimonial:**
 
-1. Click **Testimonials (saved for later)**.
+1. Click **Testimonials (your Trustpilot reviews)**.
 2. At the top-right of the "Client testimonials" list, click
    **＋ Add client testimonial**.
 3. Fill in "Client name" and "Their words".
@@ -234,6 +234,7 @@ world sees it.
 | Messages & signups | app.web3forms.com |
 | Newsletter | constantcontact.com |
 | Skool community | skool.com/move-with-diana-9111/about |
+| Program application link (for Instagram and ManyChat) | movewithdianag.com/apply |
 | Website code & history | github.com/movewithdianag-ctrl/move-with-diana |
 | Website hosting | app.netlify.com — *Continue with GitHub* |
 | Domain name | Squarespace → Domains → movewithdianag.com |
@@ -249,6 +250,314 @@ world sees it.
    confusing, ask Nick first.
 3. **"Value code (internal)" boxes** in the editor. They're wiring, not words
    visitors read. Everything else is yours to change freely.
+
+## 12. Your 8-Week Pilates Program pages
+
+The 8-Week Pilates Program has its own small set of
+pages. They are not in the website menu. People reach them from the link you
+send them, and each page leads to the next one.
+
+**The one link to share is movewithdianag.com/apply.** Put it in your
+Instagram bio, your ManyChat replies, your DMs and your posts. Everyone
+starts with the questions, and the website sends them to the right page
+afterwards. Don't send people straight to the payment page.
+
+### The four pages and what each one is for
+
+| Page address | What it is for |
+| --- | --- |
+| movewithdianag.com/apply | The intake form. One short page of questions that takes about two minutes. **This is the link you share.** |
+| movewithdianag.com/pilates-program | The order page, laid out like a shop page. First the photo beside the program name, the review count, the price ($897), four short lines of what is included and one pay button that opens Stripe. Below that: three client reviews, what's included, how the 8 weeks work, what happens next, questions, all the reviews, and the pay button once more. People who are a fit land here straight from the form and see one slim bar on top: "[Name], you qualify for the 8-Week Pilates Program". |
+| movewithdianag.com/apply/not-yet | The "not yet" page. People who need an OK from their doctor or physical therapist first land here. A kind message and next steps, with no payment or booking. |
+| movewithdianag.com/pilates-program/welcome | The welcome page. Stripe sends people here right after they pay. Two numbered steps: 1. book the assessment, 2. book weekly sessions one at a time. Clients come back to this page each week. |
+
+So the path is: application, order page, Stripe, welcome page. There is no
+page in between. The old address movewithdianag.com/apply/approved still
+works. It simply opens the order page.
+
+The website decides between the order page and the "not yet" page by itself,
+from the first question on the form, the health check ("Do any of these
+apply to you right now?"):
+
+- **They tick "No medical conditions".** They go to the order page. The form does
+  not ask them about a doctor at all.
+- **They tick anything else.** One more question appears: "Has a doctor or
+  physical therapist cleared you for exercise?". "Yes" goes to the order
+  page. "Not yet" and "I'm not sure" go to the "not yet" page.
+
+Someone who is cleared but ticked surgery, a serious medical condition,
+pregnant or a recent baby still goes to the order page. They see a short
+extra note under the pay button saying you will read their notes, and your Google
+Sheet marks them "Needs review" so you know to read their details before you
+book them. A current injury on its own does not add that note.
+
+The "you qualify" bar only shows to someone who has just sent the form.
+If you open the order page yourself, you see the same page without it, and
+without the Apply, Reserve, Book trail. Its words are in **8-Week Program**,
+then **Order page (price & payment link)**, then **"You qualify" bar (top
+of the page)**. The **What happens next** list is in the same place.
+
+To see each version yourself, without filling in the form, open one of
+these links:
+
+- movewithdianag.com/pilates-program?preview=1 shows the page as a visitor
+  with a direct link sees it.
+- movewithdianag.com/pilates-program?preview=qualified shows the "you
+  qualify" bar (without a name).
+- movewithdianag.com/pilates-program?preview=qualified&review=1 also shows
+  the extra note under the pay button.
+- Add &pay=1 to any of the three (for example ?preview=1&pay=1) to see the
+  pay button as it looks once the Stripe link is pasted in. In this preview
+  the button goes nowhere.
+
+These preview links are not counted as page views or pay clicks.
+
+The four short lines above the pay button are in **Order page extras**,
+under **Short lines above the pay button**. The three reviews near the top
+are the first three names in **Testimonials to show**. The list of all
+reviews lower down shows your saved testimonials, six first, with a
+**Show more reviews** button for the rest.
+
+The order page has one price and one pay button. There is no payment plan
+run by you or by the website. People who would like to pay over time can
+choose that on the Stripe payment page, where a pay-later provider (such as
+Klarna or Affirm) offers it, once you have turned those on in Stripe. The
+provider decides who is approved. You are paid the full amount up front, and
+the provider collects the installments. See docs/STRIPE-SETUP.md, Part 5.
+
+The order page says this in one place: the question **"Can I pay over
+time?"** in **8-Week Program**, under **FAQ questions & answers**. Keep it
+modest: please don't promise approval, 0% interest or exact installment
+amounts, because the provider sets those for each person. If you have not
+turned on any pay-later method in Stripe, delete that question so the order
+page does not mention it.
+
+The old addresses that start with movewithdianag.com/strong-and-safe still
+work. They simply open the new pages.
+
+At the top of these pages there is a small trail, **Apply, Reserve, Book**,
+that lights up the step the person is on. It is only a signpost, not a menu.
+The three words are in **8-Week Program**, under **Slim header & footer on
+the program pages**. Keep each one to a single short word so the trail fits
+on a phone. The "not yet" page does not show the trail.
+
+### Editing the words, questions and prices
+
+Log in at **movewithdianag.com/admin** (section 1). Two sections hold
+everything:
+
+- **8-Week Program (order page, welcome, booking)** holds the program name,
+  what's included, how the 8 weeks work, the FAQ, the price, the welcome
+  page and the booking calendars.
+- **Intake form** holds the few lines at the top of the form, every
+  question, the buttons and error messages, and the "not yet" page.
+
+Edit and Publish exactly as in section 2. Lists (what's included, FAQ,
+answers to a question) work as in section 3.
+
+**How the form is laid out.** The whole form is one page that people
+scroll down, with one button at the end. There are no separate screens and
+no "next" buttons. It has seven short parts, in this order:
+
+1. The health check: tick boxes for surgery in the last 6 months, a serious
+   medical condition, pregnant, a recent baby, a current injury, or "None of
+   these". It comes first on purpose, so safety comes first.
+2. The clearance question, with an optional box for details. It only
+   appears when something other than "No medical conditions" is ticked.
+3. Where the body needs the most care.
+4. Discomfort on a typical day, from 0 to 10.
+5. What they would love to be able to do again, in their own words.
+6. Name, email and phone. The phone number is optional.
+7. One tick box to agree, then the send button.
+
+Everyone can finish the form, whatever they answer, so you get every lead.
+
+**To reword a question:** open **Intake form**, scroll to **Questions**,
+and open the part you want. Change the "Question" box or the "Help text
+under the question" box, then Publish.
+
+**To reword an answer:** open the question, then **Answers**, and change
+the "Answer text" box. You can also drag answers into a new order. Leave
+the "Value code (internal)" box next to it exactly as it is. That code is
+what gets saved to your Google Sheet, and the form uses it to decide which
+page a person sees next. If you would like to add or remove an answer,
+ask Nick, because the sheet needs a matching change.
+
+**The rule that decides who is a fit** lives in **Who is a fit (advanced
+rules)**, at the bottom of the form settings. It holds two things: which
+answer to the clearance question counts as cleared, and the list of health
+boxes that add the "I'll read your notes carefully" note and the "Needs
+review" mark. Both are written as value codes, so this box is one for Nick.
+Tell him what you want to change (for example, "a current injury should
+also be marked for review") and he will update it. The form is built to
+play safe: if those codes ever stop matching the questions, people are sent
+to the "not yet" page and never straight to payment.
+
+**The time estimate** ("About 2 minutes") is a line you type yourself. It
+is the "Time estimate" box under **Top of the form**. Keep it honest: if
+the form ever gets longer, raise it. The same promise appears in two other
+places, so keep all three the same: the "Search description" of the
+Application page (under **Search & browser-tab info**) and the "Come back
+when cleared" text on the "not yet" page.
+
+**The tick box at the end.** Open the last part under **Questions**,
+**"Agreement tick box"**:
+
+- **Tick box wording** is one sentence that says two things: Pilates is
+  exercise, not medical care, and it is fine for you to contact the person
+  about their application. Reword it if you like, but keep both meanings.
+- **Moving a session line** is optional small print under the tick box.
+  It is empty, so nothing shows, and it is best left that way. The one
+  line about moving a session ("Need to move a session? Please give me at
+  least 24 hours notice.") is on the welcome page, in the weekly session
+  text under **8-Week Program**, then **Booking calendars**.
+- **Privacy line** is the short line under the policy. Empty the box to
+  hide it.
+
+**To change the price:** open **8-Week Program**, scroll to **Order page
+(price & payment link)**, and open **Price and Stripe link**. The price
+appears in several boxes, so change all of them:
+
+- the number ("Price (number only)")
+- "Price as shown"
+- the "Pay button text" (for example: Start Program)
+
+Important: the website only *shows* the
+price. The amount people are actually charged is set inside Stripe, so
+change it there too (see docs/STRIPE-SETUP.md).
+
+**Leave these alone unless Nick says so:**
+
+- Any box labelled **"value code (internal)"** or with the note "Advanced:
+  ask Nick before changing". These connect the form to your Google Sheet
+  and to the rule that decides who is a fit.
+- **Form behaviour (advanced)** and **Who is a fit (advanced rules)** in the
+  Intake form section.
+- Adding, deleting or reordering whole questions, and adding or deleting
+  answers. Rewording is always fine.
+- The words in curly brackets, such as `{firstName}`. Keep them exactly as
+  written. The website swaps them for the person's name or a number.
+
+### Where to paste your Stripe link
+
+There is one Stripe link. Open **8-Week Program**, then **Order page (price
+& payment link)**, then **Price and Stripe link**. In the box **"Stripe
+payment link"**, paste the Stripe link for the one payment of $897.
+
+Paste the whole address, starting with `https://`, then Publish. While the
+box is empty, the order page shows a "coming soon" note and an "email me
+for a payment link" button instead of a pay button, so nothing looks broken.
+
+### Where to paste your booking links
+
+Open **8-Week Program**, then **Booking calendars**. There are three boxes:
+
+- **Assessment booking link (75 minutes)**: the calendar on the welcome page
+  for the first session.
+- **Weekly session booking link (60 minutes)**: the calendar on the welcome
+  page where the client books each weekly session, one at a time. It shows
+  the next 14 days. They come back to the page each week, or you agree the
+  next time together at the end of a session. Every request waits for your
+  approval in Cal.com, and the client gets the confirmation by email.
+- **Quick call booking link**: for people who want to talk before they
+  decide. On the order page this is the last question, "Not ready to decide
+  yet?". When this link is filled in, the link in its answer reads "Book a
+  15 minute video call with me" and opens your quick call calendar. When it
+  is empty, the link reads "Ask me a question first" and opens an email to
+  you. The wordings are in **Order page (price & payment link)**: the boxes
+  **"Not ready yet?" question**, **link text** and **sentence**, and the
+  two boxes ending in **quick call**.
+
+While the first two are empty, the welcome page tells people you will
+message them within 24 hours to set their times.
+
+Each of the three links also has its own page that you can send to an
+existing client, so they book without you doing it by hand:
+movewithdianag.com/book/intro-call (15 minute call),
+movewithdianag.com/book/assessment (75 minute assessment) and
+movewithdianag.com/book/session (60 minute private session). Every booking
+still waits for your approval by email. These three pages only work once
+the new site changes are published. Until then, send the Cal.com links
+instead (they are listed in the playbook). When to send each one is in
+docs/CLIENT-PLAYBOOK.md, under "Your three booking links".
+
+A few more words you can change. On the welcome page (**8-Week Program**,
+then **Welcome page (after payment)**): the **What happens next** list.
+Only promise there what really happens.
+
+Under each calendar there is a button, **"I can't find a time that works"**.
+It opens an email to you that is already started for them, asking which days
+and times suit them. You reply and book the time yourself. The button text,
+the two email subjects and the opening lines of the email are in the same
+**Booking calendars** section.
+
+The private hub link is not needed for launch. In **8-Week Program**,
+under **Welcome page (after payment)**, there is a box called **"Private
+hub link (Skool)"**. While it is empty, the whole hub section stays hidden
+on the welcome page. If you paste your Skool hub address there later, the
+section and its button appear.
+
+When Stripe emails you about a new payment, message the client within 24
+hours and invite them to the private hub from Skool (Members, Invite). The
+welcome page tells them you will message within 24 hours to say hello and
+send the hub invite.
+
+### Where the applications go
+
+Every finished application is meant to land as a new row in a Google Sheet,
+with an alert to you. Until that sheet is connected, you get an email with
+the person's name and contact details only. Their health answers and the
+result (cleared or not yet) are left out of the email on purpose, to keep
+them private.
+
+In the sheet, every answer has its own column, so you can sort and filter:
+
+- **Surgery last 6 months, Serious condition, Pregnant, Recently
+  postpartum, Current injury**: each one says Y or N.
+- **Other health boxes**: almost always empty. If you add a box to the
+  health check, its name shows up here when someone ticks it.
+- **Cleared**: yes, no or not_sure. It says "not asked" for people who
+  ticked "No medical conditions", because the form skips that question for them.
+  If it ever says "config error" or "unknown", something on the form needs
+  fixing. The person was sent to the "not yet" page to be safe, so tell
+  Nick and message them yourself.
+- **Details**: anything they chose to add. It is optional, so it is often
+  empty.
+- **Areas**, **Pain 0-10 at start** and **Main goal**: the rest of their
+  answers.
+- **Status**: QUALIFIED or NOT CLEARED. **Needs review** says Y when you
+  should read their details before booking.
+
+The columns you fill in yourself (Start date, Paid?, Sessions used and
+Testimonial) sit next to their name. The full list, and the one-time tidy
+up for a sheet made with the older, longer form, are in Part 9 of
+integrations/google-sheet/SETUP.md. That part is a job for Nick.
+
+### The setup guides
+
+These four step-by-step guides live in the website's files. Nick can open
+them for you or walk through them with you:
+
+- **docs/STRIPE-SETUP.md**: creating the one Stripe payment link, turning
+  on pay over time, Apple Pay and Google Pay, and sending people to the
+  welcome page after they pay.
+- **docs/SCHEDULING-SETUP.md**: setting up the assessment, weekly session
+  and quick call calendars.
+- **docs/LEAD-ALERTS-SETUP.md**: getting an alert email each time someone
+  applies. Keep notifications on for your mail app so you see it at once.
+- **integrations/google-sheet/SETUP.md**: connecting the Google Sheet that
+  stores every application.
+
+### Your day to day playbook
+
+Once the pages are live, **docs/CLIENT-PLAYBOOK.md** is the one to keep
+open. It is your routine for the program, in about 15 minutes a day: how to
+reply when someone applies, what to send before each session, the weekly
+check-in and when to ask for a review. Nothing is decided yet for after
+week 8. Every message in it is ready to copy and paste. Ask Nick to send it
+to you as a document you can keep on your phone.
+
+---
 
 That's everything. Log in, change what you want, press Publish, give it two
 minutes. You've got this.

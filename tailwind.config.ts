@@ -29,6 +29,8 @@ const config: Config = {
         },
         // Near-black warm dark for the footer / CTA band
         char: "#1D1813",
+        // Trustpilot's own green. Review stars only, never as a second accent.
+        trustpilot: "#00B67A",
       },
       fontFamily: {
         display: ['"Fraunces"', "Georgia", "'Times New Roman'", "serif"],

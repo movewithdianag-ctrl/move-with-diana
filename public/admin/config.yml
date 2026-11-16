@@ -130,6 +130,154 @@ collections:
               - { label: "Question", name: "question", widget: "string" }
               - { label: "Answer", name: "answer", widget: "text" }
 
+      # ─────────────────────────────── HOME PAGE V2 ────────────────────────
+      # Unlisted test page at /v2. Not in the menu, footer or search results.
+      - name: "homeV2"
+        label: "Home page v2 (test page at /v2)"
+        file: "src/content/homeV2.json"
+        fields:
+          - label: "Search & browser-tab info"
+            name: "meta"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Browser-tab title", name: "title", widget: "string" }
+              - { label: "Search description", name: "description", widget: "text", hint: "This page is hidden from Google while it is a test page." }
+          - label: "Buttons"
+            name: "cta"
+            widget: "object"
+            collapsed: true
+            hint: "The same main button is used all the way down the page. It opens the contact form with Private 1:1 selected."
+            fields:
+              - { label: "Main button", name: "primaryLabel", widget: "string" }
+              - { label: "Second button", name: "secondaryLabel", widget: "string", hint: "Leads to the Offers page." }
+              - { label: "Small line under the top buttons", name: "replyNote", widget: "string", required: false }
+          - label: "Top of page (hero)"
+            name: "hero"
+            widget: "object"
+            collapsed: true
+            hint: "The photo is the same one as the live home page. Change it under Home page."
+            fields:
+              - { label: "Small label above the headline", name: "eyebrow", widget: "string", required: false }
+              - { label: "Big headline", name: "headline", widget: "string" }
+              - { label: "Sentence under the headline", name: "subhead", widget: "text" }
+          - label: "Who it's for"
+            name: "callout"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Small label above the heading", name: "eyebrow", widget: "string", required: false }
+              - { label: "Section heading", name: "heading", widget: "string" }
+              - label: "List"
+                name: "items"
+                widget: "list"
+                field: { label: "Line", name: "line", widget: "string" }
+                hint: "Short lines with checkmarks. Each one finishes the sentence in the heading."
+              - { label: "Photo", name: "photo", widget: "image", required: false, hint: "A tall (portrait) photo works best. It is cropped to 4:5." }
+              - { label: "Photo description", name: "photoAlt", widget: "string", required: false, hint: "For screen readers. One short sentence." }
+          - label: "What we work on"
+            name: "whatChanges"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Small label above the heading", name: "eyebrow", widget: "string", required: false }
+              - { label: "Section heading", name: "heading", widget: "string" }
+              - { label: "Text under the heading", name: "body", widget: "text", required: false }
+              - label: "Cards"
+                name: "items"
+                widget: "list"
+                summary: "{{fields.title}}"
+                hint: "Three works best."
+                fields:
+                  - { label: "Short title", name: "title", widget: "string" }
+                  - { label: "Sentence", name: "detail", widget: "text" }
+          - label: "The method"
+            name: "method"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Small label above the heading", name: "eyebrow", widget: "string", required: false }
+              - { label: "Section heading", name: "heading", widget: "string" }
+              - { label: "Text under the heading", name: "body", widget: "text", required: false }
+              - label: "Steps"
+                name: "steps"
+                widget: "list"
+                summary: "{{fields.title}}"
+                hint: "The numbers are added for you, in this order."
+                fields:
+                  - { label: "Short title", name: "title", widget: "string" }
+                  - { label: "Sentence", name: "detail", widget: "text" }
+          - label: "What makes this different"
+            name: "different"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Small label above the heading", name: "eyebrow", widget: "string", required: false }
+              - { label: "Section heading", name: "heading", widget: "string" }
+              - label: "Points"
+                name: "items"
+                widget: "list"
+                summary: "{{fields.title}}"
+                hint: "Use only facts that are true today."
+                fields:
+                  - { label: "Short title", name: "title", widget: "string" }
+                  - { label: "Sentence", name: "detail", widget: "text" }
+              - { label: "Photo", name: "photo", widget: "image", required: false, hint: "A tall (portrait) photo works best. It is cropped to 4:5." }
+              - { label: "Photo description", name: "photoAlt", widget: "string", required: false, hint: "For screen readers. One short sentence." }
+          - label: "Ways to work with me (above the offers carousel)"
+            name: "offers"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Small label above the heading", name: "eyebrow", widget: "string", required: false }
+              - { label: "Section heading", name: "heading", widget: "string" }
+              - { label: "Text under the heading", name: "body", widget: "text", required: false }
+          - label: "Reviews"
+            name: "proof"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Small label above the heading", name: "eyebrow", widget: "string", required: false }
+              - { label: "Section heading", name: "heading", widget: "string" }
+              - { label: "Text under the heading", name: "body", widget: "text", required: false }
+              - label: "Reviews to show"
+                name: "reviewNames"
+                widget: "list"
+                field: { label: "Reviewer name", name: "name", widget: "string" }
+                hint: "Type the name exactly as it appears under Testimonials. The review text is pulled from there, word for word. Three works best."
+              - { label: "Link under the reviews", name: "linkLabel", widget: "string", required: false, hint: "Leads to the Reviews page." }
+          - label: "How to start"
+            name: "howToStart"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Small label above the heading", name: "eyebrow", widget: "string", required: false }
+              - { label: "Section heading", name: "heading", widget: "string" }
+              - label: "Steps"
+                name: "steps"
+                widget: "list"
+                summary: "{{fields.title}}"
+                hint: "The numbers are added for you, in this order."
+                fields:
+                  - { label: "Short title", name: "title", widget: "string" }
+                  - { label: "Sentence", name: "detail", widget: "text" }
+          - label: "Closing band (dark)"
+            name: "closing"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Text", name: "body", widget: "text", required: false }
+          - { label: "FAQ section heading", name: "faqHeading", widget: "string" }
+          - label: "FAQ questions & answers"
+            name: "faqs"
+            widget: "list"
+            summary: "{{fields.question}}"
+            hint: "Drag the handle on the left of each item to reorder. Use the + button to add and the … menu to delete."
+            fields:
+              - { label: "Question", name: "question", widget: "string" }
+              - { label: "Answer", name: "answer", widget: "text" }
+
       # ─────────────────────────────── ABOUT PAGE ──────────────────────────
       - name: "about"
         label: "About page"
@@ -231,7 +379,7 @@ collections:
               - { label: "Your public Trustpilot page link", name: "profileUrl", widget: "string", required: false, hint: "Your business page on trustpilot.com." }
               - { label: "\"Write a review\" link", name: "reviewUrl", widget: "string", required: false, hint: "The link you send clients to leave a review. While it's filled in, a button shows on the page." }
               - { label: "\"Write a review\" button text", name: "reviewButtonLabel", widget: "string", required: false }
-          - { label: "Also show the saved client testimonials", name: "showSavedTestimonials", widget: "boolean", required: false, hint: "Turn on to show the quotes from \"Testimonials (saved for later)\" under the Trustpilot reviews." }
+          - { label: "Also show the saved client testimonials", name: "showSavedTestimonials", widget: "boolean", required: false, hint: "Turn on to show the quotes from \"Testimonials (your Trustpilot reviews)\" under the Trustpilot reviews." }
 
       # ────────────────────────────── CONTACT PAGE ─────────────────────────
       - name: "contact"
@@ -340,10 +488,10 @@ collections:
 
       # ────────────────────────────── TESTIMONIALS ─────────────────────────
       - name: "testimonials"
-        label: "Testimonials (saved for later)"
+        label: "Testimonials (your Trustpilot reviews)"
         file: "src/content/testimonials.json"
         fields:
-          - { label: "Section heading", name: "heading", widget: "string", hint: "These show on the Reviews page only when \"Also show the saved client testimonials\" is turned on there — otherwise they're saved here, ready." }
+          - { label: "Section heading", name: "heading", widget: "string", hint: "These show on the Reviews page when \"Also show the saved client testimonials\" is turned on there. The list also feeds the 8-Week Program order page: the quotes you pick there come from here, and the review count shown there is the number of entries in this list. So only add reviews that are on your Trustpilot page." }
           - { label: "Small label above the heading", name: "eyebrow", widget: "string" }
           - { label: "\"Read more\" link text", name: "readMore", widget: "string" }
           - { label: "\"Read less\" link text", name: "readLess", widget: "string" }
@@ -355,3 +503,505 @@ collections:
             fields:
               - { label: "Client name", name: "name", widget: "string" }
               - { label: "Their words", name: "quote", widget: "text" }
+
+      # ───────────────── 8-WEEK PROGRAM (order page, welcome, booking) ─────
+      - name: "program"
+        label: "8-Week Program (order page, welcome, booking)"
+        file: "src/content/program.json"
+        fields:
+          - label: "Search & browser-tab info"
+            name: "meta"
+            widget: "object"
+            collapsed: true
+            hint: "What the browser tab shows on each program page. The order and welcome pages are hidden from Google on purpose."
+            fields:
+              - label: "Order page"
+                name: "checkout"
+                widget: "object"
+                fields:
+                  - { label: "Browser-tab title", name: "title", widget: "string" }
+                  - { label: "Search description", name: "description", widget: "text" }
+              - label: "Welcome page (after payment)"
+                name: "welcome"
+                widget: "object"
+                fields:
+                  - { label: "Browser-tab title", name: "title", widget: "string" }
+                  - { label: "Search description", name: "description", widget: "text" }
+          - label: "Slim header & footer on the program pages"
+            name: "chrome"
+            widget: "object"
+            collapsed: true
+            hint: "The application, order and welcome pages use a slim header and footer instead of the full menu, so people stay focused."
+            fields:
+              - { label: "Logo link description", name: "homeLabel", widget: "string", hint: "Read aloud by screen readers. Not shown on screen." }
+              - { label: "Email subject for questions", name: "questionsSubject", widget: "string", hint: "The subject line already filled in when someone taps an email link on the program pages." }
+              - { label: "Progress trail description", name: "stepsLabel", widget: "string", hint: "The small Apply, Reserve, Book trail in the header. Read aloud by screen readers. Not shown on screen." }
+              - { label: "Progress trail, step 1", name: "stepApply", widget: "string", hint: "One short word. Lit on the application form." }
+              - { label: "Progress trail, step 2", name: "stepReserve", widget: "string", hint: "One short word. Lit on the order page." }
+              - { label: "Progress trail, step 3", name: "stepBook", widget: "string", hint: "One short word. Lit on the welcome page." }
+              - { label: "Footer disclaimer", name: "footerDisclaimer", widget: "string" }
+          - { label: "Program name (full)", name: "name", widget: "string" }
+          - { label: "Program name (short)", name: "shortName", widget: "string", hint: "Used where space is tight." }
+          - { label: "\"What's included\" heading", name: "includedHeading", widget: "string" }
+          - label: "What's included"
+            name: "included"
+            widget: "list"
+            summary: "{{fields.title}}"
+            hint: "Shown open on the order page, as a grid of short items. The four short lines beside the pay button are separate: Order page, Order page extras, Short lines above the pay button. Drag an item's grey bar to reorder, + Add to add, and the small x on the grey bar deletes it."
+            fields:
+              - { label: "Item", name: "title", widget: "string" }
+              - { label: "Short explanation", name: "detail", widget: "text" }
+          - { label: "\"How it works\" heading", name: "howItWorksHeading", widget: "string" }
+          - label: "How the 8 weeks work"
+            name: "howItWorks"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Step", name: "title", widget: "string" }
+              - { label: "Short explanation", name: "detail", widget: "text", required: false }
+          - { label: "Testimonials heading", name: "testimonialsHeading", widget: "string", hint: "The heading above the three short reviews near the top of the order page." }
+          - label: "Which testimonials to show"
+            name: "testimonialNames"
+            widget: "list"
+            field: { label: "Client name", name: "name", widget: "string" }
+            hint: "The first three names are the three short reviews near the top of the order page. Type each client's name exactly as it appears in \"Testimonials (your Trustpilot reviews)\". The quote is pulled from there. A name that doesn't match is simply skipped. The full list of reviews lower on the order page shows every saved testimonial."
+          - { label: "FAQ heading", name: "faqHeading", widget: "string" }
+          - label: "FAQ questions & answers"
+            name: "faq"
+            widget: "list"
+            summary: "{{fields.q}}"
+            hint: "Each item is one row that opens when tapped. Drag an item's grey bar to reorder, + Add to add, and the small x on the grey bar deletes it."
+            fields:
+              - { label: "Question", name: "q", widget: "string" }
+              - { label: "Answer", name: "a", widget: "text" }
+          - { label: "Disclaimer", name: "disclaimer", widget: "text", hint: "The \"exercise, not medical care\" wording. Please check with Nick before shortening this." }
+          - label: "Order page (price & payment link)"
+            name: "checkout"
+            widget: "object"
+            hint: "The page where people pay, movewithdianag.com/pilates-program. One price and one pay button. This is where your price and Stripe link live."
+            fields:
+              - label: "Price and Stripe link"
+                name: "payInFull"
+                widget: "object"
+                hint: "The one price for the program. People who want to pay over time choose that on the Stripe page, not here."
+                fields:
+                  - { label: "Short name", name: "label", widget: "string", hint: "Shown in the bottom bar on phones and in the subject of the email fallback." }
+                  - { label: "Price (number only)", name: "price", widget: "number", value_type: "int", hint: "Just the number, no $ sign. Changing it here does not change what Stripe charges. Update the price in Stripe too, and the price wording in the boxes below." }
+                  - { label: "Price as shown", name: "priceDisplay", widget: "string", hint: "For example $897." }
+                  - { label: "Small line beside the price", name: "sublabel", widget: "string", required: false, hint: "For example: One payment today." }
+                  - { label: "Stripe payment link", name: "stripeUrl", widget: "string", required: false, hint: "Paste your Stripe payment link here (it starts with https://buy.stripe.com/). While empty, the button shows as coming soon and offers to email you instead." }
+                  - { label: "Pay button text", name: "buttonLabel", widget: "string", hint: "Keep it short, for example: Start Program" }
+              - label: "\"You qualify\" bar (top of the page)"
+                name: "qualified"
+                widget: "object"
+                hint: "A slim bar with a check mark, shown only to someone who just sent the application and is a fit. Everyone else sees the same page without it. To see it yourself, open movewithdianag.com/pilates-program?preview=qualified"
+                fields:
+                  - { label: "Heading with their name", name: "heading", widget: "string", hint: "Keep {firstName} exactly as written. It is swapped for the person's first name." }
+                  - { label: "Heading without a name", name: "headingNoName", widget: "string" }
+                  - { label: "Note for people marked \"Needs review\"", name: "reviewNote", widget: "text", hint: "Small text under the pay button. To see it yourself, open movewithdianag.com/pilates-program?preview=qualified&review=1. Shown only to a cleared person who ticked one of the health boxes listed under \"Who is a fit\" in the application form (today: surgery, a serious condition, pregnant, or a recent baby)." }
+              - label: "What happens next"
+                name: "next"
+                widget: "object"
+                hint: "The numbered 1, 2, 3 row under the program details. Keep it true to what really happens."
+                fields:
+                  - { label: "Heading", name: "heading", widget: "string" }
+                  - label: "Steps"
+                    name: "steps"
+                    widget: "list"
+                    summary: "{{fields.title}}"
+                    fields:
+                      - { label: "Step", name: "title", widget: "string" }
+                      - { label: "Short explanation", name: "detail", widget: "text", required: false, hint: "Leave empty when the step says it all." }
+              - { label: "\"Not ready yet?\" question", name: "notReadyQuestion", widget: "string", required: false, hint: "The last row of the questions on the order page. Its answer is one of the sentences below, with the link under it. Leave empty to hide the row." }
+              - { label: "\"Not ready yet?\" link text", name: "notReadyLabel", widget: "string", hint: "Used while your quick call booking link is empty (Booking calendars). It opens an email to you." }
+              - { label: "\"Not ready yet?\" sentence", name: "notReadyText", widget: "string", hint: "Used while your quick call booking link is empty." }
+              - { label: "\"Not ready yet?\" link text, quick call", name: "notReadyCallLabel", widget: "string", required: false, hint: "Used once your quick call booking link is filled in. It opens that calendar. Keep the length of the call true to your calendar. If you leave this empty, the link text above is used." }
+              - { label: "\"Not ready yet?\" sentence, quick call", name: "notReadyCallText", widget: "text", required: false, hint: "Used once your quick call booking link is filled in. Say what to do and when, for example pick a time in the next few days." }
+              - { label: "Note while the Stripe link is missing", name: "pendingStripeNote", widget: "string", hint: "Shown instead of the pay button until the Stripe payment link above is pasted in." }
+              - { label: "Button while the Stripe link is missing", name: "pendingStripeButtonLabel", widget: "string", hint: "Opens an email to you." }
+              - label: "Order page extras"
+                name: "orderPage"
+                widget: "object"
+                collapsed: true
+                hint: "The smaller labels on the order page, the short lines above the pay button, and the photo."
+                fields:
+                  - { label: "Greyed-out button while the Stripe link is missing", name: "pendingButtonLabel", widget: "string" }
+                  - { label: "Contact page link while the Stripe link is missing", name: "pendingContactLabel", widget: "string" }
+                  - { label: "Bottom bar label (phones, screen readers)", name: "stickyBarLabel", widget: "string" }
+                  - { label: "Pay button text while Stripe opens", name: "payBusyLabel", widget: "string" }
+                  - label: "Short lines above the pay button"
+                    name: "highlights"
+                    widget: "list"
+                    field: { label: "Line", name: "line", widget: "string" }
+                    hint: "Three or four lines, each under about 8 words, shown with a check mark in the box above the pay button. Facts only, taken from What's included."
+                  - { label: "Star rating", name: "starRating", widget: "number", value_type: "int", min: 0, max: 5, required: false, hint: "The stars shown beside your reviews. Use 5 only while every review on your Trustpilot page is 5 stars. Set 0 to hide the stars." }
+                  - { label: "Star rating, read aloud by screen readers", name: "starsLabel", widget: "string", required: false, hint: "Keep {rating} exactly as written." }
+                  - { label: "Reviews line under the program name", name: "reviewsLine", widget: "string", required: false, hint: "Keep {count} exactly as written. It is swapped for the number of entries saved in \"Testimonials (your Trustpilot reviews)\"." }
+                  - { label: "Link to all reviews on Trustpilot", name: "reviewsLinkLabel", widget: "string", required: false, hint: "The link under the list of reviews. It opens your Trustpilot page." }
+                  - { label: "\"Show more reviews\" button", name: "showMoreReviewsLabel", widget: "string", hint: "The list of reviews on the order page shows six first. This button shows the rest." }
+                  - { label: "Photo", name: "photo", widget: "image", required: false, hint: "The one large photo of the order page: beside the price on computers, above it on phones. A tall (portrait) photo with you in the middle works best, because phones show only the middle band." }
+                  - { label: "Photo description", name: "photoAlt", widget: "string", required: false, hint: "For screen readers. One short sentence." }
+                  - { label: "(auto) photo width", name: "photoW", widget: "hidden", required: false }
+                  - { label: "(auto) photo height", name: "photoH", widget: "hidden", required: false }
+          - label: "Welcome page (after payment)"
+            name: "welcome"
+            widget: "object"
+            hint: "movewithdianag.com/pilates-program/welcome. Stripe sends people here right after they pay."
+            fields:
+              - { label: "Small label above the heading", name: "eyebrow", widget: "string" }
+              - { label: "Heading", name: "heading", widget: "string", hint: "Used when the site doesn't know the person's first name." }
+              - { label: "Heading with their name", name: "headingWithName", widget: "string", hint: "Keep {firstName} exactly as written. It is swapped for the person's first name." }
+              - { label: "Intro", name: "intro", widget: "text", required: false, hint: "Leave empty to hide it." }
+              - { label: "Receipt note", name: "receiptNote", widget: "string", required: false, hint: "Leave empty to hide it." }
+              - { label: "\"Before your assessment\" heading", name: "prepHeading", widget: "string" }
+              - label: "Before your assessment"
+                name: "prep"
+                widget: "list"
+                field: { label: "Line", name: "line", widget: "string" }
+                hint: "Each item is one line. Drag to reorder."
+              - { label: "\"What happens next\" heading", name: "nextHeading", widget: "string", required: false }
+              - label: "What happens next"
+                name: "next"
+                widget: "list"
+                required: false
+                summary: "{{fields.title}}"
+                hint: "A short timeline under the two calendars. Only promise what really happens, for example when you will message them. Remove every item to hide the block."
+                fields:
+                  - { label: "When", name: "title", widget: "string" }
+                  - { label: "What happens", name: "detail", widget: "text" }
+              - { label: "Private hub heading", name: "hubHeading", widget: "string" }
+              - { label: "Private hub text", name: "hubText", widget: "text" }
+              - { label: "Private hub button", name: "hubButtonLabel", widget: "string" }
+              - { label: "Private hub link (Skool)", name: "hubUrl", widget: "string", required: false, hint: "Paste the web address of your private hub here. While empty, the whole private hub block is hidden on the welcome page." }
+          - label: "Booking calendars"
+            name: "booking"
+            widget: "object"
+            hint: "The calendars people use to book their assessment, their weekly sessions, and a quick call."
+            fields:
+              - { label: "Assessment booking link (75 minutes)", name: "assessmentUrl", widget: "string", required: false, hint: "Paste the booking link for your 75-minute online assessment here. While empty, the welcome page shows the \"calendar is being connected\" note below instead of a calendar." }
+              - { label: "Weekly session booking link (60 minutes)", name: "sessionUrl", widget: "string", required: false, hint: "Paste the booking link for your 60-minute private sessions here. While empty, the welcome page shows the \"calendar is being connected\" note below instead of a calendar." }
+              - { label: "Quick call booking link", name: "callUrl", widget: "string", required: false, hint: "Paste the booking link for a short call here. The \"Not ready yet?\" link on the order page opens your quick call calendar when this link is filled in, and opens an email to you when it is empty." }
+              - { label: "Assessment small label", name: "assessmentEyebrow", widget: "string", required: false, hint: "A short line above the heading that says who this step is for. Leave empty to hide it." }
+              - { label: "Assessment heading", name: "assessmentHeading", widget: "string", hint: "Step 1 on the welcome page. The step number is added for you." }
+              - { label: "Assessment text", name: "assessmentText", widget: "text", hint: "Say what to do and why. If you mention how many days ahead people can book, keep it the same as in your booking calendar." }
+              - { label: "Assessment calendar description", name: "assessmentTitle", widget: "string", hint: "Read aloud by screen readers. Not shown on screen." }
+              - { label: "Weekly sessions small label", name: "sessionEyebrow", widget: "string", required: false, hint: "A short line above the heading that says who this step is for. Leave empty to hide it." }
+              - { label: "Weekly sessions heading", name: "sessionHeading", widget: "string", hint: "Step 2 on the welcome page. The step number is added for you." }
+              - { label: "Weekly sessions text", name: "sessionText", widget: "text", hint: "Sessions are booked one at a time, because your schedule changes every week. Do not promise the same time each week. If you mention how many days ahead people can book, keep it the same as in your booking calendar." }
+              - { label: "Weekly sessions calendar description", name: "sessionTitle", widget: "string", hint: "Read aloud by screen readers. Not shown on screen." }
+              - { label: "Small note under the assessment text", name: "detailsNote", widget: "string", required: false, hint: "One quiet line shown on step 1, for example about time zones and the confirmation email. Leave empty to hide it." }
+              - { label: "\"Calendar is being connected\" note", name: "pendingNote", widget: "string", hint: "Shown in place of a calendar while its booking link is empty." }
+              - { label: "\"Open in a new tab\" link text", name: "openLinkLabel", widget: "string" }
+              - { label: "Loading message", name: "loadingLabel", widget: "string" }
+              - { label: "\"I can't find a time\" button", name: "cantFindLabel", widget: "string", hint: "Shown under each calendar. Opens an email to you that is already started for them." }
+              - { label: "\"I can't find a time\" email subject, assessment", name: "cantFindAssessmentSubject", widget: "string" }
+              - { label: "\"I can't find a time\" email subject, weekly sessions", name: "cantFindSessionSubject", widget: "string" }
+              - { label: "\"I can't find a time\" email text", name: "cantFindBody", widget: "text", hint: "The start of the email they send you. Keep it short and end by asking for the days and times that suit them." }
+          - label: "Booking pages (one link per calendar)"
+            name: "bookingPages"
+            widget: "object"
+            hint: "Three simple pages you can send to a client so they book by themselves. Each page shows one calendar and nothing else. The web addresses cannot be changed here. The time zone note, the buttons and the booking links come from Booking calendars above."
+            fields:
+              - label: "15 minute call page"
+                name: "introCall"
+                widget: "object"
+                collapsed: true
+                hint: "movewithdianag.com/book/intro-call. It shows the calendar from the Quick call booking link above."
+                fields:
+                  - { label: "Browser tab title", name: "metaTitle", widget: "string" }
+                  - { label: "Short description", name: "metaDescription", widget: "string", required: false, hint: "Shown when the link is shared. The page is hidden from Google." }
+                  - { label: "Small label", name: "eyebrow", widget: "string", required: false, hint: "A short line above the heading. Leave empty to hide it." }
+                  - { label: "Heading", name: "heading", widget: "string" }
+                  - { label: "Text", name: "text", widget: "text", hint: "One or two short sentences. Keep the length of the booking true to your calendar." }
+                  - { label: "Calendar description", name: "calendarTitle", widget: "string", hint: "Read aloud by screen readers. Not shown on screen." }
+                  - { label: "\"I can't find a time\" email subject", name: "cantFindSubject", widget: "string", required: false, hint: "Leave empty to hide the button on this page." }
+              - label: "Assessment page"
+                name: "assessment"
+                widget: "object"
+                collapsed: true
+                hint: "movewithdianag.com/book/assessment. It shows the calendar from the Assessment booking link above."
+                fields:
+                  - { label: "Browser tab title", name: "metaTitle", widget: "string" }
+                  - { label: "Short description", name: "metaDescription", widget: "string", required: false, hint: "Shown when the link is shared. The page is hidden from Google." }
+                  - { label: "Small label", name: "eyebrow", widget: "string", required: false, hint: "A short line above the heading. Leave empty to hide it." }
+                  - { label: "Heading", name: "heading", widget: "string" }
+                  - { label: "Text", name: "text", widget: "text", hint: "One or two short sentences. Keep the length of the booking true to your calendar." }
+                  - { label: "Calendar description", name: "calendarTitle", widget: "string", hint: "Read aloud by screen readers. Not shown on screen." }
+                  - { label: "\"I can't find a time\" email subject", name: "cantFindSubject", widget: "string", required: false, hint: "Leave empty to hide the button on this page." }
+              - label: "Private session page"
+                name: "session"
+                widget: "object"
+                collapsed: true
+                hint: "movewithdianag.com/book/session. It shows the calendar from the Weekly session booking link above."
+                fields:
+                  - { label: "Browser tab title", name: "metaTitle", widget: "string" }
+                  - { label: "Short description", name: "metaDescription", widget: "string", required: false, hint: "Shown when the link is shared. The page is hidden from Google." }
+                  - { label: "Small label", name: "eyebrow", widget: "string", required: false, hint: "A short line above the heading. Leave empty to hide it." }
+                  - { label: "Heading", name: "heading", widget: "string" }
+                  - { label: "Text", name: "text", widget: "text", hint: "One or two short sentences. Keep the length of the booking true to your calendar." }
+                  - { label: "Calendar description", name: "calendarTitle", widget: "string", hint: "Read aloud by screen readers. Not shown on screen." }
+                  - { label: "\"I can't find a time\" email subject", name: "cantFindSubject", widget: "string", required: false, hint: "Leave empty to hide the button on this page." }
+
+      # ─────────────────────────────── INTAKE FORM ─────────────────────────
+      - name: "intake"
+        label: "Intake form"
+        file: "src/content/intake.json"
+        fields:
+          - label: "Search & browser-tab info"
+            name: "meta"
+            widget: "object"
+            collapsed: true
+            hint: "What Google and the browser tab show. The \"not yet\" page is hidden from Google on purpose."
+            fields:
+              - label: "Application page"
+                name: "apply"
+                widget: "object"
+                fields:
+                  - { label: "Browser-tab title", name: "title", widget: "string" }
+                  - { label: "Search description", name: "description", widget: "text", hint: "1 to 2 sentences. This is also the preview text when the link is shared. If it mentions how long the form takes, keep it the same as the time estimate at the top of the form." }
+              - label: "\"Not yet\" page"
+                name: "notYet"
+                widget: "object"
+                fields:
+                  - { label: "Browser-tab title", name: "title", widget: "string" }
+                  - { label: "Search description", name: "description", widget: "text" }
+          - label: "Form behaviour (advanced)"
+            name: "settings"
+            widget: "object"
+            collapsed: true
+            hint: "Advanced: ask Nick before changing anything in this box."
+            fields:
+              - { label: "Days a half-finished application is remembered", name: "draftMaxAgeDays", widget: "number", value_type: "int", hint: "Only the name, email and phone are remembered on the visitor's device, never the health answers. Advanced: ask Nick before changing." }
+              - { label: "Include health answers in the backup email", name: "emailFallbackIncludesAnswers", widget: "boolean", required: false, hint: "Advanced: ask Nick before changing. Off keeps health answers and the screening result out of email: the backup email then carries the name, contact details and where the lead came from only." }
+          - label: "Top of the form"
+            name: "intro"
+            widget: "object"
+            hint: "The few lines above the first question."
+            fields:
+              - { label: "Small label above the heading", name: "eyebrow", widget: "string", required: false, hint: "Leave empty to hide it." }
+              - { label: "Time estimate", name: "timeEstimate", widget: "string", required: false, hint: "Shown next to the small label, for example \"About 2 minutes\". Keep it honest: if you add questions, raise it. Leave empty to hide it." }
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Sentence under the heading", name: "subline", widget: "text", required: false, hint: "One sentence on why you ask these questions. Leave empty to hide it." }
+              - label: "Short reassurances under the sentence"
+                name: "points"
+                widget: "list"
+                required: false
+                field: { label: "Reassurance", name: "point", widget: "string" }
+                hint: "Two or three very short lines, each shown with a small tick. For example: no payment on this page. Keep them true. Delete them all to hide the list."
+          - label: "Questions"
+            name: "blocks"
+            widget: "list"
+            hint: "The whole form is one page. Each item here is one block on that page, in the order people see them. The health question comes first on purpose (safety first). You can freely change the question, the help text and the answer wording. Boxes marked \"value code (internal)\" are wiring that connects the form to your Google Sheet and to the rule that decides who is a fit. Ask Nick before changing those, before adding or deleting a block, and before reordering."
+            types:
+              - label: "Tick all that apply"
+                name: "multi"
+                widget: "object"
+                summary: "{{fields.question}}"
+                fields:
+                  - &blockId { label: "Question value code (internal)", name: "id", widget: "string", hint: "Advanced: ask Nick before changing. The Google Sheet and the fit rules find this question by this code." }
+                  - &blockQuestion { label: "Question", name: "question", widget: "string" }
+                  - &blockHelp { label: "Help text under the question", name: "help", widget: "text", required: false }
+                  - &blockRequired { label: "Must be answered", name: "required", widget: "boolean", required: false, hint: "Off lets people leave this one empty." }
+                  - &blockRequiredMessage { label: "Message if left empty", name: "requiredMessage", widget: "string", required: false, hint: "Leave empty to use the standard message from \"Error messages\" below." }
+                  - &blockLayout { label: "Layout", name: "layout", widget: "select", required: false, options: [{ label: "One column", value: "stack" }, { label: "Two columns", value: "grid" }] }
+                  - { label: "\"No medical conditions\" answer, value code (internal)", name: "exclusive", widget: "string", required: false, hint: "Advanced: ask Nick before changing. The one answer that cannot be combined with the others: ticking it clears the rest, and ticking anything else clears it. Leave empty when every answer can be combined." }
+                  - &blockOptions
+                    label: "Answers"
+                    name: "options"
+                    widget: "list"
+                    summary: "{{fields.label}}"
+                    hint: "You can freely change the answer text and drag to reorder. Ask Nick before adding or deleting an answer."
+                    fields:
+                      - { label: "Answer text", name: "label", widget: "string" }
+                      - { label: "Value code (internal)", name: "value", widget: "string", hint: "Advanced: ask Nick before changing. This is what gets saved to your Google Sheet and what the fit rules look at." }
+                  - label: "\"Something else\" text box"
+                    name: "other"
+                    widget: "object"
+                    required: false
+                    collapsed: true
+                    hint: "A text box that opens when one particular answer is ticked."
+                    fields:
+                      - { label: "Answer that opens the box, value code (internal)", name: "optionValue", widget: "string", required: false, hint: "Advanced: ask Nick before changing." }
+                      - { label: "Text box value code (internal)", name: "fieldId", widget: "string", required: false, hint: "Advanced: ask Nick before changing." }
+                      - { label: "Text box label", name: "label", widget: "string", required: false }
+                      - { label: "Greyed-out example text", name: "placeholder", widget: "string", required: false }
+              - label: "Pick one"
+                name: "single"
+                widget: "object"
+                summary: "{{fields.question}}"
+                fields:
+                  - *blockId
+                  - *blockQuestion
+                  - *blockHelp
+                  - *blockRequired
+                  - *blockRequiredMessage
+                  - *blockLayout
+                  - *blockOptions
+                  - label: "Optional text box under the answers"
+                    name: "detail"
+                    widget: "object"
+                    required: false
+                    collapsed: true
+                    hint: "A box people can fill in if they want to, for example \"Tell me a little more, if you're comfortable.\" It is never required."
+                    fields:
+                      - { label: "Text box value code (internal)", name: "fieldId", widget: "string", required: false, hint: "Advanced: ask Nick before changing. Leave empty for no text box." }
+                      - { label: "Text box label", name: "label", widget: "string", required: false }
+                      - { label: "Help text above the box", name: "help", widget: "text", required: false }
+                      - { label: "Greyed-out example text", name: "placeholder", widget: "string", required: false }
+                      - { label: "Longest answer allowed (characters)", name: "maxLength", widget: "number", value_type: "int", required: false }
+              - label: "0 to 10 scale"
+                name: "scale"
+                widget: "object"
+                summary: "{{fields.question}}"
+                fields:
+                  - *blockId
+                  - *blockQuestion
+                  - *blockHelp
+                  - *blockRequired
+                  - *blockRequiredMessage
+                  - { label: "Lowest number", name: "min", widget: "number", value_type: "int", required: false, hint: "Advanced: ask Nick before changing." }
+                  - { label: "Highest number", name: "max", widget: "number", value_type: "int", required: false, hint: "Advanced: ask Nick before changing." }
+                  - { label: "Label at the low end", name: "minLabel", widget: "string", required: false }
+                  - { label: "Label at the high end", name: "maxLabel", widget: "string", required: false }
+              - label: "Written answer"
+                name: "longtext"
+                widget: "object"
+                summary: "{{fields.question}}"
+                fields:
+                  - *blockId
+                  - *blockQuestion
+                  - *blockHelp
+                  - *blockRequired
+                  - *blockRequiredMessage
+                  - { label: "Greyed-out example text", name: "placeholder", widget: "string", required: false }
+                  - { label: "Longest answer allowed (characters)", name: "maxLength", widget: "number", value_type: "int", required: false }
+              - label: "Contact details"
+                name: "contact"
+                widget: "object"
+                summary: "{{fields.question}}"
+                fields:
+                  - *blockId
+                  - *blockQuestion
+                  - *blockHelp
+                  - { label: "Must be answered", name: "required", widget: "boolean", required: false, hint: "Each box below has its own \"Must be filled in\" switch. That switch is the one that counts." }
+                  - label: "Boxes to fill in"
+                    name: "fields"
+                    widget: "list"
+                    summary: "{{fields.label}}"
+                    hint: "You can change the labels and messages. Ask Nick before adding or deleting a box."
+                    fields:
+                      - { label: "Label", name: "label", widget: "string" }
+                      - { label: "Value code (internal)", name: "id", widget: "string", hint: "Advanced: ask Nick before changing. The Google Sheet finds this box by this code." }
+                      - { label: "Kind of box (internal)", name: "type", widget: "select", options: [{ label: "Text", value: "text" }, { label: "Email", value: "email" }, { label: "Phone", value: "tel" }], hint: "Advanced: ask Nick before changing." }
+                      - { label: "Must be filled in", name: "required", widget: "boolean", required: false }
+                      - { label: "Autofill value code (internal)", name: "autoComplete", widget: "string", required: false, hint: "Advanced: ask Nick before changing. Lets phones fill the box in automatically." }
+                      - { label: "Capital letters (internal)", name: "autoCapitalize", widget: "select", required: false, options: [{ label: "Capitalise each word", value: "words" }, { label: "No capitals", value: "none" }], hint: "Advanced: ask Nick before changing." }
+                      - { label: "Help text under the box", name: "help", widget: "string", required: false }
+                      - { label: "Message if left empty", name: "requiredMessage", widget: "string", required: false, hint: "Leave empty to use the standard message." }
+                      - { label: "Message if it looks wrong", name: "invalidMessage", widget: "string", required: false, hint: "Leave empty to use the standard message." }
+              - label: "Agreement tick box"
+                name: "consent"
+                widget: "object"
+                summary: "{{fields.question}}"
+                fields:
+                  - *blockId
+                  - { label: "Small heading above the tick box", name: "question", widget: "string" }
+                  - { label: "Must be ticked", name: "required", widget: "boolean", required: false, hint: "Keep this on. It is how people agree to be contacted." }
+                  - { label: "Message if not ticked", name: "requiredMessage", widget: "string", required: false, hint: "Leave empty to use the standard message from \"Error messages\" below." }
+                  - { label: "Tick box wording", name: "consentLabel", widget: "text", hint: "One sentence that says two things: Pilates is exercise, not medical care, and you may contact the person about their application. Keep both meanings." }
+                  - { label: "Moving a session line", name: "policyText", widget: "text", required: false, hint: "Optional small print under the tick box. Normally left empty, which hides it. The 24 hours notice line lives in the weekly session text on the welcome page (8-Week Program, Booking calendars)." }
+                  - { label: "Privacy line", name: "note", widget: "text", required: false, hint: "A short line under the policy. Leave empty to hide it." }
+          - label: "Buttons & small labels"
+            name: "labels"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Send button", name: "submit", widget: "string" }
+              - { label: "Small line under the send button", name: "submitNote", widget: "text", required: false, hint: "Reassurance at the moment of sending: no payment here, and what the next page shows. Keep it true. Leave empty to hide it." }
+              - { label: "Question counter", name: "questionCount", widget: "string", required: false, hint: "The small \"2 of 7\" above each question. Keep {current} and {total} exactly as written. They are swapped for the numbers. Leave empty to hide the counter." }
+              - { label: "Send button while sending", name: "submitting", widget: "string" }
+              - { label: "\"Optional\" tag", name: "optional", widget: "string" }
+              - { label: "Email typo suggestion", name: "emailSuggestion", widget: "string", hint: "Keep {suggestion} exactly as written. It is swapped for the corrected email." }
+              - { label: "Accept the suggestion button", name: "emailSuggestionAccept", widget: "string" }
+              - { label: "Spoken note when \"No medical conditions\" clears the other ticks", name: "exclusiveCleared", widget: "string", hint: "Read aloud by screen readers. Not shown on screen." }
+              - { label: "Spoken note when another tick clears \"No medical conditions\"", name: "exclusiveUnticked", widget: "string", hint: "Read aloud by screen readers. Not shown on screen. Keep {option} exactly as written. It is swapped for the answer that was unticked." }
+              - { label: "Spoken note when a tick adds the clearance question", name: "followUpShown", widget: "string", hint: "Read aloud by screen readers. Not shown on screen." }
+              - { label: "Spoken note when the clearance question goes away", name: "followUpHidden", widget: "string", hint: "Read aloud by screen readers. Not shown on screen." }
+              - { label: "Spam trap label (internal)", name: "honeypotLabel", widget: "string", hint: "Advanced: ask Nick before changing. People never see this." }
+          - label: "Error messages"
+            name: "errors"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Something is missing", name: "required", widget: "string" }
+              - { label: "Nothing picked (pick one)", name: "chooseOne", widget: "string" }
+              - { label: "Nothing picked (tick all that apply)", name: "chooseAtLeastOne", widget: "string" }
+              - { label: "No number picked on the scale", name: "scaleRequired", widget: "string" }
+              - { label: "Email looks wrong", name: "emailInvalid", widget: "string" }
+              - { label: "Phone number looks wrong", name: "phoneInvalid", widget: "string" }
+              - { label: "Agreement box not ticked", name: "consentRequired", widget: "string" }
+              - { label: "Above the send button, one answer missing", name: "summaryOne", widget: "string" }
+              - { label: "Above the send button, several answers missing", name: "summaryMany", widget: "string", hint: "Keep {count} exactly as written. It is swapped for the number." }
+              - { label: "Sending failed", name: "submitFailed", widget: "string" }
+              - { label: "Try again button", name: "retryLabel", widget: "string" }
+              - { label: "\"Still stuck?\" text", name: "fallbackText", widget: "string" }
+              - { label: "Instagram link text", name: "fallbackInstagramLabel", widget: "string" }
+              - { label: "Email link text", name: "fallbackEmailLabel", widget: "string" }
+          - label: "Who is a fit (advanced rules)"
+            name: "eligibility"
+            widget: "object"
+            collapsed: true
+            hint: "Advanced: ask Nick before changing. These rules decide where a person lands after sending the form: the order page (a fit) or the \"not yet\" page. Someone who ticks \"No medical conditions\" is a fit and is never asked about clearance. Someone who ticks anything else is asked about clearance: only the cleared answer below is a fit, every other answer goes to the \"not yet\" page. If anything here does not match the questions above, the form plays safe and sends people to the \"not yet\" page."
+            fields:
+              - { label: "Health tick boxes question, value code (internal)", name: "flagsField", widget: "string", hint: "Advanced: ask Nick before changing. The question whose ticks decide whether the clearance question appears." }
+              - { label: "Clearance question, value code (internal)", name: "clearanceField", widget: "string", hint: "Advanced: ask Nick before changing. Only shown when a health box other than \"No medical conditions\" is ticked." }
+              - { label: "Answer that means cleared, value code (internal)", name: "clearedValue", widget: "string", hint: "Advanced: ask Nick before changing." }
+              - label: "Health boxes that add the \"I'll read your notes\" message"
+                name: "reviewFlags"
+                widget: "list"
+                field: { label: "Answer value code (internal)", name: "flag", widget: "string" }
+                hint: "Advanced: ask Nick before changing. A cleared person who ticked one of these is still a fit, but sees the extra note under the pay button of the order page (8-Week Program, Order page) and is marked \"Needs review\" in your Google Sheet. Each item is the value code of one answer to the health tick boxes question."
+          - label: "\"Not yet\" page"
+            name: "notYet"
+            widget: "object"
+            hint: "movewithdianag.com/apply/not-yet. Where people who are not cleared for exercise land. Kind and warm, with no payment or booking buttons."
+            fields:
+              - { label: "Small label above the heading", name: "eyebrow", widget: "string" }
+              - { label: "Heading with their name", name: "heading", widget: "string", hint: "Keep {firstName} exactly as written. It is swapped for the person's first name." }
+              - { label: "Heading without a name", name: "headingNoName", widget: "string" }
+              - label: "Message paragraphs"
+                name: "body"
+                widget: "list"
+                field: { label: "Paragraph", name: "paragraph", widget: "text" }
+                hint: "Each item is one paragraph. Drag to reorder."
+              - { label: "\"What to do next\" heading", name: "nextHeading", widget: "string" }
+              - label: "What to do next"
+                name: "next"
+                widget: "list"
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "Step", name: "title", widget: "string" }
+                  - { label: "Short explanation", name: "detail", widget: "text" }
+              - { label: "\"What to ask your doctor\" heading", name: "askHeading", widget: "string" }
+              - { label: "\"What to ask your doctor\" intro", name: "askIntro", widget: "text", required: false }
+              - label: "Questions to ask a doctor or PT"
+                name: "ask"
+                widget: "list"
+                field: { label: "Question", name: "question", widget: "string" }
+                hint: "Each item is one question. Drag to reorder."
+              - { label: "Contact heading", name: "contactHeading", widget: "string", required: false, hint: "Leave empty to hide the whole contact section (heading, Instagram link and email link)." }
+              - { label: "Email link text", name: "emailLabel", widget: "string" }
+              - { label: "Instagram link text", name: "messageLabel", widget: "string" }
+              - { label: "Community heading", name: "communityHeading", widget: "string", required: false, hint: "Leave empty to hide it." }
+              - { label: "Community text", name: "communityText", widget: "text", required: false, hint: "Leave empty to hide the community text and its button." }
+              - { label: "Community button", name: "communityLabel", widget: "string", hint: "Opens your free Skool community (the Community link in Site settings)." }
+              - label: "Newsletter box"
+                name: "newsletter"
+                widget: "object"
+                fields:
+                  - { label: "Newsletter name", name: "heading", widget: "string" }
+                  - { label: "Description", name: "text", widget: "text" }
+                  - { label: "Sign-up button", name: "buttonLabel", widget: "string" }
+                  - { label: "Success message", name: "successText", widget: "string" }
+                  - { label: "Error message", name: "errorText", widget: "string" }
+              - { label: "Disclaimer", name: "disclaimer", widget: "string" }

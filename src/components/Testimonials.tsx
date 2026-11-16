@@ -9,7 +9,14 @@ const TRUNCATE_WORDS = 40;
  * of stock avatars, no fake star ratings. Long quotes truncate at ~40 words
  * with an inline "Read more" expander.
  */
-function TestimonialCard({ t }: { t: Testimonial }) {
+export function TestimonialCard({
+  t,
+  roomyToggle = false,
+}: {
+  t: Testimonial;
+  /** Puts "Read more" on its own 44px line (a larger tap target). Off by default. */
+  roomyToggle?: boolean;
+}) {
   const [expanded, setExpanded] = useState(false);
   const words = t.quote.split(/\s+/);
   const isLong = words.length > TRUNCATE_WORDS;
@@ -24,7 +31,11 @@ function TestimonialCard({ t }: { t: Testimonial }) {
             type="button"
             onClick={() => setExpanded((v) => !v)}
             aria-expanded={expanded}
-            className="ml-2 inline font-semibold text-steel underline decoration-steel/40 underline-offset-2 hover:decoration-steel"
+            className={
+              roomyToggle
+                ? "mt-1 -mb-2 flex min-h-11 items-center font-semibold text-steel underline decoration-steel/40 underline-offset-2 hover:decoration-steel"
+                : "ml-2 inline font-semibold text-steel underline decoration-steel/40 underline-offset-2 hover:decoration-steel"
+            }
           >
             {expanded ? testimonialsSection.readLess : testimonialsSection.readMore}
           </button>

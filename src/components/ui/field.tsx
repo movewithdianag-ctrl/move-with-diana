@@ -16,7 +16,7 @@ import { cn } from "@/lib/utils";
  */
 
 const fieldClasses =
-  "w-full rounded-lg border border-ink/20 bg-white/70 px-4 py-3 text-base text-ink placeholder:text-umber transition-colors focus:border-steel focus:outline-none focus:ring-2 focus:ring-steel/30";
+  "w-full rounded-lg border border-ink/50 bg-white/70 px-4 py-3 text-base text-ink placeholder:text-umber transition-[border-color,box-shadow] duration-150 focus:border-steel focus:outline-none focus:ring-2 focus:ring-steel/30";
 
 export const Label = forwardRef<HTMLLabelElement, LabelHTMLAttributes<HTMLLabelElement>>(
   ({ className, ...props }, ref) => (
