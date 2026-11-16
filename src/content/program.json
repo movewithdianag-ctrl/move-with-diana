@@ -172,16 +172,8 @@
     "nextHeading": "What happens next",
     "next": [
       {
-        "title": "Within 24 hours",
-        "detail": "I message you myself to say hello and send your invite to the private hub."
-      },
-      {
         "title": "After you book",
-        "detail": "I confirm your time by email. That email has your video link, so keep it handy."
-      },
-      {
-        "title": "On the day",
-        "detail": "Be set up a few minutes early. The list under Before your assessment, just below, is all you need."
+        "detail": "You get an email with your assessment instructions and your Zoom link."
       }
     ],
     "hubHeading": "Your private hub",

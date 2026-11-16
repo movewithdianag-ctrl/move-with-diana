@@ -498,9 +498,7 @@ on the welcome page. If you paste your Skool hub address there later, the
 section and its button appear.
 
 When Stripe emails you about a new payment, message the client within 24
-hours and invite them to the private hub from Skool (Members, Invite). The
-welcome page tells them you will message within 24 hours to say hello and
-send the hub invite.
+hours and invite them to the private hub from Skool (Members, Invite).
 
 ### Where the applications go
 
