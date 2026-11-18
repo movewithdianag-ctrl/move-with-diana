@@ -1,9 +1,9 @@
-import { Check } from "lucide-react";
 import { program } from "@/content/content";
 import OrderSection from "./OrderSection";
 
 /**
- * "What's included" on the order page: every item open, as a grid to scan.
+ * "What's included" on the order page: every item open, numbered, in one
+ * column to read top to bottom.
  * Copy comes from program.json; with no items the section drops out.
  */
 export function Included() {
@@ -11,10 +11,15 @@ export function Included() {
 
   return (
     <OrderSection heading={program.includedHeading}>
-      <ul className="grid gap-x-10 gap-y-7 sm:grid-cols-2 lg:grid-cols-3">
-        {program.included.map((item) => (
-          <li key={item.title} className="flex items-start gap-3">
-            <Check aria-hidden="true" className="mt-1 h-4 w-4 shrink-0 text-steel" />
+      <ol className="mx-auto max-w-3xl divide-y divide-ink/10">
+        {program.included.map((item, i) => (
+          <li key={item.title} className="flex items-baseline gap-3 py-5 first:pt-0 last:pb-0">
+            <span
+              aria-hidden="true"
+              className="w-5 shrink-0 font-display text-lg font-medium leading-snug text-steel"
+            >
+              {i + 1}.
+            </span>
             <div>
               <h3 className="font-sans font-semibold leading-snug">{item.title}</h3>
               {item.detail && (
@@ -23,7 +28,7 @@ export function Included() {
             </div>
           </li>
         ))}
-      </ul>
+      </ol>
     </OrderSection>
   );
 }

@@ -16,56 +16,35 @@
     "stepApply": "Apply",
     "stepReserve": "Reserve",
     "stepBook": "Book",
-    "footerDisclaimer": "Pilates is exercise, not medical care."
+    "footerDisclaimer": ""
   },
   "name": "8-Week Pilates Program",
   "shortName": "8-Week Pilates Program",
-  "includedHeading": "What's included",
+  "includedHeading": "What's Included in Your 8-Week Program",
   "included": [
     {
-      "title": "1 online assessment (75 minutes)",
-      "detail": "We meet live on video. I watch how you move, listen to your history, and we set the goals for your 8 weeks."
+      "title": "Initial Online Assessment (75 minutes)",
+      "detail": "We'll meet live via Zoom to assess your movement, discuss your background, understand your needs, and establish clear goals for the next eight weeks."
     },
     {
-      "title": "7 private online sessions (60 minutes each)",
-      "detail": "Just you and me, once a week. Every session is planned for your body and adjusted as you get stronger."
+      "title": "7 Private Online Sessions (60 minutes each)",
+      "detail": "One-on-one coaching with me, once a week. Each session is individually designed around your needs and progress, with exercises adjusted as you develop strength, mobility, and control."
     },
     {
-      "title": "A written weekly plan",
-      "detail": "A short, clear plan after each session."
+      "title": "Personalized Weekly Plan",
+      "detail": "After each session, you'll receive a simple, written plan of what to practice during the week so you can stay consistent between sessions."
     },
     {
-      "title": "Session recordings",
-      "detail": "Our sessions are on Zoom and recorded. I send you the recording so you can revisit the cues at home."
+      "title": "Session Recordings",
+      "detail": "Every Zoom session is recorded, and you'll receive a copy to revisit the exercises, instructions, and cues whenever you need."
     },
     {
-      "title": "Weekly check-in by WhatsApp or text",
-      "detail": "A quick message from me each week to see how your body is feeling and answer questions."
-    },
-    {
-      "title": "The private Skool hub",
-      "detail": "Access to the private hub where your plans and resources live."
+      "title": "Weekly Check-In",
+      "detail": "A personal check-in via WhatsApp or text to see how you're feeling, follow your progress, and answer any questions that come up throughout the week."
     }
   ],
   "howItWorksHeading": "How the 8 weeks work",
-  "howItWorks": [
-    {
-      "title": "Week 1. Your assessment",
-      "detail": ""
-    },
-    {
-      "title": "Weeks 2 to 8. Your private sessions",
-      "detail": ""
-    },
-    {
-      "title": "Between sessions. Your weekly plan",
-      "detail": ""
-    },
-    {
-      "title": "Week 8. Where you are now",
-      "detail": ""
-    }
-  ],
+  "howItWorks": [],
   "testimonialsHeading": "What clients say",
   "testimonialNames": [
     "Sammi Davis Jr.",
@@ -85,14 +64,6 @@
     {
       "q": "I've never done Pilates. Is that OK?",
       "a": "Yes. Everything is taught step by step and adapted to you."
-    },
-    {
-      "q": "What equipment do I need?",
-      "a": "A mat or a carpeted floor, enough space to lie down with your arms and legs stretched out, and a device with a camera. That's all."
-    },
-    {
-      "q": "How do the online sessions work?",
-      "a": "We meet live on video. You set your camera so I can see your whole body, and I coach you in real time, just like in the studio."
     }
   ],
   "disclaimer": "Pilates is exercise, not medical care. This program does not diagnose, treat or cure any condition. Please check with your doctor or physical therapist before starting any exercise program, and stop any movement that causes sharp or unusual pain.",
@@ -182,7 +153,7 @@
     "callUrl": "https://cal.com/movewithdianag/strong-safe-call",
     "assessmentEyebrow": "For new 8-Week Pilates Program clients",
     "assessmentHeading": "Book your online assessment",
-    "assessmentText": "75 minutes, live on video. Pick the earliest time that suits you in the next 10 days. The sooner we meet, the sooner we start. I'll confirm it by email.",
+    "assessmentText": "Your 75-minute assessment takes place live via video. Choose the earliest available time that works for you within the next 10 days. The sooner we meet, the sooner we can get started! I'll confirm your appointment by email.",
     "assessmentTitle": "Book your online assessment with Diana",
     "detailsNote": "Times show in your own time zone. Your confirmation email has the video link.",
     "pendingNote": "My booking calendar is being connected. I'll message you within 24 hours to set your times.",
@@ -207,7 +178,7 @@
       "metaDescription": "Book your 75 minute online assessment with Diana.",
       "eyebrow": "75 minute assessment",
       "heading": "Book your online assessment",
-      "text": "75 minutes, live on video. I look at how you move and we plan your sessions from there. Pick a time and I'll confirm it by email.",
+      "text": "A 75-minute live video assessment where I evaluate your movement and create a plan tailored to your needs. Choose a time that works for you, and I'll confirm by email.",
       "calendarTitle": "Book your online assessment with Diana",
       "cantFindSubject": "I can't find a time for my assessment"
     },
@@ -216,7 +187,7 @@
       "metaDescription": "Book your 60 minute private online session with Diana.",
       "eyebrow": "60 minute session",
       "heading": "Book your private session",
-      "text": "60 minutes, live on video. Pick a time that suits you and I'll confirm it by email. Need to move a session? Please give me at least 24 hours notice.",
+      "text": "60-minute private session, live via video. Choose a time that works for you, and I'll confirm by email. Need to reschedule? Please give at least 24 hours' notice.",
       "calendarTitle": "Book your private online session with Diana",
       "cantFindSubject": "I can't find a time for my session"
     }

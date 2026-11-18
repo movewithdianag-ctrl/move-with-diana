@@ -6,7 +6,6 @@ import FunnelHeader from "./components/FunnelHeader";
 import FunnelFooter from "./components/FunnelFooter";
 import ScrollManager from "./components/ScrollManager";
 import Home from "./pages/Home";
-import HomeV2 from "./pages/HomeV2";
 import About from "./pages/About";
 import Offers from "./pages/Offers";
 import Reviews from "./pages/Reviews";
@@ -20,7 +19,6 @@ import BookEvent from "./pages/BookEvent";
 import {
   bookingRoutes,
   funnelRoutes,
-  HOME_V2_PATH,
   isSlimChromePath,
 } from "./content/content";
 import { captureAttribution } from "./lib/intake";
@@ -72,8 +70,6 @@ export default function App() {
       <main id="main" className="flex-1">
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* Home page v2: unlisted test page, noindex, not in the nav or footer */}
-          <Route path={HOME_V2_PATH} element={<HomeV2 />} />
           <Route path="/about" element={<About />} />
           <Route path="/offers" element={<Offers />} />
           <Route path="/reviews" element={<Reviews />} />

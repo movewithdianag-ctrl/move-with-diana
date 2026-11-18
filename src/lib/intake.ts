@@ -114,6 +114,8 @@ export interface IntakePayload {
   areas: string;
   painToday: number | "";
   goal: string;
+  /** Optional last words: "anything else you'd like me to know". */
+  anythingElse: string;
   consent: string;
   outcome: IntakeOutcome;
   needsReview: boolean;
@@ -668,6 +670,7 @@ function buildPayload(answers: IntakeAnswers, eligibility: EligibilityResult): I
     areas: areasText(clean),
     painToday: typeof pain === "number" && Number.isFinite(pain) ? pain : "",
     goal: answerText(clean, "goal"),
+    anythingElse: answerText(clean, "anythingElse"),
     consent: answerText(clean, "consent"),
     outcome: eligibility.outcome,
     needsReview: eligibility.needsReview || configError,
@@ -698,6 +701,7 @@ const HEALTH_KEYS: (keyof IntakePayload)[] = [
   "areas",
   "painToday",
   "goal",
+  "anythingElse",
 ];
 
 /**

@@ -267,7 +267,7 @@ afterwards. Don't send people straight to the payment page.
 | Page address | What it is for |
 | --- | --- |
 | movewithdianag.com/apply | The intake form. One short page of questions that takes about two minutes. **This is the link you share.** |
-| movewithdianag.com/pilates-program | The order page, laid out like a shop page. First the photo beside the program name, the review count, the price ($897), four short lines of what is included and one pay button that opens Stripe. Below that: three client reviews, what's included, how the 8 weeks work, what happens next, questions, all the reviews, and the pay button once more. People who are a fit land here straight from the form and see one slim bar on top: "[Name], you qualify for the 8-Week Pilates Program". |
+| movewithdianag.com/pilates-program | The order page, laid out like a shop page. First the photo beside the program name, the review count, the price ($897), four short lines of what is included and one pay button that opens Stripe. Below that: three client reviews, what's included (a numbered list), what happens next, questions, all the reviews, and the pay button once more. People who are a fit land here straight from the form and see one slim bar on top: "[Name], you qualify for the 8-Week Pilates Program". |
 | movewithdianag.com/apply/not-yet | The "not yet" page. People who need an OK from their doctor or physical therapist first land here. A kind message and next steps, with no payment or booking. |
 | movewithdianag.com/pilates-program/welcome | The welcome page. Stripe sends people here right after they pay. It has one job: book the 75 minute assessment. Weekly sessions are booked on movewithdianag.com/book/session, the link you send each client. |
 
@@ -347,7 +347,7 @@ Log in at **movewithdianag.com/admin** (section 1). Two sections hold
 everything:
 
 - **8-Week Program (order page, welcome, booking)** holds the program name,
-  what's included, how the 8 weeks work, the FAQ, the price, the welcome
+  what's included, the FAQ, the price, the welcome
   page and the booking calendars.
 - **Intake form** holds the few lines at the top of the form, every
   question, the buttons and error messages, and the "not yet" page.
@@ -403,9 +403,15 @@ when cleared" text on the "not yet" page.
 **The tick box at the end.** Open the last part under **Questions**,
 **"Agreement tick box"**:
 
-- **Tick box wording** is one sentence that says two things: Pilates is
-  exercise, not medical care, and it is fine for you to contact the person
-  about their application. Reword it if you like, but keep both meanings.
+- **"Is there anything else you'd like me to know?"** is an optional box
+  near the end of the form. Whatever the person writes lands in the
+  "Anything else" column of your sheet.
+- **Reviews at the end of the home page** are in **Home page**, under
+  "Reviews at the end of the page". Type the names of up to three reviews
+  exactly as they appear on the Reviews page. The first one shows large.
+- **Tick box wording** is one sentence saying it is fine for you to contact
+  the person about their application. Reword it if you like, but keep that
+  meaning.
 - **Moving a session line** is optional small print under the tick box.
   It is empty, so nothing shows, and it is best left that way. The one
   line about moving a session ("Need to move a session? Please give me at

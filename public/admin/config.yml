@@ -129,154 +129,18 @@ collections:
             fields:
               - { label: "Question", name: "question", widget: "string" }
               - { label: "Answer", name: "answer", widget: "text" }
-
-      # ─────────────────────────────── HOME PAGE V2 ────────────────────────
-      # Unlisted test page at /v2. Not in the menu, footer or search results.
-      - name: "homeV2"
-        label: "Home page v2 (test page at /v2)"
-        file: "src/content/homeV2.json"
-        fields:
-          - label: "Search & browser-tab info"
-            name: "meta"
+          - label: "Reviews at the end of the page"
+            name: "reviews"
             widget: "object"
-            collapsed: true
-            fields:
-              - { label: "Browser-tab title", name: "title", widget: "string" }
-              - { label: "Search description", name: "description", widget: "text", hint: "This page is hidden from Google while it is a test page." }
-          - label: "Buttons"
-            name: "cta"
-            widget: "object"
-            collapsed: true
-            hint: "The same main button is used all the way down the page. It opens the contact form with Private 1:1 selected."
-            fields:
-              - { label: "Main button", name: "primaryLabel", widget: "string" }
-              - { label: "Second button", name: "secondaryLabel", widget: "string", hint: "Leads to the Offers page." }
-              - { label: "Small line under the top buttons", name: "replyNote", widget: "string", required: false }
-          - label: "Top of page (hero)"
-            name: "hero"
-            widget: "object"
-            collapsed: true
-            hint: "The photo is the same one as the live home page. Change it under Home page."
-            fields:
-              - { label: "Small label above the headline", name: "eyebrow", widget: "string", required: false }
-              - { label: "Big headline", name: "headline", widget: "string" }
-              - { label: "Sentence under the headline", name: "subhead", widget: "text" }
-          - label: "Who it's for"
-            name: "callout"
-            widget: "object"
-            collapsed: true
-            fields:
-              - { label: "Small label above the heading", name: "eyebrow", widget: "string", required: false }
-              - { label: "Section heading", name: "heading", widget: "string" }
-              - label: "List"
-                name: "items"
-                widget: "list"
-                field: { label: "Line", name: "line", widget: "string" }
-                hint: "Short lines with checkmarks. Each one finishes the sentence in the heading."
-              - { label: "Photo", name: "photo", widget: "image", required: false, hint: "A tall (portrait) photo works best. It is cropped to 4:5." }
-              - { label: "Photo description", name: "photoAlt", widget: "string", required: false, hint: "For screen readers. One short sentence." }
-          - label: "What we work on"
-            name: "whatChanges"
-            widget: "object"
-            collapsed: true
-            fields:
-              - { label: "Small label above the heading", name: "eyebrow", widget: "string", required: false }
-              - { label: "Section heading", name: "heading", widget: "string" }
-              - { label: "Text under the heading", name: "body", widget: "text", required: false }
-              - label: "Cards"
-                name: "items"
-                widget: "list"
-                summary: "{{fields.title}}"
-                hint: "Three works best."
-                fields:
-                  - { label: "Short title", name: "title", widget: "string" }
-                  - { label: "Sentence", name: "detail", widget: "text" }
-          - label: "The method"
-            name: "method"
-            widget: "object"
-            collapsed: true
-            fields:
-              - { label: "Small label above the heading", name: "eyebrow", widget: "string", required: false }
-              - { label: "Section heading", name: "heading", widget: "string" }
-              - { label: "Text under the heading", name: "body", widget: "text", required: false }
-              - label: "Steps"
-                name: "steps"
-                widget: "list"
-                summary: "{{fields.title}}"
-                hint: "The numbers are added for you, in this order."
-                fields:
-                  - { label: "Short title", name: "title", widget: "string" }
-                  - { label: "Sentence", name: "detail", widget: "text" }
-          - label: "What makes this different"
-            name: "different"
-            widget: "object"
-            collapsed: true
-            fields:
-              - { label: "Small label above the heading", name: "eyebrow", widget: "string", required: false }
-              - { label: "Section heading", name: "heading", widget: "string" }
-              - label: "Points"
-                name: "items"
-                widget: "list"
-                summary: "{{fields.title}}"
-                hint: "Use only facts that are true today."
-                fields:
-                  - { label: "Short title", name: "title", widget: "string" }
-                  - { label: "Sentence", name: "detail", widget: "text" }
-              - { label: "Photo", name: "photo", widget: "image", required: false, hint: "A tall (portrait) photo works best. It is cropped to 4:5." }
-              - { label: "Photo description", name: "photoAlt", widget: "string", required: false, hint: "For screen readers. One short sentence." }
-          - label: "Ways to work with me (above the offers carousel)"
-            name: "offers"
-            widget: "object"
-            collapsed: true
-            fields:
-              - { label: "Small label above the heading", name: "eyebrow", widget: "string", required: false }
-              - { label: "Section heading", name: "heading", widget: "string" }
-              - { label: "Text under the heading", name: "body", widget: "text", required: false }
-          - label: "Reviews"
-            name: "proof"
-            widget: "object"
-            collapsed: true
-            fields:
-              - { label: "Small label above the heading", name: "eyebrow", widget: "string", required: false }
-              - { label: "Section heading", name: "heading", widget: "string" }
-              - { label: "Text under the heading", name: "body", widget: "text", required: false }
-              - label: "Reviews to show"
-                name: "reviewNames"
-                widget: "list"
-                field: { label: "Reviewer name", name: "name", widget: "string" }
-                hint: "Type the name exactly as it appears under Testimonials. The review text is pulled from there, word for word. Three works best."
-              - { label: "Link under the reviews", name: "linkLabel", widget: "string", required: false, hint: "Leads to the Reviews page." }
-          - label: "How to start"
-            name: "howToStart"
-            widget: "object"
-            collapsed: true
-            fields:
-              - { label: "Small label above the heading", name: "eyebrow", widget: "string", required: false }
-              - { label: "Section heading", name: "heading", widget: "string" }
-              - label: "Steps"
-                name: "steps"
-                widget: "list"
-                summary: "{{fields.title}}"
-                hint: "The numbers are added for you, in this order."
-                fields:
-                  - { label: "Short title", name: "title", widget: "string" }
-                  - { label: "Sentence", name: "detail", widget: "text" }
-          - label: "Closing band (dark)"
-            name: "closing"
-            widget: "object"
-            collapsed: true
             fields:
               - { label: "Heading", name: "heading", widget: "string" }
-              - { label: "Text", name: "body", widget: "text", required: false }
-          - { label: "FAQ section heading", name: "faqHeading", widget: "string" }
-          - label: "FAQ questions & answers"
-            name: "faqs"
-            widget: "list"
-            summary: "{{fields.question}}"
-            hint: "Drag the handle on the left of each item to reorder. Use the + button to add and the … menu to delete."
-            fields:
-              - { label: "Question", name: "question", widget: "string" }
-              - { label: "Answer", name: "answer", widget: "text" }
+              - label: "Which reviews to show"
+                name: "names"
+                widget: "list"
+                field: { label: "Client name", name: "name", widget: "string" }
+                hint: "Three names. The first is shown large, the other two beside it. Type each name exactly as it appears in \"Testimonials (your Trustpilot reviews)\". The quote is pulled from there. A name that doesn't match is skipped."
+              - { label: "Review count line", name: "countLine", widget: "string", hint: "{count} becomes the number of saved reviews." }
+              - { label: "Link to the Reviews page", name: "linkLabel", widget: "string" }
 
       # ─────────────────────────────── ABOUT PAGE ──────────────────────────
       - name: "about"
@@ -539,7 +403,7 @@ collections:
               - { label: "Progress trail, step 1", name: "stepApply", widget: "string", hint: "One short word. Lit on the application form." }
               - { label: "Progress trail, step 2", name: "stepReserve", widget: "string", hint: "One short word. Lit on the order page." }
               - { label: "Progress trail, step 3", name: "stepBook", widget: "string", hint: "One short word. Lit on the welcome page." }
-              - { label: "Footer disclaimer", name: "footerDisclaimer", widget: "string" }
+              - { label: "Footer disclaimer", name: "footerDisclaimer", widget: "string", required: false, hint: "Small print at the bottom of the funnel pages. Leave empty to hide it." }
           - { label: "Program name (full)", name: "name", widget: "string" }
           - { label: "Program name (short)", name: "shortName", widget: "string", hint: "Used where space is tight." }
           - { label: "\"What's included\" heading", name: "includedHeading", widget: "string" }
@@ -555,6 +419,8 @@ collections:
           - label: "How the 8 weeks work"
             name: "howItWorks"
             widget: "list"
+            required: false
+            hint: "With no steps, the whole section is hidden."
             summary: "{{fields.title}}"
             fields:
               - { label: "Step", name: "title", widget: "string" }
@@ -904,7 +770,7 @@ collections:
                   - { label: "Small heading above the tick box", name: "question", widget: "string" }
                   - { label: "Must be ticked", name: "required", widget: "boolean", required: false, hint: "Keep this on. It is how people agree to be contacted." }
                   - { label: "Message if not ticked", name: "requiredMessage", widget: "string", required: false, hint: "Leave empty to use the standard message from \"Error messages\" below." }
-                  - { label: "Tick box wording", name: "consentLabel", widget: "text", hint: "One sentence that says two things: Pilates is exercise, not medical care, and you may contact the person about their application. Keep both meanings." }
+                  - { label: "Tick box wording", name: "consentLabel", widget: "text", hint: "One sentence. The person ticks it to say you may contact them about their application." }
                   - { label: "Moving a session line", name: "policyText", widget: "text", required: false, hint: "Optional small print under the tick box. Normally left empty, which hides it. The 24 hours notice line lives in the weekly session text on the welcome page (8-Week Program, Booking calendars)." }
                   - { label: "Privacy line", name: "note", widget: "text", required: false, hint: "A short line under the policy. Leave empty to hide it." }
           - label: "Buttons & small labels"
@@ -1000,4 +866,4 @@ collections:
                   - { label: "Sign-up button", name: "buttonLabel", widget: "string" }
                   - { label: "Success message", name: "successText", widget: "string" }
                   - { label: "Error message", name: "errorText", widget: "string" }
-              - { label: "Disclaimer", name: "disclaimer", widget: "string" }
+              - { label: "Disclaimer", name: "disclaimer", widget: "string", required: false, hint: "Leave empty to hide it." }

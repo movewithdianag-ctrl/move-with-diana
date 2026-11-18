@@ -5,14 +5,15 @@ import Section from "@/components/Section";
 import ScheduleEmbed from "@/components/ScheduleEmbed";
 import OffersCarousel from "@/components/OffersCarousel";
 import Faq from "@/components/Faq";
+import HomeReviews from "@/components/HomeReviews";
 import { buttonClasses } from "@/components/ui/button";
 import { SHOW_SCHEDULE, SKOOL_COMMUNITY_URL } from "@/lib/config";
 
 /**
  * Home, matching the owner's reference build: hero → heading-less offers
- * carousel → FAQ. Removed sections (pillars, intro, offers grid,
- * testimonials, CTA band) keep their copy in src/content/content.ts marked
- * NOT RENDERED.
+ * carousel → FAQ → client reviews. Removed sections (pillars, intro, offers
+ * grid, CTA band) keep their copy in src/content/content.ts marked NOT
+ * RENDERED.
  */
 export default function Home() {
   return (
@@ -114,6 +115,9 @@ export default function Home() {
           <Faq />
         </div>
       </Section>
+
+      {/* ── Client reviews ───────────────────────────────────────────────── */}
+      <HomeReviews />
     </>
   );
 }

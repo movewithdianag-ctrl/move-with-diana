@@ -16,6 +16,7 @@
   "areas": "back, hips, other: wrists",
   "painToday": 6,
   "goal": "Test row sent with curl. Safe to delete.",
+  "anythingElse": "Test answer to the last question.",
   "consent": "yes",
   "outcome": "qualified",
   "needsReview": false,

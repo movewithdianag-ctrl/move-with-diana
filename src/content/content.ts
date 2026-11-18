@@ -6,7 +6,7 @@
  *      it edits the .json files in this folder through friendly forms.
  *      (settings.json, home.json, about.json, offers.json, reviews.json,
  *      contact.json, footer.json, testimonials.json, program.json,
- *      intake.json, homeV2.json)
+ *      intake.json)
  *
  *  This file is the typed adapter between those JSON files and the React
  *  components: it maps plain-English CMS fields onto the exact shapes the
@@ -25,7 +25,6 @@ import testimonialsJson from "./testimonials.json";
 import reviewsJsonRaw from "./reviews.json";
 import programJsonRaw from "./program.json";
 import intakeJsonRaw from "./intake.json";
-import homeV2JsonRaw from "./homeV2.json";
 
 /**
  * The CMS may omit or null image-dimension fields when Diana saves (they are
@@ -311,6 +310,23 @@ export const testimonialsSection = {
 };
 
 export const testimonials: Testimonial[] = testimonialsJson.items;
+
+/**
+ * The reviews at the end of the home page (home.json, reviews). The first
+ * name is the large quote; the next two sit beside it. Quotes are looked up
+ * by name in testimonials.json; a name that doesn't match is skipped.
+ */
+export const homeReviews = {
+  heading: homeJson.reviews?.heading ?? "",
+  items: (homeJson.reviews?.names ?? [])
+    .map((name) => testimonials.find((t) => t.name.trim() === name.trim()))
+    .filter((t): t is Testimonial => Boolean(t))
+    // A name typed twice shows once.
+    .filter((t, i, all) => all.indexOf(t) === i)
+    .slice(0, 3),
+  countLine: homeJson.reviews?.countLine ?? "",
+  linkLabel: homeJson.reviews?.linkLabel ?? "",
+};
 
 /* ────────────────────────────── Reviews page ────────────────────────────── */
 
@@ -1292,110 +1308,4 @@ export const funnelMeta: Record<FunnelRouteKey, FunnelPageMeta> = {
     path: funnelRoutes.welcome,
     noindex: true,
   },
-};
-
-/* ═════════════════════════════════════════════════════════════════════════
-   HOME PAGE V2  (homeV2.json), the unlisted test page at /v2
-
-   Same hero photo, offers carousel and FAQ look as the live home page, with
-   clearer copy and one call to action. Not linked from the menu or footer and
-   kept out of search results. Null-tolerant like the funnel content above.
-   ═════════════════════════════════════════════════════════════════════════ */
-
-/** Route path is fixed in code so a CMS edit can never break it. */
-export const HOME_V2_PATH = "/v2";
-
-/** The contact form option every v2 button preselects (contact.json, options). */
-const HOME_V2_INTEREST = "private-1:1";
-
-export interface HomeV2Section {
-  eyebrow: string;
-  heading: string;
-  body: string;
-}
-
-export interface HomeV2 {
-  meta: PageMeta;
-  cta: {
-    primaryLabel: string;
-    /** Contact form with the private session option preselected. */
-    primaryTo: string;
-    secondaryLabel: string;
-    secondaryTo: string;
-    replyNote: string;
-  };
-  hero: { eyebrow: string; headline: string; subhead: string };
-  callout: HomeV2Section & { items: string[]; photo: { src: string; alt: string } };
-  whatChanges: HomeV2Section & { items: TitledItem[] };
-  method: HomeV2Section & { steps: TitledItem[] };
-  different: HomeV2Section & { items: TitledItem[]; photo: { src: string; alt: string } };
-  offers: HomeV2Section;
-  proof: HomeV2Section & {
-    /** Real reviews, resolved by name from testimonials.json, word for word. */
-    reviews: Testimonial[];
-    linkLabel: string;
-    linkTo: string;
-  };
-  howToStart: HomeV2Section & { steps: TitledItem[] };
-  closing: { heading: string; body: string };
-  faqHeading: string;
-  faqs: Faq[];
-}
-
-const v2 = homeV2JsonRaw as unknown as NonNullable<Loose<typeof homeV2JsonRaw>>;
-
-const v2Section = (
-  v: { eyebrow?: unknown; heading?: unknown; body?: unknown } | null | undefined,
-): HomeV2Section => ({
-  eyebrow: str(v?.eyebrow),
-  heading: str(v?.heading),
-  body: str(v?.body),
-});
-
-export const homeV2: HomeV2 = {
-  meta: pageMeta(v2.meta, `Classical Pilates | ${site.name}`),
-  cta: {
-    primaryLabel: str(v2.cta?.primaryLabel).trim() || "Send me a message",
-    // Falls back to the plain contact page if the option is ever renamed.
-    primaryTo: contactPage.interests.some((i) => i.slug === HOME_V2_INTEREST)
-      ? `/contact?interest=${HOME_V2_INTEREST}`
-      : "/contact",
-    secondaryLabel: str(v2.cta?.secondaryLabel).trim() || hero.secondaryCtaAlt,
-    secondaryTo: "/offers",
-    replyNote: str(v2.cta?.replyNote),
-  },
-  hero: {
-    eyebrow: str(v2.hero?.eyebrow),
-    headline: str(v2.hero?.headline).trim() || hero.headline,
-    subhead: str(v2.hero?.subhead),
-  },
-  callout: {
-    ...v2Section(v2.callout),
-    items: strList(v2.callout?.items),
-    photo: { src: url(v2.callout?.photo), alt: str(v2.callout?.photoAlt) },
-  },
-  whatChanges: { ...v2Section(v2.whatChanges), items: titled(v2.whatChanges?.items) },
-  method: { ...v2Section(v2.method), steps: titled(v2.method?.steps) },
-  different: {
-    ...v2Section(v2.different),
-    items: titled(v2.different?.items),
-    photo: { src: url(v2.different?.photo), alt: str(v2.different?.photoAlt) },
-  },
-  offers: v2Section(v2.offers),
-  proof: {
-    ...v2Section(v2.proof),
-    reviews: strList(v2.proof?.reviewNames)
-      .map((name) => testimonials.find((t) => t.name.trim() === name.trim()))
-      .filter((t): t is Testimonial => Boolean(t))
-      // A name typed twice shows once.
-      .filter((t, i, all) => all.indexOf(t) === i),
-    linkLabel: str(v2.proof?.linkLabel),
-    linkTo: "/reviews",
-  },
-  howToStart: { ...v2Section(v2.howToStart), steps: titled(v2.howToStart?.steps) },
-  closing: { heading: str(v2.closing?.heading), body: str(v2.closing?.body) },
-  faqHeading: str(v2.faqHeading),
-  faqs: list(v2.faqs)
-    .map((f) => ({ question: str(f.question), answer: str(f.answer) }))
-    .filter((f) => f.question.trim() !== ""),
 };

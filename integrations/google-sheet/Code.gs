@@ -127,6 +127,7 @@ var COLUMNS = [
   { header: 'Cleared', field: 'cleared', width: 100 },
   { header: 'Details', field: 'conditionDetails', width: 300 },
   { header: 'Areas', field: 'areas', width: 200 },
+  { header: 'Anything else', field: 'anythingElse', width: 300 },
   { header: 'Consent (Y/N)', field: 'consent', width: 90 },
   { header: 'Source', field: 'source' },
   { header: 'UTM source', field: 'utmSource' },
@@ -391,6 +392,7 @@ function normalise_(data) {
     areas: text_(data.areas, LIMITS.areas),
     painToday: pain_(data.painToday),
     goal: text_(data.goal, LIMITS.longText, true),
+    anythingElse: text_(data.anythingElse, LIMITS.longText, true),
     consent: yesNo_(data.consent),
     source: text_(data.source, LIMITS.tag),
     utmSource: text_(data.utm_source, LIMITS.tag),
@@ -525,6 +527,7 @@ function rowValues_(lead) {
     cleared: lead.cleared,
     conditionDetails: lead.conditionDetails,
     areas: lead.areas,
+    anythingElse: lead.anythingElse,
     consent: lead.consent,
     source: lead.source,
     utmSource: lead.utmSource,
@@ -925,6 +928,7 @@ function buildEmail_(lead, ctx) {
       ['Health check', healthCheckText_(lead)],
       ['Cleared for exercise', pretty_(lead.cleared)],
       ['Details', lead.conditionDetails],
+      ['Anything else', lead.anythingElse],
       ['Consent', lead.consent === 'Y' ? 'Yes' : 'No']
     ]);
   }
@@ -1253,6 +1257,7 @@ function webhookBody_(lead, ctx) {
     body.other_flags = lead.otherFlags;
     body.cleared = lead.cleared;
     body.details = lead.conditionDetails;
+    body.anything_else = lead.anythingElse;
   }
   return body;
 }
@@ -1487,6 +1492,7 @@ function samplePayload_() {
     areas: 'back, hips, other: wrists',
     painToday: 6,
     goal: 'This is a test row. Safe to delete.',
+    anythingElse: 'Test answer to the last question.',
     consent: 'yes',
     outcome: 'qualified',
     needsReview: false,

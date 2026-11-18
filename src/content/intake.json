@@ -195,17 +195,25 @@
           "requiredMessage": "Please enter your mobile number.",
           "autoComplete": "tel",
           "autoCapitalize": "none",
-          "help": "So I can text you about scheduling.",
           "invalidMessage": "That number looks too short. Include the area code."
         }
       ]
+    },
+    {
+      "id": "anythingElse",
+      "type": "longtext",
+      "question": "Is there anything else you'd like me to know?",
+      "help": "",
+      "required": false,
+      "placeholder": "",
+      "maxLength": 1000
     },
     {
       "id": "consent",
       "type": "consent",
       "question": "Last step: a quick yes from you",
       "required": true,
-      "consentLabel": "I understand that Pilates is exercise, not medical care, and I'm happy for you to contact me about my application.",
+      "consentLabel": "I'm happy for you to contact me about my application.",
       "policyText": "",
       "note": ""
     }
@@ -275,8 +283,7 @@
     "ask": [
       "Am I cleared for gentle, low-impact exercise like one to one Pilates?",
       "Are there any movements or positions I should avoid for now?",
-      "Is there anything my instructor should know before we start?",
-      "When would be a sensible time to check in with you again?"
+      "Is there anything my instructor should know before we start?"
     ],
     "contactHeading": "",
     "emailLabel": "Email me",
@@ -286,11 +293,11 @@
     "communityLabel": "Visit the free community",
     "newsletter": {
       "heading": "The Weekly Cue",
-      "text": "One short, free email a week with a movement cue and what I'm teaching.",
+      "text": "A free weekly newsletter.",
       "buttonLabel": "Send me The Weekly Cue",
       "successText": "You're on the list. Welcome to The Weekly Cue.",
       "errorText": "Couldn't sign you up just now. Please try again."
     },
-    "disclaimer": "Pilates is exercise, not medical care. Nothing here is medical advice."
+    "disclaimer": ""
   }
 }

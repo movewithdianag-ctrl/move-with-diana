@@ -39,5 +39,15 @@
       "question": "How do I book, and what does it cost?",
       "answer": "Send a message through the contact form and tell me what you're interested in. I personally reply within 24–48 hours, and we'll discuss goals, scheduling, and pricing."
     }
-  ]
+  ],
+  "reviews": {
+    "heading": "What clients say",
+    "names": [
+      "Morgan",
+      "Darielle Gaines",
+      "Analisa Velez"
+    ],
+    "countLine": "{count} reviews on Trustpilot",
+    "linkLabel": "Read all reviews"
+  }
 }

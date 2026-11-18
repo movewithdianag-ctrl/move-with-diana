@@ -71,7 +71,7 @@ The alert email is the only alert in use, and it is where Diana acts. (A push or
 Two things to know:
 
 - **Text and Email open with the first line already typed.** It reads "Hi [first name], this is Diana from Move with Diana. Thank you for applying to the 8-Week Pilates Program." Diana adds the rest and sends it herself. Nothing is sent automatically. That first line is the same for every result and never contains a health detail. The email also has the subject "Your 8-Week Pilates Program application".
-- **The form does not ask how the person likes to be contacted.** Email is required and a mobile number is optional ("So I can text you about scheduling"). So for a good fit the next step suggests a text when a mobile number was given and an email when it was not. "Not cleared yet" is always an email. If Diana would like the form to ask "How would you like me to reach you?", that is a small change to the form for Nick.
+- **The form does not ask how the person likes to be contacted.** Email and a mobile number are both required. So for a good fit the next step suggests a text when a mobile number was given and an email when it was not. "Not cleared yet" is always an email. If Diana would like the form to ask "How would you like me to reach you?", that is a small change to the form for Nick.
 
 The message templates that go with each result are in `docs/CLIENT-PLAYBOOK.md`, section 1 (the 5 minute rule).
 

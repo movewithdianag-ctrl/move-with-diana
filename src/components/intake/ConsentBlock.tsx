@@ -21,7 +21,7 @@ interface ConsentBlockProps {
 }
 
 /**
- * The one tick box before sending: "exercise, not medical care" and the OK
+ * The one tick box before sending: the OK
  * to be contacted, in a single sentence. The policy line and the privacy
  * note under it are read, never ticked.
  */
