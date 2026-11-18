@@ -357,18 +357,19 @@ answers to a question) work as in section 3.
 
 **How the form is laid out.** The whole form is one page that people
 scroll down, with one button at the end. There are no separate screens and
-no "next" buttons. It has seven short parts, in this order:
+no "next" buttons. It has these short parts, in this order:
 
 1. The health check: tick boxes for surgery in the last 6 months, a serious
-   medical condition, pregnant, a recent baby, a current injury, or "None of
-   these". It comes first on purpose, so safety comes first.
+   medical condition, pregnant, a recent baby, a current injury, other, or
+   "No medical conditions". It comes first on purpose, so safety comes first.
 2. The clearance question, with an optional box for details. It only
    appears when something other than "No medical conditions" is ticked.
-3. Where the body needs the most care.
+3. Where the body has the most discomfort.
 4. Discomfort on a typical day, from 0 to 10.
-5. What they would love to be able to do again, in their own words.
-6. Name, email and phone. The phone number is optional.
-7. One tick box to agree, then the send button.
+5. Name, email and mobile number.
+6. "Is there anything else you'd like me to know?" This one is optional.
+   Whatever the person writes lands in the "Anything else" column of your
+   sheet. Then the send button.
 
 Everyone can finish the form, whatever they answer, so you get every lead.
 
@@ -400,25 +401,14 @@ places, so keep all three the same: the "Search description" of the
 Application page (under **Search & browser-tab info**) and the "Come back
 when cleared" text on the "not yet" page.
 
-**The tick box at the end.** Open the last part under **Questions**,
-**"Agreement tick box"**:
+**There is no tick box at the end.** The form used to end with an
+agreement tick box. It was removed, so people finish on the last question
+and the send button. If you ever want it back, open **Questions**, add an
+**"Agreement tick box"** at the end, and Publish.
 
-- **"Is there anything else you'd like me to know?"** is an optional box
-  near the end of the form. Whatever the person writes lands in the
-  "Anything else" column of your sheet.
-- **Reviews at the end of the home page** are in **Home page**, under
-  "Reviews at the end of the page". Type the names of up to three reviews
-  exactly as they appear on the Reviews page. The first one shows large.
-- **Tick box wording** is one sentence saying it is fine for you to contact
-  the person about their application. Reword it if you like, but keep that
-  meaning.
-- **Moving a session line** is optional small print under the tick box.
-  It is empty, so nothing shows, and it is best left that way. The one
-  line about moving a session ("Need to move a session? Please give me at
-  least 24 hours notice.") is on the weekly session booking page
-  (movewithdianag.com/book/session).
-- **Privacy line** is the short line under the policy. Empty the box to
-  hide it.
+**Reviews at the end of the home page** are in **Home page**, under
+"Reviews at the end of the page". Type the names of up to three reviews
+exactly as they appear on the Reviews page. The first one shows large.
 
 **To change the price:** open **8-Week Program**, scroll to **Order page
 (price & payment link)**, and open **Price and Stripe link**. The price

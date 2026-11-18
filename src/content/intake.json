@@ -207,15 +207,6 @@
       "required": false,
       "placeholder": "",
       "maxLength": 1000
-    },
-    {
-      "id": "consent",
-      "type": "consent",
-      "question": "Last step: a quick yes from you",
-      "required": true,
-      "consentLabel": "I'm happy for you to contact me about my application.",
-      "policyText": "",
-      "note": ""
     }
   ],
   "labels": {

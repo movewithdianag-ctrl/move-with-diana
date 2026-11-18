@@ -296,7 +296,7 @@ The form is one short page, and the sheet keeps one column per fact:
 | Pain 0-10 at start | The number they picked for a typical day. |
 | Main goal | Their own words. |
 | Anything else | Their answer to the optional last question, "Is there anything else you'd like me to know?" Often empty. |
-| Consent (Y/N) | `Y` when they ticked the one box at the end, saying it is fine for Diana to contact them. |
+| Consent (Y/N) | Empty for new rows: the form no longer has a tick box at the end. Older rows show `Y` when the box was ticked. |
 
 ### Moving from the longer form (one time)
 
@@ -304,7 +304,7 @@ The first version of the form asked more questions and used different column nam
 
 1. Publish the new `Code.gs` (the five steps above), then run **setup** once from the editor. The new columns appear on the far right with their dropdowns.
 2. These older columns are no longer filled in. Delete them, or keep them for the old rows: `First name`, `Last name`, `Surgery in last 6 months`, `Serious diagnosis`, `Pregnant or postpartum`, `Current injuries`, `Medications`, `Cleared for exercise`, `Pilates experience`, `Heard about me from`, `Agreed: exercise, not medical care`.
-3. Older rows keep `Yes` in the Consent column and new rows get `Y`. Both mean the same thing.
+3. Older rows keep `Yes` or `Y` in the Consent column. New rows leave it empty, because the form no longer has a tick box at the end.
 4. If any row has the status `PARTIAL`, it came from an old setting that saved contact details before the form was finished. That setting is gone. Those rows can be deleted.
 
 A sheet created fresh with this version needs none of this.

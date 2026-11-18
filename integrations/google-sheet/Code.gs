@@ -393,7 +393,8 @@ function normalise_(data) {
     painToday: pain_(data.painToday),
     goal: text_(data.goal, LIMITS.longText, true),
     anythingElse: text_(data.anythingElse, LIMITS.longText, true),
-    consent: yesNo_(data.consent),
+    // Blank when the form has no tick box, so the sheet never shows a false N.
+    consent: data.consent === undefined || data.consent === null || data.consent === '' ? '' : yesNo_(data.consent),
     source: text_(data.source, LIMITS.tag),
     utmSource: text_(data.utm_source, LIMITS.tag),
     utmMedium: text_(data.utm_medium, LIMITS.tag),
@@ -928,9 +929,9 @@ function buildEmail_(lead, ctx) {
       ['Health check', healthCheckText_(lead)],
       ['Cleared for exercise', pretty_(lead.cleared)],
       ['Details', lead.conditionDetails],
-      ['Anything else', lead.anythingElse],
-      ['Consent', lead.consent === 'Y' ? 'Yes' : 'No']
+      ['Anything else', lead.anythingElse]
     ]);
+    if (lead.consent !== '') rows.push(['Consent', lead.consent === 'Y' ? 'Yes' : 'No']);
   }
   rows = rows.concat([
     ['Source', lead.source],

@@ -849,9 +849,11 @@ export const programTestimonials: Testimonial[] = program.testimonialNames
  *                   one optional text box on the same block)
  *   3. areas        where the body needs care (+ areasOther)
  *   4. painToday    0 to 10
- *   5. goal         what they would love to do again
- *   6. contact      name, email, phone
- *   7. consent      one tick box, the policy line, then the send button
+ *   5. contact      name, email, phone
+ *   6. anythingElse optional free text, then the send button
+ *
+ * The "consent" block type (one tick box) still exists but intake.json no
+ * longer uses it.
  *
  * Why it is ordered this way:
  *  • Safety first, PAR-Q style, but in a single tap for most people ("None of
