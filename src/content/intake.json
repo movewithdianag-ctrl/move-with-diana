@@ -71,7 +71,7 @@
       "id": "cleared",
       "type": "single",
       "question": "Has a doctor or physical therapist cleared you for exercise?",
-      "help": "Your answer tells me where we can begin.",
+      "help": "",
       "required": true,
       "layout": "stack",
       "options": [
@@ -91,7 +91,7 @@
       "detail": {
         "fieldId": "conditionDetails",
         "label": "Anything you'd like me to know?",
-        "help": "A sentence or two is plenty. What happened and roughly when.",
+        "help": "",
         "placeholder": "For example: knee replacement in June, cleared by my surgeon in October",
         "maxLength": 600
       }

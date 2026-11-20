@@ -550,7 +550,7 @@ collections:
               - { label: "Quick call booking link", name: "callUrl", widget: "string", required: false, hint: "Paste the booking link for a short call here. The \"Not ready yet?\" link on the order page opens your quick call calendar when this link is filled in, and opens an email to you when it is empty." }
               - { label: "Assessment small label", name: "assessmentEyebrow", widget: "string", required: false, hint: "A short line above the heading that says who this step is for. Leave empty to hide it." }
               - { label: "Assessment heading", name: "assessmentHeading", widget: "string", hint: "Step 1 on the welcome page. The step number is added for you." }
-              - { label: "Assessment text", name: "assessmentText", widget: "text", hint: "Say what to do and why. If you mention how many days ahead people can book, keep it the same as in your booking calendar." }
+              - { label: "Assessment text", name: "assessmentText", widget: "text", hint: "Say what the assessment is and what happens in it. If you mention how many days ahead people can book, keep it the same as in your booking calendar." }
               - { label: "Assessment calendar description", name: "assessmentTitle", widget: "string", hint: "Read aloud by screen readers. Not shown on screen." }
               - { label: "Small note under the assessment text", name: "detailsNote", widget: "string", required: false, hint: "One quiet line under the assessment text, for example about time zones and the confirmation email. Leave empty to hide it." }
               - { label: "\"Calendar is being connected\" note", name: "pendingNote", widget: "string", hint: "Shown in place of a calendar while its booking link is empty." }
@@ -574,7 +574,7 @@ collections:
                   - { label: "Short description", name: "metaDescription", widget: "string", required: false, hint: "Shown when the link is shared. The page is hidden from Google." }
                   - { label: "Small label", name: "eyebrow", widget: "string", required: false, hint: "A short line above the heading. Leave empty to hide it." }
                   - { label: "Heading", name: "heading", widget: "string" }
-                  - { label: "Text", name: "text", widget: "text", hint: "One or two short sentences. Keep the length of the booking true to your calendar." }
+                  - { label: "Text", name: "text", widget: "text", hint: "A few short sentences. Press Enter to start a new line on the page. Keep the length of the booking true to your calendar." }
                   - { label: "Calendar description", name: "calendarTitle", widget: "string", hint: "Read aloud by screen readers. Not shown on screen." }
                   - { label: "\"I can't find a time\" email subject", name: "cantFindSubject", widget: "string", required: false, hint: "Leave empty to hide the button on this page." }
               - label: "Assessment page"
@@ -587,7 +587,7 @@ collections:
                   - { label: "Short description", name: "metaDescription", widget: "string", required: false, hint: "Shown when the link is shared. The page is hidden from Google." }
                   - { label: "Small label", name: "eyebrow", widget: "string", required: false, hint: "A short line above the heading. Leave empty to hide it." }
                   - { label: "Heading", name: "heading", widget: "string" }
-                  - { label: "Text", name: "text", widget: "text", hint: "One or two short sentences. Keep the length of the booking true to your calendar." }
+                  - { label: "Text", name: "text", widget: "text", hint: "A few short sentences. Press Enter to start a new line on the page. Keep the length of the booking true to your calendar." }
                   - { label: "Calendar description", name: "calendarTitle", widget: "string", hint: "Read aloud by screen readers. Not shown on screen." }
                   - { label: "\"I can't find a time\" email subject", name: "cantFindSubject", widget: "string", required: false, hint: "Leave empty to hide the button on this page." }
               - label: "Private session page"
@@ -600,7 +600,7 @@ collections:
                   - { label: "Short description", name: "metaDescription", widget: "string", required: false, hint: "Shown when the link is shared. The page is hidden from Google." }
                   - { label: "Small label", name: "eyebrow", widget: "string", required: false, hint: "A short line above the heading. Leave empty to hide it." }
                   - { label: "Heading", name: "heading", widget: "string" }
-                  - { label: "Text", name: "text", widget: "text", hint: "One or two short sentences. Keep the length of the booking true to your calendar." }
+                  - { label: "Text", name: "text", widget: "text", hint: "A few short sentences. Press Enter to start a new line on the page. Keep the length of the booking true to your calendar." }
                   - { label: "Calendar description", name: "calendarTitle", widget: "string", hint: "Read aloud by screen readers. Not shown on screen." }
                   - { label: "\"I can't find a time\" email subject", name: "cantFindSubject", widget: "string", required: false, hint: "Leave empty to hide the button on this page." }
 

@@ -153,7 +153,7 @@
     "callUrl": "https://cal.com/movewithdianag/strong-safe-call",
     "assessmentEyebrow": "For new 8-Week Pilates Program clients",
     "assessmentHeading": "Book your online assessment",
-    "assessmentText": "Your 75-minute assessment takes place live via video. Choose the earliest available time that works for you within the next 10 days. The sooner we meet, the sooner we can get started! I'll confirm your appointment by email.",
+    "assessmentText": "Your 75-minute initial assessment takes place live via video. We'll review your history, go through a Pilates session so I can assess your movement, and establish your goals for the 8-Week Pilates Program.",
     "assessmentTitle": "Book your online assessment with Diana",
     "detailsNote": "Times show in your own time zone. Your confirmation email has the video link.",
     "pendingNote": "My booking calendar is being connected. I'll message you within 24 hours to set your times.",
@@ -169,7 +169,7 @@
       "metaDescription": "Book a free 15 minute video call with Diana.",
       "eyebrow": "15 minute call",
       "heading": "Book a 15 minute call with me",
-      "text": "A short video call to talk through what you need and answer your questions. It is free. Pick a time and I'll confirm it by email.",
+      "text": "Free 15-minute video call to discuss your needs, learn more about the 8-Week Pilates Program, and answer any questions you may have.",
       "calendarTitle": "Book a 15 minute call with Diana",
       "cantFindSubject": "I can't find a time for a call"
     },
@@ -187,7 +187,7 @@
       "metaDescription": "Book your 60 minute private online session with Diana.",
       "eyebrow": "60 minute session",
       "heading": "Book your private session",
-      "text": "60-minute private session, live via video. Choose a time that works for you, and I'll confirm by email. Need to reschedule? Please give at least 24 hours' notice.",
+      "text": "60-minute private online session, live via video.\nBook one session at a time, choosing the day and time that works best for you each week. I'll confirm your booking by email and send your video link.",
       "calendarTitle": "Book your private online session with Diana",
       "cantFindSubject": "I can't find a time for my session"
     }

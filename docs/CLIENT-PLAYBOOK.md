@@ -159,7 +159,7 @@ After this, write "Closed" next to their name in the sheet and let it rest. You 
 
 - Cal.com emails the client a confirmation with the video link as soon as you accept the booking. Until you accept, they only have a note saying the request was sent.
 - Cal.com sends a reminder email 24 hours before and another 3 hours before every booking.
-- Cal.com is also set to send a text 3 hours before, when the client typed a mobile number into the booking form (that field is optional). We have not yet confirmed that texts really go out on the free Cal.com plan, so do not count on the text until you have tested it (see "Reminders" in `docs/SCHEDULING-SETUP.md`).
+- Cal.com is also set to send a text 3 hours before, when the client typed a phone number into the booking form (that field is optional). We have not yet confirmed that texts really go out on the free Cal.com plan, so do not count on the text until you have tested it (see "Reminders" in `docs/SCHEDULING-SETUP.md`).
 
 Those reminders, the Cal.com confirmation and the Stripe receipt are the only automatic messages a client gets. Everything else comes from you.
 

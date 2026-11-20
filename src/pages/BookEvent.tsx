@@ -53,7 +53,9 @@ export default function BookEvent({ event }: { event: BookingPageKey }) {
               {page.heading}
             </h1>
             {page.text && (
-              <p className="measure mt-3 leading-relaxed text-umber">{page.text}</p>
+              <p className="measure mt-3 whitespace-pre-line leading-relaxed text-umber">
+                {page.text}
+              </p>
             )}
             {/* Only true once there is a calendar to show. */}
             {booking.detailsNote && url && (
