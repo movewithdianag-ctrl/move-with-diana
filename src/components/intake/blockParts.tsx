@@ -1,6 +1,6 @@
 import { useState, type KeyboardEvent, type ReactNode } from "react";
 import { Check } from "lucide-react";
-import type { IntakeBlock } from "@/content/content";
+import { intake, type IntakeBlock } from "@/content/content";
 import type { IntakeAnswers } from "@/lib/intake";
 import { cn } from "@/lib/utils";
 
@@ -102,6 +102,8 @@ export function sameBlockProps<
     block.id,
     block.other?.fieldId,
     block.detail?.fieldId,
+    // The detail box's example depends on the health answers.
+    block.detail?.examples.length ? intake.eligibility.flagsField : undefined,
     ...block.fields.map((field) => field.id),
   ];
   for (const key of answerKeys) {

@@ -364,6 +364,12 @@ no "next" buttons. It has these short parts, in this order:
    "No medical conditions". It comes first on purpose, so safety comes first.
 2. The clearance question, with an optional box for details. It only
    appears when something other than "No medical conditions" is ticked.
+   The grey example in the details box changes with the answer ticked in
+   part 1: pregnant, a recent baby and a serious medical condition each
+   have their own, and everyone else sees the knee example. Edit them in
+   the editor under that question's **Optional text box under the
+   answers**, then **Examples for one health answer**. Keep each one short
+   (about 60 characters), or the end gets cut off on a phone.
 3. Where the body has the most discomfort.
 4. Discomfort on a typical day, from 0 to 10.
 5. Name, email and mobile number.

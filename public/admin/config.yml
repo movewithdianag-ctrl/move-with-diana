@@ -709,7 +709,17 @@ collections:
                       - { label: "Text box value code (internal)", name: "fieldId", widget: "string", required: false, hint: "Advanced: ask Nick before changing. Leave empty for no text box." }
                       - { label: "Text box label", name: "label", widget: "string", required: false }
                       - { label: "Help text above the box", name: "help", widget: "text", required: false }
-                      - { label: "Greyed-out example text", name: "placeholder", widget: "string", required: false }
+                      - { label: "Greyed-out example text", name: "placeholder", widget: "string", required: false, hint: "Shown when none of the examples below fits." }
+                      - label: "Examples for one health answer"
+                        name: "examples"
+                        widget: "list"
+                        required: false
+                        collapsed: true
+                        summary: "{{fields.when}}"
+                        hint: "A different greyed-out example when a certain answer was ticked in the first question. If several are ticked, the first example in this list wins."
+                        fields:
+                          - { label: "When this answer is ticked", name: "when", widget: "select", options: [{ label: "Surgery in the last 6 months", value: "surgery6mo" }, { label: "A serious medical condition", value: "seriousDiagnosis" }, { label: "I'm pregnant", value: "pregnant" }, { label: "I had a baby recently", value: "postpartum" }, { label: "A current injury", value: "currentInjury" }, { label: "Other", value: "other" }] }
+                          - { label: "Greyed-out example text", name: "placeholder", widget: "string" }
                       - { label: "Longest answer allowed (characters)", name: "maxLength", widget: "number", value_type: "int", required: false }
               - label: "0 to 10 scale"
                 name: "scale"

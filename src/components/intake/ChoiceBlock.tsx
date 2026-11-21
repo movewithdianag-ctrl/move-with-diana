@@ -42,6 +42,11 @@ function ChoiceBlock({ block, answers, error, onSelect, onText }: ChoiceBlockPro
   const errorId = errorDomId(block.id);
   const { other, detail } = block;
   const detailValue = detail ? rawText(answers, detail.fieldId) : "";
+  // The example follows the health answers ticked earlier: pregnant, a new baby, and so on.
+  const flags = answerList(answers, intake.eligibility.flagsField);
+  const detailExample = detail
+    ? (detail.examples.find((x) => flags.includes(x.when))?.placeholder ?? detail.placeholder)
+    : "";
   // False during the first render only: a "Something else" box that is
   // already open when the page loads must not fade in.
   const settled = useRef(false);
@@ -127,7 +132,7 @@ function ChoiceBlock({ block, answers, error, onSelect, onText }: ChoiceBlockPro
             rows={2}
             value={detailValue}
             onChange={(event) => onText(detail.fieldId, event.target.value)}
-            placeholder={detail.placeholder}
+            placeholder={detailExample}
             maxLength={detail.maxLength}
             autoComplete="off"
             autoCapitalize="sentences"

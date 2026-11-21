@@ -93,6 +93,20 @@
         "label": "Anything you'd like me to know?",
         "help": "",
         "placeholder": "For example: knee replacement in June, cleared by my surgeon in October",
+        "examples": [
+          {
+            "when": "pregnant",
+            "placeholder": "For example: 5 months pregnant. I did Pilates twice a week before."
+          },
+          {
+            "when": "postpartum",
+            "placeholder": "For example: my baby is 4 months old, born by C-section."
+          },
+          {
+            "when": "seriousDiagnosis",
+            "placeholder": "For example: osteoporosis in my spine, diagnosed last year."
+          }
+        ],
         "maxLength": 600
       }
     },

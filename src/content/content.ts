@@ -913,7 +913,13 @@ export interface IntakeDetailField {
   label: string;
   /** One line under the label ("" = none). */
   help: string;
+  /** The example shown when none of `examples` applies. */
   placeholder: string;
+  /**
+   * A different example for a health answer ticked earlier in the form
+   * (eligibility.flagsField). The first entry whose answer is ticked wins.
+   */
+  examples: { when: string; placeholder: string }[];
   maxLength: number;
 }
 
@@ -1094,6 +1100,7 @@ interface CmsIntakeBlock {
     label?: string | null;
     help?: string | null;
     placeholder?: string | null;
+    examples?: ({ when?: string | null; placeholder?: string | null } | null)[] | null;
     maxLength?: number | string | null;
   } | null;
   fields?: ({
@@ -1168,6 +1175,9 @@ function normaliseBlock(raw: CmsIntakeBlock): IntakeBlock | null {
             label: str(raw.detail?.label),
             help: str(raw.detail?.help),
             placeholder: str(raw.detail?.placeholder),
+            examples: list(raw.detail?.examples)
+              .map((x) => ({ when: str(x.when).trim(), placeholder: str(x.placeholder) }))
+              .filter((x) => x.when !== "" && x.placeholder !== ""),
             maxLength: Math.max(1, num(raw.detail?.maxLength, 600)),
           }
         : null,
