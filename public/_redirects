@@ -1,2 +1,4 @@
-# Netlify SPA fallback — real files (including /admin/*) are served first.
+# Page fallback for Netlify: real files (including /admin/*) are served first.
+# Cloudflare Pages does this on its own and skips this rule with a warning.
+# Delete this file once the site has left Netlify.
 /*  /index.html  200

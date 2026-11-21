@@ -1,4 +1,4 @@
-# Netlify response headers.
+# Response headers. Netlify and Cloudflare Pages both read this file.
 # /book/* are the standalone booking pages, sent to clients as a direct link.
 # Keep them out of search results too.
 /book/*

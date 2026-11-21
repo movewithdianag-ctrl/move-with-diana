@@ -226,7 +226,7 @@ These three are already created on your account. This is what is set on each one
 | Schedule | 8-Week Pilates Program hours | 8-Week Pilates Program hours | 8-Week Pilates Program hours |
 | Location today | Cal Video (Zoom once installed, section 5) | Cal Video (Zoom once installed) | Cal Video (Zoom once installed) |
 | "Add guests" field on the form | Hidden | Hidden | Hidden |
-| Phone number field on the form | Shown, optional | Shown, optional | Shown, optional |
+| "Phone number (Text notifications)" field | Shown, optional | Shown, optional | Shown, optional |
 
 Why each setting is the way it is:
 
@@ -239,7 +239,7 @@ Why each setting is the way it is:
 - **Weekly session: 24 hours ahead.** You always have a day to plan the session.
 - **Weekly session: up to 14 days out.** Sessions are booked one at a time, from the week you planned on Friday. A client cannot take a time months ahead that you may not be able to keep.
 - **Guests hidden.** These are private sessions, so the form does not offer to invite anyone else.
-- **Phone number, optional.** It is only used for the text reminder (see "Reminders" after section 8). A client can leave it empty.
+- **One phone box, optional.** The form shows "Phone number (Text notifications)". Cal.com adds that box itself because the text reminder is switched on, and the reminder texts the number typed there (see "Reminders" after section 8). A client can leave it empty. Cal.com's own "Phone number" box is hidden so clients are not asked twice. Do not switch it back on, and do not remove the text reminder from an event, or the text box disappears from that form.
 
 ### Where to change any of these
 
@@ -293,7 +293,7 @@ People show up when they are reminded. Cal.com sends the confirmation email with
 | --- | --- |
 | `8-Week Pilates Program: email reminder 24 hours before` | Emails the client 24 hours before every booking. |
 | `8-Week Pilates Program: email reminder 3 hours before` | Emails the client 3 hours before every booking. |
-| `8-Week Pilates Program: text reminder 3 hours before` | Texts the client 3 hours before, only when they typed a phone number into the booking form. That field is optional. |
+| `8-Week Pilates Program: text reminder 3 hours before` | Texts the client 3 hours before, only when they typed a number into the "Phone number (Text notifications)" box on the booking form. That box is optional. |
 
 You do not have to create anything. To change the wording, open a workflow, edit the message and click **Save**.
 
@@ -423,7 +423,7 @@ Do this once before sending anyone to the page. Use a different email address th
 - [ ] Open the assessment link directly. It shows 75 minutes, and only offers times Monday to Friday between 9:00 am and 4:00 pm Eastern. No Saturday or Sunday times.
 - [ ] Open the weekly session link directly. It shows 60 minutes and offers no date more than 14 days ahead.
 - [ ] Open the quick call link directly. It shows 15 minutes.
-- [ ] On each booking form there is no "add guests" option, and the phone number field is there and can be left empty.
+- [ ] On each booking form there is no "add guests" option, and there is one phone box, "Phone number (Text notifications)", which can be left empty.
 - [ ] Put a fake appointment in your Apple Calendar tomorrow inside your open hours. Wait 5 minutes, refresh the booking page, and confirm that time (plus any buffer you set) is gone.
 - [ ] If you connected Google, repeat that with a fake event in the Google calendar.
 - [ ] Confirm the earliest times offered match section 7: 2 hours ahead for the call, 12 hours for the assessment, 24 hours for the weekly session.
