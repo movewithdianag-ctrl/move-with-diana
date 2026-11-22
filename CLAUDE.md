@@ -8,7 +8,7 @@ This is Diana Gonçalves's website, movewithdianag.com (Classical Pilates, in pe
 - Almost all words on the site live in `src/content/*.json` and are read through `src/content/content.ts`. Change copy in the JSON, not in the components.
 - Diana can also edit copy in the browser at movewithdianag.com/admin (Decap CMS, login through DecapBridge). Its fields are defined in `public/admin/config.yml`. A new JSON field must also be added there, or the editor will drop it when she saves.
 - A section with empty text hides itself. To remove a line, set it to `""` rather than deleting the key.
-- Every push to `main` goes live automatically within a few minutes. There is no staging site. Check your work with `npm run build` and the local preview before pushing.
+- Every push to `main` goes live automatically within a few minutes. Check your work with `npm run build` before pushing.
 - Hosted on Cloudflare Pages (project `movewithdianag`, Diana's Cloudflare account) since 2026-11-22. Every branch other than `main` gets its own preview link. The Netlify site is kept a few days as a backup; see `docs/MOVE-TO-CLOUDFLARE.md`.
 
 ## Other systems (not in this repo)
@@ -25,7 +25,7 @@ This is Diana Gonçalves's website, movewithdianag.com (Classical Pilates, in pe
 - **Copy style:** be clear, not clever. Short, plain sentences. No em dashes or en dashes. No invented facts, prices, guarantees or promises. No medical claims (Pilates is exercise, not treatment). It is Classical Pilates. Skip filler reassurance.
 - When Diana gives exact wording, use it exactly.
 - Show her the change in the local preview, or give her the page link once it is live, and tell her in a sentence or two what changed.
-- In a cloud session (claude.ai/code or the phone app) there is no local preview. Push to a branch, not `main`, and give her the Cloudflare preview link for that branch. Merge to `main` only when she says to publish.
+- In a cloud session (claude.ai/code or the phone app) there is no local preview. Push to a branch, not `main`, and give her the Cloudflare preview link for that branch: `https://<branch>.movewithdianag.pages.dev`, with every character that is not a letter or number in the branch name turned into `-`, lowercase, and cut to the first 28 characters (so `claude/new-photo` becomes `claude-new-photo`). It is ready a minute or two after the push. Merge to `main` only when she says to publish.
 
 ## Useful docs
 
