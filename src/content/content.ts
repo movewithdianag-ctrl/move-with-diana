@@ -42,6 +42,8 @@ interface CmsOffer {
   /** Optional page the button opens instead of the contact form, e.g. /apply. */
   buttonLink?: string | null;
   contactOption: string;
+  /** false keeps the offer off the home page carousel (it stays on the Offers page). */
+  showOnHome?: boolean | null;
   cardPhoto: string;
   cardPhotoAlt: string;
   cardPhotoW?: number | null;
@@ -205,6 +207,8 @@ export interface Offer {
   whoItsFor: string;
   included: string[];
   ctas: OfferCta[];
+  /** Shown as a card in the home page carousel. */
+  showOnHome: boolean;
   image: { src: string; alt: string; w?: number; h?: number };
   pageImage?: { src: string; alt: string; tall?: boolean; w?: number; h?: number };
 }
@@ -217,6 +221,7 @@ export const offers: Offer[] = offersJson.offers.map((o, i) => ({
   whoItsFor: o.whoItsFor,
   included: o.included,
   ctas: [{ label: o.buttonLabel, slug: o.contactOption, to: o.buttonLink?.trim() || undefined }],
+  showOnHome: o.showOnHome !== false,
   image: {
     src: o.cardPhoto,
     alt: o.cardPhotoAlt,

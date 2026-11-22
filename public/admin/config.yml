@@ -204,6 +204,7 @@ collections:
               - { label: "Button text", name: "buttonLabel", widget: "string", hint: "Say what happens, e.g. \"Book a private session\"." }
               - { label: "Button link (optional)", name: "buttonLink", widget: "string", required: false, hint: "Leave empty and the button opens the contact form. Or type a page address, e.g. /apply for the program application." }
               - { label: "Contact form option", name: "contactOption", widget: "string", hint: "Advanced — must exactly match one of the \"value\" codes on the Contact page's dropdown options (e.g. private-1:1). It preselects that option when someone clicks this offer." }
+              - { label: "Show on the home page", name: "showOnHome", widget: "boolean", default: true, required: false, hint: "Turn off to keep this offer out of the home page photo row. It still shows on the Offers page." }
               - { label: "Carousel photo (home page)", name: "cardPhoto", widget: "image", hint: "Tall photos look best — they show uncropped." }
               - { label: "Carousel photo description", name: "cardPhotoAlt", widget: "string" }
               - { label: "(auto) photo width", name: "cardPhotoW", widget: "hidden", required: false }

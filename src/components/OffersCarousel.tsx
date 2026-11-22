@@ -16,6 +16,8 @@ import { cn } from "@/lib/utils";
  */
 export default function OffersCarousel({ className }: { className?: string } = {}) {
   const trackRef = useRef<HTMLDivElement>(null);
+  // "Show on the home page" off in the CMS keeps an offer on the Offers page only.
+  const homeOffers = offers.filter((offer) => offer.showOnHome);
 
   const scrollByCard = (direction: 1 | -1) => {
     const track = trackRef.current;
@@ -52,7 +54,7 @@ export default function OffersCarousel({ className }: { className?: string } = {
           ref={trackRef}
           className="carousel-track -mx-5 flex snap-x gap-6 overflow-x-auto px-5 pb-2 md:mx-0 md:px-0"
         >
-          {offers.map((offer) => {
+          {homeOffers.map((offer) => {
             const cta = offer.ctas[0];
             const external = cta.slug === "community" && SKOOL_COMMUNITY_URL;
             const cardBody = (
@@ -99,7 +101,12 @@ export default function OffersCarousel({ className }: { className?: string } = {
                 {cardBody}
               </a>
             ) : (
-              <Link key={offer.id} data-card to={cta.to ?? `/contact?interest=${cta.slug}`} className={cardClass}>
+              <Link
+                key={offer.id}
+                data-card
+                to={cta.to ?? `/contact?interest=${cta.slug}`}
+                className={cardClass}
+              >
                 {cardBody}
               </Link>
             );
