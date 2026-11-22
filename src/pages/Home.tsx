@@ -11,7 +11,7 @@ import { SHOW_SCHEDULE } from "@/lib/config";
 
 /**
  * Home, matching the owner's reference build: hero → heading-less offers
- * carousel → FAQ → client reviews. Removed sections (pillars, intro, offers
+ * carousel → client reviews → FAQ. Removed sections (pillars, intro, offers
  * grid, CTA band) keep their copy in src/content/content.ts marked NOT
  * RENDERED.
  */
@@ -100,6 +100,9 @@ export default function Home() {
         </Section>
       )}
 
+      {/* ── Client reviews ───────────────────────────────────────────────── */}
+      <HomeReviews />
+
       {/* ── FAQ ──────────────────────────────────────────────────────────── */}
       <Section
         id="faq"
@@ -111,9 +114,6 @@ export default function Home() {
           <Faq />
         </div>
       </Section>
-
-      {/* ── Client reviews ───────────────────────────────────────────────── */}
-      <HomeReviews />
     </>
   );
 }
