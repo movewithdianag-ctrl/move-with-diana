@@ -9,7 +9,7 @@ This is Diana Gonçalves's website, movewithdianag.com (Classical Pilates, in pe
 - Diana can also edit copy in the browser at movewithdianag.com/admin (Decap CMS, login through DecapBridge). Its fields are defined in `public/admin/config.yml`. A new JSON field must also be added there, or the editor will drop it when she saves.
 - A section with empty text hides itself. To remove a line, set it to `""` rather than deleting the key.
 - Every push to `main` goes live automatically within a few minutes. There is no staging site. Check your work with `npm run build` and the local preview before pushing.
-- Hosting moves from Netlify to Cloudflare Pages; see `docs/MOVE-TO-CLOUDFLARE.md` for where that stands.
+- Hosted on Cloudflare Pages (project `movewithdianag`, Diana's Cloudflare account) since 2026-11-22. Every branch other than `main` gets its own preview link. The Netlify site is kept a few days as a backup; see `docs/MOVE-TO-CLOUDFLARE.md`.
 
 ## Other systems (not in this repo)
 

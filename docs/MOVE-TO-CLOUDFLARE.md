@@ -9,6 +9,8 @@ There are two parts:
 
 Netlify keeps running until the very end, so we can always go back.
 
+**Status (2026-11-22):** Parts A and B are done. movewithdianag.com and www are served by Cloudflare Pages, and the domain's records (Gmail included) live in Cloudflare. Left: B6 (delete the Netlify site after a few days) and Part C (Diana's own Claude).
+
 ---
 
 ## What is already done (in the code)
