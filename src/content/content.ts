@@ -234,21 +234,6 @@ export const offers: Offer[] = offersJson.offers.map((o, i) => ({
     : undefined,
 }));
 
-/** The 8-Week Pilates Program section on the home page (home.json, program). */
-export const homeProgram = {
-  eyebrow: homeJson.program?.eyebrow ?? "",
-  heading: homeJson.program?.heading ?? "",
-  text: homeJson.program?.text ?? "",
-  points: (homeJson.program?.points ?? []) as string[],
-  button: homeJson.program?.button ?? "",
-  image: {
-    src: homeJson.program?.photo ?? "",
-    alt: homeJson.program?.photoAlt ?? "",
-    w: (homeJson.program?.photoW as number | null | undefined) ?? undefined,
-    h: (homeJson.program?.photoH as number | null | undefined) ?? undefined,
-  },
-};
-
 export const offersPage = {
   eyebrow: "",
   heading: offersJson.heading,

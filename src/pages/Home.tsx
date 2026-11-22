@@ -1,8 +1,5 @@
 import { Link } from "react-router-dom";
-import { Check } from "lucide-react";
-import { faqSection, funnelRoutes, hero, homeProgram, meta, schedule } from "@/content/content";
-import Photo from "@/components/Photo";
-import Reveal from "@/components/Reveal";
+import { faqSection, funnelRoutes, hero, meta, schedule } from "@/content/content";
 import Seo from "@/components/Seo";
 import Section from "@/components/Section";
 import ScheduleEmbed from "@/components/ScheduleEmbed";
@@ -87,56 +84,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* ── 8-Week Pilates Program — photo + copy, button opens /apply.
-             Hides itself while the heading is empty. ───────────────────── */}
-      {homeProgram.heading && (
-        <section aria-labelledby="home-program-heading" className="bg-plaster/60 py-16 md:py-24">
-          <div className="mx-auto w-full max-w-6xl px-5 md:px-8">
-            <Reveal>
-              <div className="grid items-center gap-8 md:grid-cols-2 md:gap-14">
-                {homeProgram.image.src && (
-                  <Photo
-                    src={homeProgram.image.src}
-                    alt={homeProgram.image.alt}
-                    ratio="natural"
-                    width={homeProgram.image.w}
-                    height={homeProgram.image.h}
-                    className="mx-auto w-full max-w-sm"
-                  />
-                )}
-                <div>
-                  {homeProgram.eyebrow && <p className="eyebrow mb-3">{homeProgram.eyebrow}</p>}
-                  <h2
-                    id="home-program-heading"
-                    className="font-display text-3xl font-medium leading-tight tracking-tight md:text-4xl"
-                  >
-                    {homeProgram.heading}
-                  </h2>
-                  {homeProgram.text && (
-                    <p className="mt-4 leading-relaxed text-ink/85">{homeProgram.text}</p>
-                  )}
-                  {homeProgram.points.length > 0 && (
-                    <ul className="mt-5 space-y-2.5">
-                      {homeProgram.points.map((line) => (
-                        <li key={line} className="flex items-start gap-2.5 text-sm leading-relaxed">
-                          <Check className="mt-0.5 h-4 w-4 shrink-0 text-steel" aria-hidden />
-                          {line}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                  {homeProgram.button && (
-                    <Link to={funnelRoutes.apply} className={buttonClasses("primary", "mt-7 px-8 py-4 text-base")}>
-                      {homeProgram.button}
-                    </Link>
-                  )}
-                </div>
-              </div>
-            </Reveal>
-          </div>
-        </section>
-      )}
 
       {/* ── Offers carousel (no heading, per reference build) ────────────── */}
       <OffersCarousel />

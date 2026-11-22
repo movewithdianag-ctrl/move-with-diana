@@ -108,24 +108,6 @@ collections:
               - { label: "Hero photo (wide, for computers)", name: "photo", widget: "image", hint: "A wide photo works best — it fills the top of the page edge to edge." }
               - { label: "Hero photo (tall, for phones)", name: "photoMobile", widget: "image", hint: "A tall crop of the same photo, shown on phones. Keep the subject centered." }
               - { label: "Photo description", name: "photoAlt", widget: "string", hint: "Describes the photo for people using screen readers. One short sentence." }
-          - label: "8-Week Pilates Program section"
-            name: "program"
-            widget: "object"
-            hint: "The photo and text block under the top of the page. Its button opens the program application (/apply). Empty the heading to hide the whole section."
-            fields:
-              - { label: "Small label above the heading", name: "eyebrow", widget: "string", required: false }
-              - { label: "Heading", name: "heading", widget: "string", required: false }
-              - { label: "Text", name: "text", widget: "text", required: false }
-              - label: "Checkmark lines"
-                name: "points"
-                widget: "list"
-                required: false
-                field: { label: "Line", name: "line", widget: "string" }
-              - { label: "Button text", name: "button", widget: "string", required: false }
-              - { label: "Photo", name: "photo", widget: "image", required: false }
-              - { label: "Photo description", name: "photoAlt", widget: "string", required: false }
-              - { label: "(auto) photo width", name: "photoW", widget: "hidden", required: false }
-              - { label: "(auto) photo height", name: "photoH", widget: "hidden", required: false }
           - label: "Weekly schedule section text"
             name: "schedule"
             widget: "object"
