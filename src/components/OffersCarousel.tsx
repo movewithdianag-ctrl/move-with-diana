@@ -8,7 +8,8 @@ import { cn } from "@/lib/utils";
 
 /**
  * Heading-less offers carousel on the home page (per the owner's reference
- * build): full-frame photo cards with the offer title, one-liner, and an
+ * build): photo cards, all cropped to the same 2:3 shape so the row lines up
+ * whatever size each photo is, with the offer title, one-liner, and an
  * explicit link-styled CTA. The whole card — image and text — clicks through
  * to the contact form with that offer preselected (the community card goes
  * straight to Skool once SKOOL_COMMUNITY_URL is configured).
@@ -59,7 +60,7 @@ export default function OffersCarousel({ className }: { className?: string } = {
                 <Photo
                   src={offer.image.src}
                   alt={offer.image.alt}
-                  ratio="natural"
+                  ratio="2/3"
                   width={offer.image.w}
                   height={offer.image.h}
                 />
