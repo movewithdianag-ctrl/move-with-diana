@@ -7,6 +7,30 @@
   "whoLabel": "Who it's for:",
   "offers": [
     {
+      "cardPhoto": "/images/gallery-40.jpg",
+      "buttonLabel": "Apply for the program",
+      "buttonLink": "/apply",
+      "pagePhoto": "/images/gallery-40.jpg",
+      "pagePhotoH": 920,
+      "pagePhotoAlt": "Diana Gonçalves in a teaser variation on the mat, knees in tabletop",
+      "cardPhotoH": 920,
+      "cardPhotoAlt": "Diana Gonçalves in a teaser variation on the mat, knees in tabletop",
+      "pagePhotoTall": true,
+      "pagePhotoW": 613,
+      "contactOption": "8-week-program",
+      "cardPhotoW": 613,
+      "oneLiner": "Eight weeks of private Classical Pilates, live online from home.",
+      "title": "8-Week Pilates Program (online 1:1)",
+      "included": [
+        "1 online assessment, 75 minutes",
+        "7 private sessions, 60 minutes each",
+        "A written weekly plan",
+        "Session recordings and a weekly check-in"
+      ],
+      "description": "A structured eight weeks of one to one Classical Pilates with me, live on Zoom. We start with an assessment, then meet once a week. Each session is planned around your body, your needs and your progress.",
+      "whoItsFor": "For anyone who wants clear structure and personal guidance from home. You apply first, so I can check the program is right for you."
+    },
+    {
       "cardPhoto": "/images/offer-private.jpg",
       "buttonLabel": "Book a private session",
       "pagePhoto": "/images/offer-private-page.jpg",

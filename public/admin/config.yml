@@ -108,6 +108,24 @@ collections:
               - { label: "Hero photo (wide, for computers)", name: "photo", widget: "image", hint: "A wide photo works best — it fills the top of the page edge to edge." }
               - { label: "Hero photo (tall, for phones)", name: "photoMobile", widget: "image", hint: "A tall crop of the same photo, shown on phones. Keep the subject centered." }
               - { label: "Photo description", name: "photoAlt", widget: "string", hint: "Describes the photo for people using screen readers. One short sentence." }
+          - label: "8-Week Pilates Program section"
+            name: "program"
+            widget: "object"
+            hint: "The photo and text block under the top of the page. Its button opens the program application (/apply). Empty the heading to hide the whole section."
+            fields:
+              - { label: "Small label above the heading", name: "eyebrow", widget: "string", required: false }
+              - { label: "Heading", name: "heading", widget: "string", required: false }
+              - { label: "Text", name: "text", widget: "text", required: false }
+              - label: "Checkmark lines"
+                name: "points"
+                widget: "list"
+                required: false
+                field: { label: "Line", name: "line", widget: "string" }
+              - { label: "Button text", name: "button", widget: "string", required: false }
+              - { label: "Photo", name: "photo", widget: "image", required: false }
+              - { label: "Photo description", name: "photoAlt", widget: "string", required: false }
+              - { label: "(auto) photo width", name: "photoW", widget: "hidden", required: false }
+              - { label: "(auto) photo height", name: "photoH", widget: "hidden", required: false }
           - label: "Weekly schedule section text"
             name: "schedule"
             widget: "object"
@@ -202,6 +220,7 @@ collections:
                 field: { label: "Line", name: "line", widget: "string" }
                 hint: "Short lines with checkmarks. 3–4 works best."
               - { label: "Button text", name: "buttonLabel", widget: "string", hint: "Say what happens, e.g. \"Book a private session\"." }
+              - { label: "Button link (optional)", name: "buttonLink", widget: "string", required: false, hint: "Leave empty and the button opens the contact form. Or type a page address, e.g. /apply for the program application." }
               - { label: "Contact form option", name: "contactOption", widget: "string", hint: "Advanced — must exactly match one of the \"value\" codes on the Contact page's dropdown options (e.g. private-1:1). It preselects that option when someone clicks this offer." }
               - { label: "Carousel photo (home page)", name: "cardPhoto", widget: "image", hint: "Tall photos look best — they show uncropped." }
               - { label: "Carousel photo description", name: "cardPhotoAlt", widget: "string" }

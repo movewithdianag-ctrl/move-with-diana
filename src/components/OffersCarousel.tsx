@@ -98,7 +98,7 @@ export default function OffersCarousel({ className }: { className?: string } = {
                 {cardBody}
               </a>
             ) : (
-              <Link key={offer.id} data-card to={`/contact?interest=${cta.slug}`} className={cardClass}>
+              <Link key={offer.id} data-card to={cta.to ?? `/contact?interest=${cta.slug}`} className={cardClass}>
                 {cardBody}
               </Link>
             );

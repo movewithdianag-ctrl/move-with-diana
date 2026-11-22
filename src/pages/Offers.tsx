@@ -84,7 +84,7 @@ export default function Offers() {
                         ) : (
                           <Link
                             key={cta.slug}
-                            to={`/contact?interest=${cta.slug}`}
+                            to={cta.to ?? `/contact?interest=${cta.slug}`}
                             className={buttonClasses(ctaIndex === 0 ? "primary" : "ghost")}
                           >
                             {cta.label}

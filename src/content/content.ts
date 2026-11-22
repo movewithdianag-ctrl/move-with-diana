@@ -39,6 +39,8 @@ interface CmsOffer {
   whoItsFor: string;
   included: string[];
   buttonLabel: string;
+  /** Optional page the button opens instead of the contact form, e.g. /apply. */
+  buttonLink?: string | null;
   contactOption: string;
   cardPhoto: string;
   cardPhotoAlt: string;
@@ -191,6 +193,8 @@ export interface OfferCta {
   label: string;
   /** Slug appended as /contact?interest=<slug> to preselect the form. */
   slug: string;
+  /** When set, the button opens this page instead of the contact form. */
+  to?: string;
 }
 
 export interface Offer {
@@ -212,7 +216,7 @@ export const offers: Offer[] = offersJson.offers.map((o, i) => ({
   whatItIs: o.description,
   whoItsFor: o.whoItsFor,
   included: o.included,
-  ctas: [{ label: o.buttonLabel, slug: o.contactOption }],
+  ctas: [{ label: o.buttonLabel, slug: o.contactOption, to: o.buttonLink?.trim() || undefined }],
   image: {
     src: o.cardPhoto,
     alt: o.cardPhotoAlt,
@@ -229,6 +233,21 @@ export const offers: Offer[] = offersJson.offers.map((o, i) => ({
       }
     : undefined,
 }));
+
+/** The 8-Week Pilates Program section on the home page (home.json, program). */
+export const homeProgram = {
+  eyebrow: homeJson.program?.eyebrow ?? "",
+  heading: homeJson.program?.heading ?? "",
+  text: homeJson.program?.text ?? "",
+  points: (homeJson.program?.points ?? []) as string[],
+  button: homeJson.program?.button ?? "",
+  image: {
+    src: homeJson.program?.photo ?? "",
+    alt: homeJson.program?.photoAlt ?? "",
+    w: (homeJson.program?.photoW as number | null | undefined) ?? undefined,
+    h: (homeJson.program?.photoH as number | null | undefined) ?? undefined,
+  },
+};
 
 export const offersPage = {
   eyebrow: "",
