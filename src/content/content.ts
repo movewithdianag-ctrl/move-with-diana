@@ -25,6 +25,7 @@ import testimonialsJson from "./testimonials.json";
 import reviewsJsonRaw from "./reviews.json";
 import programJsonRaw from "./program.json";
 import intakeJsonRaw from "./intake.json";
+import privateJsonRaw from "./private.json";
 
 /**
  * The CMS may omit or null image-dimension fields when Diana saves (they are
@@ -525,12 +526,29 @@ export function isBookingPath(pathname: string): boolean {
   return (Object.values(bookingRoutes) as string[]).includes(clean);
 }
 
+/* ─────────────────────────── Offer order pages ──────────────────────────── */
+
+/**
+ * Order pages for single offers, laid out like the program's order page.
+ * Reached by a link Diana sends, not from the site menu.
+ */
+export const offerRoutes = {
+  privatePilates: "/private-pilates",
+} as const;
+
+/** True on an offer order page. Tolerates a trailing slash. */
+export function isOfferPath(pathname: string): boolean {
+  const clean = pathname.length > 1 ? pathname.replace(/\/+$/, "") : pathname;
+  return (Object.values(offerRoutes) as string[]).includes(clean);
+}
+
 /**
  * True where the slim funnel header and one-line footer replace the site nav
- * and big footer: the four funnel routes and the three booking pages.
+ * and big footer: the four funnel routes, the three booking pages and the
+ * offer order pages.
  */
 export function isSlimChromePath(pathname: string): boolean {
-  return isFunnelPath(pathname) || isBookingPath(pathname);
+  return isFunnelPath(pathname) || isBookingPath(pathname) || isOfferPath(pathname);
 }
 
 /* ────────────────────── Program (order + welcome pages) ─────────────────── */
@@ -834,9 +852,143 @@ export const program: Program = {
  * order. Quotes are never copied into program.json: they stay in
  * testimonials.json so there is one source of truth.
  */
-export const programTestimonials: Testimonial[] = program.testimonialNames
-  .map((name) => testimonials.find((t) => t.name.trim() === name.trim()))
-  .filter((t): t is Testimonial => Boolean(t));
+export const programTestimonials: Testimonial[] = pickTestimonials(program.testimonialNames);
+
+function pickTestimonials(names: string[]): Testimonial[] {
+  return names
+    .map((name) => testimonials.find((t) => t.name.trim() === name.trim()))
+    .filter((t): t is Testimonial => Boolean(t));
+}
+
+/* ─────────────────────── Order page content (shared) ────────────────────── */
+
+/**
+ * Everything one order page shows: the 8-Week Pilates Program at
+ * /pilates-program, or a single offer such as private sessions at
+ * /private-pilates. The page layout is the same for all of them; the labels
+ * they share (the "coming soon" button, the review links) stay in
+ * program.checkout.orderPage.
+ */
+export interface OrderProduct {
+  meta: PageMeta & { path: string; noindex: boolean };
+  /** The page h1 (or h2 under the "you qualify" bar). */
+  name: string;
+  /** In the phone pay bar. */
+  shortName: string;
+  /** Under the name in the buy box. "" hides it. */
+  description: string;
+  /** Price, button text and Stripe link. An empty priceDisplay hides the price. */
+  option: CheckoutOption;
+  /** Where the button goes while option.stripeUrl is "". "" shows the "coming soon" state. */
+  fallbackUrl: string;
+  highlights: string[];
+  photo: OrderPageCopy["photo"];
+  testimonialsHeading: string;
+  testimonials: Testimonial[];
+  includedHeading: string;
+  included: TitledItem[];
+  howItWorksHeading: string;
+  howItWorks: TitledItem[];
+  next: { heading: string; steps: TitledItem[] };
+  faqHeading: string;
+  faq: ProgramFaq[];
+  notReady: { question: string; label: string; text: string; callLabel: string; callText: string };
+  /** The short call calendar for "not ready yet". "" sends an email instead. */
+  callUrl: string;
+  /** Subject of the "not ready yet" email. */
+  questionsSubject: string;
+  disclaimer: string;
+}
+
+export const programProduct: OrderProduct = {
+  meta: {
+    ...pageMeta(pj.meta?.checkout, `${program.name} | ${site.name}`),
+    path: funnelRoutes.checkout,
+    noindex: true,
+  },
+  name: program.name,
+  shortName: program.shortName,
+  description: "",
+  option: program.checkout.payInFull,
+  fallbackUrl: "",
+  highlights: program.checkout.orderPage.highlights,
+  photo: program.checkout.orderPage.photo,
+  testimonialsHeading: program.testimonialsHeading,
+  testimonials: programTestimonials,
+  includedHeading: program.includedHeading,
+  included: program.included,
+  howItWorksHeading: program.howItWorksHeading,
+  howItWorks: program.howItWorks,
+  next: program.checkout.next,
+  faqHeading: program.faqHeading,
+  faq: program.faq,
+  notReady: {
+    question: program.checkout.notReadyQuestion,
+    label: program.checkout.notReadyLabel,
+    text: program.checkout.notReadyText,
+    callLabel: program.checkout.notReadyCallLabel,
+    callText: program.checkout.notReadyCallText,
+  },
+  callUrl: program.booking.callUrl,
+  questionsSubject: program.chrome.questionsSubject,
+  disclaimer: program.disclaimer,
+};
+
+const vj = privateJsonRaw as unknown as NonNullable<Loose<typeof privateJsonRaw>>;
+const privateName = str(vj.name).trim() || "Private Pilates One-on-One";
+const privateButton = str(vj.buttonLabel).trim() || "Book a private session";
+
+/** Private sessions, at /private-pilates (private.json). */
+export const privateProduct: OrderProduct = {
+  meta: {
+    ...pageMeta(vj.meta, `${privateName} | ${site.name}`),
+    path: offerRoutes.privatePilates,
+    noindex: true,
+  },
+  name: privateName,
+  shortName: str(vj.shortName).trim() || privateName,
+  description: str(vj.description),
+  option: {
+    label: privateButton,
+    price: 0,
+    priceDisplay: str(vj.priceDisplay).trim(),
+    sublabel: str(vj.priceNote),
+    stripeUrl: url(vj.stripeUrl),
+    buttonLabel: privateButton,
+  },
+  fallbackUrl: url(vj.fallbackUrl),
+  highlights: strList(vj.highlights),
+  photo: {
+    src: url(vj.photo),
+    alt: str(vj.photoAlt),
+    w: vj.photoW ? num(vj.photoW, 0) || undefined : undefined,
+    h: vj.photoH ? num(vj.photoH, 0) || undefined : undefined,
+  },
+  testimonialsHeading: str(vj.testimonialsHeading),
+  testimonials: pickTestimonials(strList(vj.testimonialNames)),
+  includedHeading: str(vj.includedHeading),
+  included: titled(vj.included),
+  howItWorksHeading: "",
+  howItWorks: [],
+  next: {
+    heading: str(vj.next?.heading).trim() || "What happens next",
+    steps: titled(vj.next?.steps),
+  },
+  faqHeading: str(vj.faqHeading),
+  faq: list(vj.faq)
+    .map((f) => ({ q: str(f.q), a: str(f.a) }))
+    .filter((f) => f.q !== "" && f.a !== ""),
+  notReady: {
+    question: str(vj.notReadyQuestion),
+    label: str(vj.notReadyLabel),
+    text: str(vj.notReadyText),
+    callLabel: "",
+    callText: "",
+  },
+  callUrl: "",
+  questionsSubject: str(vj.questionsSubject),
+  disclaimer: str(vj.disclaimer),
+};
 
 /* ───────────────────────── Intake form (/apply) ─────────────────────────── */
 

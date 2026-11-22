@@ -604,6 +604,84 @@ collections:
                   - { label: "Calendar description", name: "calendarTitle", widget: "string", hint: "Read aloud by screen readers. Not shown on screen." }
                   - { label: "\"I can't find a time\" email subject", name: "cantFindSubject", widget: "string", required: false, hint: "Leave empty to hide the button on this page." }
 
+      # ─────────────────────────── PRIVATE SESSIONS PAGE ───────────────────
+      - name: "private"
+        label: "Private sessions page (order page)"
+        file: "src/content/private.json"
+        fields:
+          - label: "Search & browser-tab info"
+            name: "meta"
+            widget: "object"
+            collapsed: true
+            hint: "What the browser tab shows. The page is hidden from Google on purpose: you send people the link."
+            fields:
+              - { label: "Browser-tab title", name: "title", widget: "string" }
+              - { label: "Search description", name: "description", widget: "text" }
+          - { label: "Page title", name: "name", widget: "string" }
+          - { label: "Short name", name: "shortName", widget: "string", hint: "In the bar pinned to the bottom of phone screens." }
+          - { label: "Description", name: "description", widget: "text", required: false, hint: "Under the title, above the check mark lines. Leave empty to hide it." }
+          - { label: "Price", name: "priceDisplay", widget: "string", required: false, hint: "As it should show, for example $150. Leave empty to hide the price." }
+          - { label: "Small line beside the price", name: "priceNote", widget: "string", required: false, hint: "For example: per session. Leave empty to hide it." }
+          - { label: "Stripe payment link", name: "stripeUrl", widget: "string", required: false, hint: "Paste the Stripe payment link here. While it is empty, the button opens the link below instead." }
+          - { label: "Button link while there is no Stripe link", name: "fallbackUrl", widget: "string", required: false, hint: "For example /contact?interest=private-1:1. If both links are empty, the button shows \"Payment link coming soon\"." }
+          - { label: "Button text", name: "buttonLabel", widget: "string" }
+          - label: "Check mark lines"
+            name: "highlights"
+            widget: "list"
+            field: { label: "Line", name: "line", widget: "string" }
+            required: false
+            hint: "The short lines in the box above the button. Facts only."
+          - { label: "Photo", name: "photo", widget: "image", required: false }
+          - { label: "Photo description", name: "photoAlt", widget: "string", hint: "Describe the photo for people who can't see it." }
+          - { label: "(auto) photo width", name: "photoW", widget: "hidden", required: false }
+          - { label: "(auto) photo height", name: "photoH", widget: "hidden", required: false }
+          - { label: "Reviews heading", name: "testimonialsHeading", widget: "string", required: false }
+          - label: "Reviews near the top"
+            name: "testimonialNames"
+            widget: "list"
+            field: { label: "Client name", name: "name", widget: "string" }
+            required: false
+            hint: "Three names, typed exactly as in \"Testimonials (your Trustpilot reviews)\". Remove them all to hide the section."
+          - { label: "Second section heading", name: "includedHeading", widget: "string", required: false }
+          - label: "Second section lines"
+            name: "included"
+            widget: "list"
+            required: false
+            summary: "{{fields.title}}"
+            hint: "Numbered lines under the heading above. Remove them all to hide the section."
+            fields:
+              - { label: "Line", name: "title", widget: "string" }
+              - { label: "Short explanation", name: "detail", widget: "text", required: false }
+          - label: "What happens next"
+            name: "next"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - label: "Steps"
+                name: "steps"
+                widget: "list"
+                required: false
+                summary: "{{fields.title}}"
+                hint: "Only promise what really happens. Remove every step to hide the block."
+                fields:
+                  - { label: "Step", name: "title", widget: "string" }
+                  - { label: "Short explanation", name: "detail", widget: "text", required: false }
+          - { label: "Questions heading", name: "faqHeading", widget: "string", required: false }
+          - label: "Questions"
+            name: "faq"
+            widget: "list"
+            required: false
+            summary: "{{fields.q}}"
+            fields:
+              - { label: "Question", name: "q", widget: "string" }
+              - { label: "Answer", name: "a", widget: "text" }
+          - { label: "\"Not ready yet?\" question", name: "notReadyQuestion", widget: "string", required: false, hint: "The last question. Its answer is the sentence below, with an email link under it. Leave empty to hide the row." }
+          - { label: "\"Not ready yet?\" email link text", name: "notReadyLabel", widget: "string", required: false }
+          - { label: "\"Not ready yet?\" sentence", name: "notReadyText", widget: "text", required: false }
+          - { label: "Email subject for questions", name: "questionsSubject", widget: "string", required: false }
+          - { label: "Disclaimer at the end", name: "disclaimer", widget: "text", required: false }
+
       # ─────────────────────────────── INTAKE FORM ─────────────────────────
       - name: "intake"
         label: "Intake form"

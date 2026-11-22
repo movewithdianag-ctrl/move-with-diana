@@ -16,10 +16,12 @@ import ApplyNotYet from "./pages/ApplyNotYet";
 import Checkout from "./pages/Checkout";
 import ProgramWelcome from "./pages/ProgramWelcome";
 import BookEvent from "./pages/BookEvent";
+import PrivatePilates from "./pages/PrivatePilates";
 import {
   bookingRoutes,
   funnelRoutes,
   isSlimChromePath,
+  offerRoutes,
 } from "./content/content";
 import { captureAttribution } from "./lib/intake";
 import { cn } from "./lib/utils";
@@ -90,6 +92,7 @@ export default function App() {
           <Route path={bookingRoutes.introCall} element={<BookEvent event="introCall" />} />
           <Route path={bookingRoutes.assessment} element={<BookEvent event="assessment" />} />
           <Route path={bookingRoutes.session} element={<BookEvent event="session" />} />
+          <Route path={offerRoutes.privatePilates} element={<PrivatePilates />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

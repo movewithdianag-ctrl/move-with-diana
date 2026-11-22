@@ -1,18 +1,19 @@
-import { program } from "@/content/content";
+import { useOrderProduct } from "./OrderProductContext";
 import OrderSection from "./OrderSection";
 
 /**
  * "What's included" on the order page: every item open, numbered, in one
  * column to read top to bottom.
- * Copy comes from program.json; with no items the section drops out.
+ * Copy comes from the page's content file; with no items the section drops out.
  */
 export function Included() {
-  if (program.included.length === 0) return null;
+  const product = useOrderProduct();
+  if (product.included.length === 0) return null;
 
   return (
-    <OrderSection heading={program.includedHeading}>
+    <OrderSection heading={product.includedHeading}>
       <ol className="mx-auto max-w-3xl divide-y divide-ink/10">
-        {program.included.map((item, i) => (
+        {product.included.map((item, i) => (
           <li key={item.title} className="flex items-baseline gap-3 py-5 first:pt-0 last:pb-0">
             <span
               aria-hidden="true"
@@ -38,12 +39,13 @@ export function Included() {
  * titles in program.json already name the weeks, so there are no numerals.
  */
 export function HowItWorks() {
-  if (program.howItWorks.length === 0) return null;
+  const product = useOrderProduct();
+  if (product.howItWorks.length === 0) return null;
 
   return (
-    <OrderSection heading={program.howItWorksHeading} band>
+    <OrderSection heading={product.howItWorksHeading} band>
       <ol className="grid gap-x-8 gap-y-7 sm:grid-cols-2 lg:grid-cols-4">
-        {program.howItWorks.map((step) => (
+        {product.howItWorks.map((step) => (
           <li key={step.title} className="border-t-2 border-steel/50 pt-4">
             <h3 className="font-sans font-semibold leading-snug">{step.title}</h3>
             {step.detail && (

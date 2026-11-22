@@ -1,0 +1,69 @@
+{
+  "meta": {
+    "title": "Private Pilates One-on-One, In Person or Online | Move with Diana",
+    "description": "One-to-one Classical Pilates in the studio or live virtual. Fully tailored to your body, your goals, and your history."
+  },
+  "name": "Private Pilates One-on-One, In Person or Online",
+  "shortName": "Private Pilates One-on-One",
+  "description": "One-to-one Classical Pilates in the studio or live virtual. Fully tailored to your body, your goals, and your history. Whether you're a beginner, advanced practitioner, or athlete.",
+  "priceDisplay": "",
+  "priceNote": "",
+  "stripeUrl": "",
+  "fallbackUrl": "/contact?interest=private-1:1",
+  "buttonLabel": "Book a private session",
+  "highlights": [
+    "Movement assessment and goal setting in your first session",
+    "Classical sequencing written for your body, history, and schedule",
+    "Real-time form correction, in person or on camera",
+    "Progress tracked and adjusted week to week"
+  ],
+  "photo": "/images/offer-private.jpg",
+  "photoAlt": "Diana Gonçalves balancing on the wunda chair, leg extended",
+  "photoW": 900,
+  "photoH": 1349,
+  "testimonialsHeading": "What clients say",
+  "testimonialNames": [
+    "Sammi Davis Jr.",
+    "Liam Gardner",
+    "Spencer"
+  ],
+  "includedHeading": "Who it's for",
+  "included": [
+    {
+      "title": "Beginners building a foundation",
+      "detail": ""
+    },
+    {
+      "title": "Advanced practitioners refining their practice",
+      "detail": ""
+    },
+    {
+      "title": "Athletes who want control, recovery, and longevity",
+      "detail": ""
+    }
+  ],
+  "next": {
+    "heading": "What happens next",
+    "steps": []
+  },
+  "faqHeading": "Questions, answered",
+  "faq": [
+    {
+      "q": "Is this medical care or physical therapy?",
+      "a": "No. Pilates is exercise. I don't diagnose or treat anything. I plan careful, injury-aware sessions and I'm happy to work alongside the advice of your doctor or physical therapist."
+    },
+    {
+      "q": "Do I need to be cleared for exercise?",
+      "a": "Yes. If you have an injury, a recent surgery or a medical condition, please get the OK from your doctor or PT before we start. If you are not sure, ask them first."
+    },
+    {
+      "q": "I've never done Pilates. Is that OK?",
+      "a": "Yes. Everything is taught step by step and adapted to you."
+    }
+  ],
+  "notReadyQuestion": "Not ready to decide yet?",
+  "notReadyLabel": "Ask me a question first",
+  "notReadyText": "If you have a question before you commit, I'm happy to talk it through.",
+  "questionsSubject": "Question about private Pilates",
+  "disclaimer": "Pilates is exercise, not medical care. These sessions do not diagnose, treat or cure any condition. Please check with your doctor or physical therapist before starting any exercise program, and stop any movement that causes sharp or unusual pain."
+}

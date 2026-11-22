@@ -9,6 +9,7 @@ import {
 } from "@/content/content";
 import { buttonClasses } from "@/components/ui/button";
 import OrderSection from "./OrderSection";
+import { useOrderProduct } from "./OrderProductContext";
 import Stars from "./Stars";
 
 const orderPageCopy = program.checkout.orderPage;
@@ -39,11 +40,12 @@ function ReviewName({ name }: { name: string }) {
 
 /** The three short review cards right under the product block. */
 export function ReviewStrip({ items }: { items: Testimonial[] }) {
+  const { testimonialsHeading } = useOrderProduct();
   const shown = items.slice(0, STRIP_COUNT);
   if (shown.length === 0) return null;
 
   return (
-    <OrderSection heading={program.testimonialsHeading} band>
+    <OrderSection heading={testimonialsHeading} band>
       <ul className="grid gap-5 md:grid-cols-3">
         {shown.map((t) => (
           <li key={t.name}>

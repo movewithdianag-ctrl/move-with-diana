@@ -5,6 +5,7 @@ import { FUNNEL_HEADER_ID } from "@/components/FunnelHeader";
 import { buttonClasses } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { PayLink } from "./PayAction";
+import { useOrderProduct } from "./OrderProductContext";
 
 const orderPageCopy = program.checkout.orderPage;
 
@@ -90,6 +91,7 @@ export interface StickyPayBarProps {
  */
 export default function StickyPayBar({ visible, option, href, mailSubject, onPay }: StickyPayBarProps) {
   const { checkout } = program;
+  const { shortName } = useOrderProduct();
 
   // No slide-in on arrival: the bar is simply there. It animates from then on.
   const [animated, setAnimated] = useState(false);
@@ -111,8 +113,16 @@ export default function StickyPayBar({ visible, option, href, mailSubject, onPay
     >
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-3 px-5 py-3">
         <p className="min-w-0 leading-tight">
-          <span className="block truncate text-xs text-umber">{program.shortName}</span>
-          <span className="block truncate text-sm font-semibold tabular-nums">{option.priceDisplay}</span>
+          {option.priceDisplay ? (
+            <>
+              <span className="block truncate text-xs text-umber">{shortName}</span>
+              <span className="block truncate text-sm font-semibold tabular-nums">
+                {option.priceDisplay}
+              </span>
+            </>
+          ) : (
+            <span className="block truncate text-sm font-semibold">{shortName}</span>
+          )}
         </p>
 
         {href ? (

@@ -1,4 +1,4 @@
-import { program } from "@/content/content";
+import { useOrderProduct } from "./OrderProductContext";
 import OrderSection from "./OrderSection";
 
 /**
@@ -7,7 +7,7 @@ import OrderSection from "./OrderSection";
  * program.json (checkout.next); with no steps the whole block drops out.
  */
 export default function NextSteps() {
-  const { heading, steps } = program.checkout.next;
+  const { heading, steps } = useOrderProduct().next;
   if (steps.length === 0) return null;
 
   return (

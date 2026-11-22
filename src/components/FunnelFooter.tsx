@@ -1,12 +1,12 @@
 import { useLocation } from "react-router-dom";
-import { footer, funnelRouteKey, program } from "@/content/content";
+import { footer, funnelRouteKey, isOfferPath, program } from "@/content/content";
 import { cn } from "@/lib/utils";
 
 /**
  * One quiet line for the funnel routes: copyright and the "exercise, not
  * medical care" disclaimer. No links, no newsletter.
  *
- * On the order page a pay bar is pinned to the bottom of phone screens
+ * On the order pages (the program's and the offer pages) a pay bar is pinned to the bottom of phone screens
  * (StickyPayBar), so the footer carries extra bottom padding there. That
  * keeps these lines readable above the bar at the very end of the page.
  * The order page ends with its own, longer disclaimer, so the short one is
@@ -14,8 +14,8 @@ import { cn } from "@/lib/utils";
  */
 export default function FunnelFooter() {
   const { chrome } = program;
-  const route = funnelRouteKey(useLocation().pathname);
-  const isOrderPage = route === "checkout";
+  const { pathname } = useLocation();
+  const isOrderPage = funnelRouteKey(pathname) === "checkout" || isOfferPath(pathname);
   const parts = [
     footer.smallPrint,
     isOrderPage ? "" : chrome.footerDisclaimer,

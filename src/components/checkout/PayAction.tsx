@@ -53,8 +53,9 @@ export function PayLink({ href, label, onPay, className }: PayLinkProps) {
       return;
     }
     onPay();
-    // Opening in a new tab or window leaves this page as it is.
-    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    // Opening in a new tab or window leaves this page as it is. A link on
+    // this site (the contact page, before Stripe is set) is not checkout.
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || href.startsWith("/")) return;
     setBusy(true);
   };
 

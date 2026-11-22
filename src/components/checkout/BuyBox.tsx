@@ -1,6 +1,7 @@
 import type { RefObject } from "react";
 import { Check } from "lucide-react";
 import { fillTokens, program, testimonials } from "@/content/content";
+import { useOrderProduct } from "./OrderProductContext";
 import PayAction from "./PayAction";
 import Stars from "./Stars";
 
@@ -42,7 +43,8 @@ export default function BuyBox({
   onShowReviews,
   reviewNote,
 }: BuyBoxProps) {
-  const option = program.checkout.payInFull;
+  const product = useOrderProduct();
+  const { option } = product;
   const reviewsLine =
     onShowReviews && testimonials.length > 0 && orderPageCopy.reviewsLine
       ? fillTokens(orderPageCopy.reviewsLine, { count: testimonials.length })
@@ -56,7 +58,7 @@ export default function BuyBox({
         tabIndex={headingRef ? -1 : undefined}
         className="font-display text-[1.625rem] font-medium leading-[1.15] tracking-tight focus:outline-none sm:text-3xl lg:text-[2.125rem]"
       >
-        {program.name}
+        {product.name}
       </Heading>
 
       {reviewsLine && (
@@ -70,16 +72,22 @@ export default function BuyBox({
         </button>
       )}
 
-      <p className="mt-2 flex flex-wrap items-baseline gap-x-3 gap-y-1">
-        <span className="font-display text-[2.75rem] font-medium leading-none tabular-nums lg:text-5xl">
-          {option.priceDisplay}
-        </span>
-        {option.sublabel && <span className="text-sm text-umber">{option.sublabel}</span>}
-      </p>
+      {option.priceDisplay && (
+        <p className="mt-2 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+          <span className="font-display text-[2.75rem] font-medium leading-none tabular-nums lg:text-5xl">
+            {option.priceDisplay}
+          </span>
+          {option.sublabel && <span className="text-sm text-umber">{option.sublabel}</span>}
+        </p>
+      )}
 
-      {orderPageCopy.highlights.length > 0 && (
+      {product.description && (
+        <p className="mt-3 leading-relaxed text-umber">{product.description}</p>
+      )}
+
+      {product.highlights.length > 0 && (
         <ul className="mt-5 space-y-2.5 rounded-photo border border-ink/15 p-4">
-          {orderPageCopy.highlights.map((line) => (
+          {product.highlights.map((line) => (
             <li key={line} className="flex items-start gap-2.5 text-[0.9375rem] leading-snug">
               <Check aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0 text-steel" />
               {line}
