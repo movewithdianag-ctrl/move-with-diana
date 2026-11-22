@@ -36,7 +36,7 @@ export default function Header() {
 
   // Sheet open: lock body scroll, move focus in, close on Escape, and close
   // if the viewport crosses into desktop (rotation would otherwise hide the
-  // sheet via md:hidden while leaving the scroll lock orphaned). On close,
+  // sheet via lg:hidden while leaving the scroll lock orphaned). On close,
   // return focus to the hamburger so keyboard users keep their place.
   useEffect(() => {
     if (!open) return;
@@ -45,7 +45,7 @@ export default function Header() {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") setOpen(false);
     };
-    const mq = window.matchMedia("(min-width: 768px)");
+    const mq = window.matchMedia("(min-width: 1024px)");
     const onBreakpoint = (e: MediaQueryListEvent) => {
       if (e.matches) setOpen(false);
     };
@@ -105,7 +105,7 @@ export default function Header() {
           {site.name}
         </Link>
 
-        <nav aria-label="Main" className="hidden items-center gap-7 md:flex">
+        <nav aria-label="Main" className="hidden items-center gap-7 lg:flex">
           {navLinks.map((link) =>
             link.to.includes("#") ? (
               <Link
@@ -131,7 +131,10 @@ export default function Header() {
             ),
           )}
           {/* The top-right button opens the 8-Week Pilates Program application. */}
-          <Link to={funnelRoutes.apply} className={buttonClasses("primary", "px-5 py-2.5")}>
+          <Link
+            to={funnelRoutes.apply}
+            className={buttonClasses("primary", "whitespace-nowrap px-5 py-2.5")}
+          >
             {nav.bookCta}
           </Link>
         </nav>
@@ -142,7 +145,7 @@ export default function Header() {
           onClick={() => setOpen(true)}
           aria-label="Open menu"
           aria-expanded={open}
-          className="-mr-2 rounded-md p-2 md:hidden"
+          className="-mr-2 rounded-md p-2 lg:hidden"
         >
           <Menu className="h-6 w-6" aria-hidden />
         </button>
@@ -159,7 +162,7 @@ export default function Header() {
             aria-modal="true"
             aria-label="Menu"
             onKeyDown={onSheetKeyDown}
-            className="fixed inset-0 z-[60] flex flex-col overflow-y-auto bg-bone pl-[env(safe-area-inset-left)] pr-[env(safe-area-inset-right)] md:hidden"
+            className="fixed inset-0 z-[60] flex flex-col overflow-y-auto bg-bone pl-[env(safe-area-inset-left)] pr-[env(safe-area-inset-right)] lg:hidden"
           >
             <div className="flex h-16 items-center justify-between px-5">
               <span className="font-display text-lg font-semibold tracking-tight">
