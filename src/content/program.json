@@ -135,13 +135,8 @@
     "receiptNote": "",
     "prepHeading": "Before your assessment",
     "prep": [],
-    "nextHeading": "What happens next",
-    "next": [
-      {
-        "title": "After you book",
-        "detail": "You get an email with your assessment instructions and your Zoom link."
-      }
-    ],
+    "nextHeading": "",
+    "next": [],
     "hubHeading": "Your private hub",
     "hubText": "Your private hub is where your weekly plans and resources live. I'll send your invite myself when I message you to say hello.",
     "hubButtonLabel": "Open the private hub",

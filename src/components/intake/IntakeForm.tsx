@@ -374,7 +374,7 @@ export default function IntakeForm() {
             )}
           </p>
         )}
-        <h1 className="font-display text-[1.75rem] font-medium leading-[1.15] tracking-tight text-ink md:text-4xl">
+        <h1 className="font-sans text-[1.75rem] font-semibold leading-[1.2] tracking-tight text-ink md:text-4xl">
           {intro.heading}
         </h1>
         {intro.subline && (
