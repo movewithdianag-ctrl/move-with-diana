@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { faqSection, hero, meta, schedule } from "@/content/content";
+import { faqSection, funnelRoutes, hero, meta, schedule } from "@/content/content";
 import Seo from "@/components/Seo";
 import Section from "@/components/Section";
 import ScheduleEmbed from "@/components/ScheduleEmbed";
@@ -7,7 +7,7 @@ import OffersCarousel from "@/components/OffersCarousel";
 import Faq from "@/components/Faq";
 import HomeReviews from "@/components/HomeReviews";
 import { buttonClasses } from "@/components/ui/button";
-import { SHOW_SCHEDULE, SKOOL_COMMUNITY_URL } from "@/lib/config";
+import { SHOW_SCHEDULE } from "@/lib/config";
 
 /**
  * Home, matching the owner's reference build: hero → heading-less offers
@@ -61,29 +61,25 @@ export default function Home() {
               className="hero-rise mt-8 flex flex-col gap-3 sm:flex-row"
               style={{ animationDelay: "0.35s" }}
             >
-              {/* "Get started" → the Skool community while the link is set;
-                  falls back to the contact form if it's ever cleared. */}
-              {SKOOL_COMMUNITY_URL ? (
-                <a
-                  href={SKOOL_COMMUNITY_URL}
-                  className={buttonClasses("primary", "px-8 py-4 text-base")}
-                >
-                  {hero.primaryCta}
-                </a>
-              ) : (
-                <Link to="/contact" className={buttonClasses("primary", "px-8 py-4 text-base")}>
-                  {hero.primaryCta}
-                </Link>
-              )}
-              {SHOW_SCHEDULE ? (
-                <Link to="/#schedule" className={buttonClasses("ghost", "px-8 py-4 text-base")}>
-                  {hero.secondaryCta}
-                </Link>
-              ) : (
-                <Link to="/offers" className={buttonClasses("ghost", "px-8 py-4 text-base")}>
-                  {hero.secondaryCtaAlt}
-                </Link>
-              )}
+              {/* The main button opens the 8-Week Pilates Program application. */}
+              <Link
+                to={funnelRoutes.apply}
+                className={buttonClasses("primary", "px-8 py-4 text-base")}
+              >
+                {hero.primaryCta}
+              </Link>
+              {/* The second button hides while its text is empty. */}
+              {SHOW_SCHEDULE
+                ? hero.secondaryCta && (
+                    <Link to="/#schedule" className={buttonClasses("ghost", "px-8 py-4 text-base")}>
+                      {hero.secondaryCta}
+                    </Link>
+                  )
+                : hero.secondaryCtaAlt && (
+                    <Link to="/offers" className={buttonClasses("ghost", "px-8 py-4 text-base")}>
+                      {hero.secondaryCtaAlt}
+                    </Link>
+                  )}
             </div>
           </div>
         </div>

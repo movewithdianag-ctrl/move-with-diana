@@ -102,8 +102,8 @@ collections:
             fields:
               - { label: "Big headline", name: "headline", widget: "string" }
               - { label: "Sentence under the headline", name: "subhead", widget: "text" }
-              - { label: "Main button", name: "primaryButton", widget: "string", hint: "Opens your Skool community while the Community link (in Site settings) is filled in; if that link is empty, it opens the contact page." }
-              - { label: "Second button", name: "offersButton", widget: "string", hint: "Leads to the Offers page." }
+              - { label: "Main button", name: "primaryButton", widget: "string", hint: "Opens the 8-Week Pilates Program application (/apply)." }
+              - { label: "Second button", name: "offersButton", widget: "string", required: false, hint: "Leads to the Offers page. Leave empty to hide the button." }
               - { label: "Second button (when schedule is on)", name: "scheduleButton", widget: "string", hint: "Used instead of the one above while the weekly schedule section is turned on." }
               - { label: "Hero photo (wide, for computers)", name: "photo", widget: "image", hint: "A wide photo works best — it fills the top of the page edge to edge." }
               - { label: "Hero photo (tall, for phones)", name: "photoMobile", widget: "image", hint: "A tall crop of the same photo, shown on phones. Keep the subject centered." }
