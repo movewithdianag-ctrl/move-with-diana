@@ -138,7 +138,7 @@ collections:
                 name: "names"
                 widget: "list"
                 field: { label: "Client name", name: "name", widget: "string" }
-                hint: "Three names. The first is shown large, the other two beside it. Type each name exactly as it appears in \"Testimonials (your Trustpilot reviews)\". The quote is pulled from there. A name that doesn't match is skipped."
+                hint: "Up to six names, shown as cards in this order, the same as on the Reviews page. Type each name exactly as it appears in \"Testimonials (your Trustpilot reviews)\". The quote is pulled from there. A name that doesn't match is skipped."
               - { label: "Review count line", name: "countLine", widget: "string", hint: "{count} becomes the number of saved reviews." }
               - { label: "Link to the Reviews page", name: "linkLabel", widget: "string" }
 

@@ -1,41 +1,16 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import { fillTokens, homeReviews, testimonials, type Testimonial } from "@/content/content";
+import { fillTokens, homeReviews, testimonials } from "@/content/content";
 import Stars from "@/components/checkout/Stars";
-
-/** Real name and an initial monogram, as on the order page. */
-function Attribution({ name }: { name: string }) {
-  return (
-    <figcaption className="mt-6 flex items-center gap-3">
-      <span
-        aria-hidden="true"
-        className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-bone font-display text-sm font-semibold text-steel-deep"
-      >
-        {name.charAt(0)}
-      </span>
-      <span className="text-sm font-semibold">{name}</span>
-    </figcaption>
-  );
-}
-
-function SmallQuote({ t }: { t: Testimonial }) {
-  return (
-    <figure className="border-t border-ink/15 pt-6">
-      <blockquote className="leading-relaxed text-ink/90">“{t.quote}”</blockquote>
-      <Attribution name={t.name} />
-    </figure>
-  );
-}
+import Testimonials from "@/components/Testimonials";
 
 /**
- * The end of the home page: one review set large, two beside it, the star
- * rating with the review count, and a link to the Reviews page. Which
- * reviews show is set in home.json (reviews, names); with none, the section
- * drops out.
+ * The end of the home page: the star rating with the review count, the same
+ * review cards as the Reviews page, and a link to that page. Which reviews
+ * show is set in home.json (reviews, names); with none, the section drops out.
  */
 export default function HomeReviews() {
-  const [featured, ...rest] = homeReviews.items;
-  if (!featured) return null;
+  if (homeReviews.items.length === 0) return null;
 
   const countLine = homeReviews.countLine
     ? fillTokens(homeReviews.countLine, { count: testimonials.length })
@@ -59,31 +34,10 @@ export default function HomeReviews() {
           )}
         </div>
 
-        <div className="grid gap-12 md:grid-cols-12 md:gap-x-14">
-          <figure className="md:col-span-7">
-            <span
-              aria-hidden="true"
-              className="block font-display text-6xl leading-none text-steel/40 md:text-7xl"
-            >
-              “
-            </span>
-            <blockquote className="-mt-3 font-display text-2xl font-normal leading-snug tracking-tight md:text-[1.75rem] md:leading-snug">
-              {featured.quote}
-            </blockquote>
-            <Attribution name={featured.name} />
-          </figure>
-
-          {rest.length > 0 && (
-            <div className="flex flex-col gap-10 md:col-span-5">
-              {rest.map((t) => (
-                <SmallQuote key={t.name} t={t} />
-              ))}
-            </div>
-          )}
-        </div>
+        <Testimonials items={homeReviews.items} />
 
         {homeReviews.linkLabel && (
-          <div className="mt-12 border-t border-ink/15 pt-8 md:mt-16">
+          <div className="mt-6 border-t border-ink/15 pt-8 md:mt-10">
             <Link
               to="/reviews"
               className="group inline-flex min-h-11 items-center gap-2 font-semibold text-steel underline decoration-steel/40 underline-offset-4 hover:decoration-steel"

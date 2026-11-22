@@ -54,7 +54,8 @@ export function TestimonialCard({
   );
 }
 
-export default function Testimonials() {
+/** The saved reviews as cards: a swipeable row on phones, three columns on larger screens. */
+export default function Testimonials({ items = testimonials }: { items?: Testimonial[] }) {
   const trackRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
 
@@ -63,17 +64,17 @@ export default function Testimonials() {
     const track = trackRef.current;
     if (!track) return;
     const onScroll = () => {
-      const slideWidth = track.scrollWidth / testimonials.length;
+      const slideWidth = track.scrollWidth / items.length;
       setActive(Math.round(track.scrollLeft / slideWidth));
     };
     track.addEventListener("scroll", onScroll, { passive: true });
     return () => track.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [items.length]);
 
   const scrollTo = (i: number) => {
     const track = trackRef.current;
     if (!track) return;
-    const slideWidth = track.scrollWidth / testimonials.length;
+    const slideWidth = track.scrollWidth / items.length;
     track.scrollTo({ left: slideWidth * i, behavior: "smooth" });
   };
 
@@ -88,14 +89,14 @@ export default function Testimonials() {
           aria-label="Client testimonials"
           tabIndex={0}
         >
-          {testimonials.map((t) => (
+          {items.map((t) => (
             <div key={t.name} className="carousel-slide w-[85%] shrink-0">
               <TestimonialCard t={t} />
             </div>
           ))}
         </div>
         <div className="mt-4 flex justify-center gap-2">
-          {testimonials.map((t, i) => (
+          {items.map((t, i) => (
             <button
               key={t.name}
               type="button"
@@ -115,7 +116,7 @@ export default function Testimonials() {
 
       {/* Desktop: 3-column masonry via CSS columns */}
       <div className="hidden gap-6 md:block md:columns-3">
-        {testimonials.map((t) => (
+        {items.map((t) => (
           <div key={t.name} className="mb-6 break-inside-avoid">
             <TestimonialCard t={t} />
           </div>

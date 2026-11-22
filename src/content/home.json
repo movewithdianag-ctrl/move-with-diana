@@ -43,9 +43,12 @@
   "reviews": {
     "heading": "What clients say",
     "names": [
-      "Morgan",
+      "Analisa Velez",
+      "Rhiannon Evans",
+      "Kathi Grace",
       "Darielle Gaines",
-      "Analisa Velez"
+      "Jordan W",
+      "Anna L."
     ],
     "countLine": "{count} reviews on Trustpilot",
     "linkLabel": "Read all reviews"

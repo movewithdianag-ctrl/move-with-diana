@@ -323,7 +323,7 @@ export const homeReviews = {
     .filter((t): t is Testimonial => Boolean(t))
     // A name typed twice shows once.
     .filter((t, i, all) => all.indexOf(t) === i)
-    .slice(0, 3),
+    .slice(0, 6),
   countLine: homeJson.reviews?.countLine ?? "",
   linkLabel: homeJson.reviews?.linkLabel ?? "",
 };

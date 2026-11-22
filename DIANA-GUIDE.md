@@ -413,8 +413,9 @@ and the send button. If you ever want it back, open **Questions**, add an
 **"Agreement tick box"** at the end, and Publish.
 
 **Reviews at the end of the home page** are in **Home page**, under
-"Reviews at the end of the page". Type the names of up to three reviews
-exactly as they appear on the Reviews page. The first one shows large.
+"Reviews at the end of the page". Type the names of up to six reviews
+exactly as they appear on the Reviews page. They show as the same cards
+as on the Reviews page, in the order you list them.
 
 **To change the price:** open **8-Week Program**, scroll to **Order page
 (price & payment link)**, and open **Price and Stripe link**. The price
