@@ -25,6 +25,7 @@ This is Diana Gonçalves's website, movewithdianag.com (Classical Pilates, in pe
 - **Copy style:** be clear, not clever. Short, plain sentences. No em dashes or en dashes. No invented facts, prices, guarantees or promises. No medical claims (Pilates is exercise, not treatment). It is Classical Pilates. Skip filler reassurance.
 - When Diana gives exact wording, use it exactly.
 - Show her the change in the local preview, or give her the page link once it is live, and tell her in a sentence or two what changed.
+- In a cloud session (claude.ai/code or the phone app) there is no local preview. Push to a branch, not `main`, and give her the Cloudflare preview link for that branch. Merge to `main` only when she says to publish.
 
 ## Useful docs
 

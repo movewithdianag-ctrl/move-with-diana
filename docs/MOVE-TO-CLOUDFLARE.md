@@ -162,6 +162,34 @@ Today `www.movewithdianag.com` forwards to `movewithdianag.com`. Keep it that wa
 1. In Netlify, open the site, then **Site configuration**, then **Delete this site**. Then cancel any paid Netlify plan.
 2. Ask Claude to delete `public/_redirects` and update `DIANA-GUIDE.md` (sections 9 to 11), `README.md` and `integrations/google-sheet/SETUP.md`, which still say Netlify.
 
+---
+
+## Part C: Diana makes changes with her own Claude
+
+She does not need a computer setup. Claude Code runs in the cloud, so she can use it from a web browser or the Claude phone app.
+
+### C1. One-time setup (about 10 minutes)
+
+1. She needs a paid Claude plan (Pro or higher) on her own Claude account.
+2. On a computer, go to **claude.ai/code** and sign in.
+3. Click **Connect GitHub**. GitHub opens: sign in as `movewithdianag-ctrl`, allow the Claude app for the `move-with-diana` repository, and approve.
+4. Pick `move-with-diana` as the repository.
+5. On her phone, install the **Claude** app and sign in. The **Code** section shows the same repository.
+
+### C2. Making a change
+
+1. Open claude.ai/code (or Code in the phone app) and pick `move-with-diana`.
+2. Type what she wants in plain words, for example: "Change the home page headline to ...".
+3. Claude makes the change and puts it on a new branch (a draft copy), not on the live site.
+4. Cloudflare builds that draft on its own and gives it a preview link like `https://<draft-name>.movewithdianag.pages.dev`. Claude can tell her the link, and it is also under **Workers & Pages**, the project, then **Deployments**.
+5. She opens the preview link on her phone and checks it.
+6. If it looks right, she tells Claude "Publish it" (Claude merges it into `main`), or taps **Merge** on the pull request in GitHub. The live site updates in a few minutes.
+7. If it looks wrong, she tells Claude what to fix, or just closes the session. Nothing went live.
+
+Small text changes can still be made at `movewithdianag.com/admin`, with no Claude at all.
+
+---
+
 ### If something goes wrong
 
 - **Site down after B3:** Netlify is still running, so the old site can come straight back:
