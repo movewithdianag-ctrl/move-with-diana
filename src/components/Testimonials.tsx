@@ -1,5 +1,9 @@
 import { useEffect, useRef, useState } from "react";
-import { testimonials, testimonialsSection, type Testimonial } from "@/content/content";
+import {
+  testimonials,
+  testimonialsSection,
+  type Testimonial,
+} from "@/content/content";
 import { cn } from "@/lib/utils";
 
 const TRUNCATE_WORDS = 40;
@@ -20,7 +24,10 @@ export function TestimonialCard({
   const [expanded, setExpanded] = useState(false);
   const words = t.quote.split(/\s+/);
   const isLong = words.length > TRUNCATE_WORDS;
-  const shown = expanded || !isLong ? t.quote : words.slice(0, TRUNCATE_WORDS).join(" ") + "…";
+  const shown =
+    expanded || !isLong
+      ? t.quote
+      : words.slice(0, TRUNCATE_WORDS).join(" ") + "…";
 
   return (
     <figure className="flex h-full flex-col rounded-photo border border-ink/10 bg-white/70 p-6 shadow-sm">
@@ -37,7 +44,9 @@ export function TestimonialCard({
                 : "ml-2 inline font-semibold text-steel underline decoration-steel/40 underline-offset-2 hover:decoration-steel"
             }
           >
-            {expanded ? testimonialsSection.readLess : testimonialsSection.readMore}
+            {expanded
+              ? testimonialsSection.readLess
+              : testimonialsSection.readMore}
           </button>
         )}
       </blockquote>
@@ -55,7 +64,18 @@ export function TestimonialCard({
 }
 
 /** The saved reviews as cards: a swipeable row on phones, three columns on larger screens. */
-export default function Testimonials({ items = testimonials }: { items?: Testimonial[] }) {
+export default function Testimonials({
+  items = testimonials,
+  even = false,
+}: {
+  items?: Testimonial[];
+  /**
+   * Even rows instead of masonry: every card in a row is the same height,
+   * names line up along the bottom, and "Read more" sits on its own line.
+   * Used on the home page.
+   */
+  even?: boolean;
+}) {
   const trackRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
 
@@ -91,7 +111,7 @@ export default function Testimonials({ items = testimonials }: { items?: Testimo
         >
           {items.map((t) => (
             <div key={t.name} className="carousel-slide w-[85%] shrink-0">
-              <TestimonialCard t={t} />
+              <TestimonialCard t={t} roomyToggle={even} />
             </div>
           ))}
         </div>
@@ -114,14 +134,22 @@ export default function Testimonials({ items = testimonials }: { items?: Testimo
         </div>
       </div>
 
-      {/* Desktop: 3-column masonry via CSS columns */}
-      <div className="hidden gap-6 md:block md:columns-3">
-        {items.map((t) => (
-          <div key={t.name} className="mb-6 break-inside-avoid">
-            <TestimonialCard t={t} />
-          </div>
-        ))}
-      </div>
+      {/* Desktop: even 3-column grid, or 3-column masonry via CSS columns */}
+      {even ? (
+        <div className="hidden gap-6 md:grid md:grid-cols-3">
+          {items.map((t) => (
+            <TestimonialCard key={t.name} t={t} roomyToggle />
+          ))}
+        </div>
+      ) : (
+        <div className="hidden gap-6 md:block md:columns-3">
+          {items.map((t) => (
+            <div key={t.name} className="mb-6 break-inside-avoid">
+              <TestimonialCard t={t} />
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

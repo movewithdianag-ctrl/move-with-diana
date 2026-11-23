@@ -34,7 +34,7 @@ export default function HomeReviews() {
           )}
         </div>
 
-        <Testimonials items={homeReviews.items} />
+        <Testimonials items={homeReviews.items} even />
 
         {homeReviews.linkLabel && (
           <div className="mt-6 border-t border-ink/15 pt-8 md:mt-10">
